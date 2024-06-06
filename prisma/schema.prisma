@@ -1,0 +1,109 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(cuid())
+
+  username    String
+  accessToken String
+  userId      String  @unique
+  isActive    Boolean @default(true)
+
+  predictions Prediction[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Competition {
+  id String @id @default(cuid())
+
+  apiLeagueId Int
+  name        String
+  type        CompetitionType
+  logo        String
+  season      Int
+  isActive    Boolean
+
+  fixtures Fixture[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Fixture {
+  id Int @id
+
+  status    FixtureStatus   @default(NOT_STARTED)
+  timestamp Int
+  date      DateTime
+  round     String
+  homeGoals Int?
+  awayGoals Int?
+  outcome   FixtureOutcome?
+
+  homeTeamId    Int
+  homeTeam      Team         @relation(name: "homeTeam", fields: [homeTeamId], references: [id])
+  awayTeamId    Int
+  awayTeam      Team         @relation(name: "awayTeam", fields: [awayTeamId], references: [id])
+  competitionId String
+  competition   Competition  @relation(fields: [competitionId], references: [id], onDelete: Cascade)
+  predictions   Prediction[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Team {
+  id Int @id
+
+  name String
+  logo String
+
+  homeFixtures Fixture[] @relation(name: "homeTeam")
+  awayFixtures Fixture[] @relation(name: "awayTeam")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Prediction {
+  id String @id @default(cuid())
+
+  homeGoals        Int
+  awayGoals        Int
+  // only edit with same outcome(3) and same score(13)
+  points           Int            @default(1)
+  predictedOutcome FixtureOutcome
+
+  userId    String
+  user      User    @relation(fields: [userId], references: [id])
+  fixtureId Int
+  fixture   Fixture @relation(fields: [fixtureId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum CompetitionType {
+  Cup
+  League
+}
+
+enum FixtureStatus {
+  NOT_STARTED
+  FINISHED
+  COMPLETED
+}
+
+enum FixtureOutcome {
+  HOME_WIN
+  AWAY_WIN
+  DRAW
+}
