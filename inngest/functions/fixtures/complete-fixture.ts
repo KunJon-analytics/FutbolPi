@@ -20,10 +20,10 @@ export const completeFixtures = inngest.createFunction(
 
     if (!!fixtureToComplete?.outcome) {
       //start marking corect outcome
-      const correctOutcomePredictions = await step.run(
+      const markCorrectOutcome = step.run(
         "update-correct-outcome-predictions",
         async () => {
-          return await prisma.prediction.updateMany({
+          return prisma.prediction.updateMany({
             where: { fixtureId, predictedOutcome: fixtureToComplete.outcome! },
             data: { points: { increment: 3 } },
           });
@@ -31,10 +31,10 @@ export const completeFixtures = inngest.createFunction(
       );
 
       // start marking correct score
-      const correctScorePredictions = await step.run(
+      const markCorrectScore = step.run(
         "update-correct-score-predictions",
         async () => {
-          return await prisma.prediction.updateMany({
+          return prisma.prediction.updateMany({
             where: {
               fixtureId,
               awayGoals: fixtureToComplete.awayGoals || 0,
@@ -44,6 +44,10 @@ export const completeFixtures = inngest.createFunction(
           });
         }
       );
+
+      // Run both steps in parallel
+      const [correctOutcomePredictions, correctScorePredictions] =
+        await Promise.all([markCorrectOutcome, markCorrectScore]);
 
       // mark fixture as complete
       const completedFixture = await step.run(
