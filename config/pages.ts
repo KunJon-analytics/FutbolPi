@@ -55,7 +55,7 @@ export const settingsPagesConfig: Page[] = [
   },
 ];
 
-export const monitorPagesConfig: Page[] = [
+export const competitionPagesConfig: Page[] = [
   {
     title: "Overview",
     description: "View all competitions",
@@ -64,18 +64,18 @@ export const monitorPagesConfig: Page[] = [
     segment: "overview",
   },
   {
-    title: "Response logs",
-    description: "Data table with all response details.",
-    href: "/monitors/[id]/data",
+    title: "Leaderboard",
+    description: "View top players",
+    href: "/competitions/[id]/leaderboard",
     icon: "table",
-    segment: "data",
+    segment: "leaderboard",
   },
   {
-    title: "Settings",
-    description: "Edit section for the monitor.",
-    href: "/monitors/[id]/edit",
-    icon: "cog",
-    segment: "edit",
+    title: "Fixtures",
+    description: "View all competition fixtures.",
+    href: "/competitions/[id]/fixtures",
+    icon: "play",
+    segment: "fixtures",
   },
 ];
 
@@ -149,7 +149,7 @@ export const pagesConfig = [
     href: "/competitions",
     icon: "activity",
     segment: "competitions",
-    children: monitorPagesConfig,
+    children: competitionPagesConfig,
   },
   {
     title: "Incidents",
