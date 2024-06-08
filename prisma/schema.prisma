@@ -10,7 +10,7 @@ datasource db {
 model User {
   id String @id @default(cuid())
 
-  username    String
+  username    String  @unique
   accessToken String
   userId      String  @unique
   isActive    Boolean @default(true)
@@ -83,8 +83,8 @@ model Prediction {
   points           Int            @default(1)
   predictedOutcome FixtureOutcome
 
-  userId    String
-  user      User    @relation(fields: [userId], references: [id])
+  username  String
+  user      User    @relation(fields: [username], references: [username])
   fixtureId Int
   fixture   Fixture @relation(fields: [fixtureId], references: [id], onDelete: Cascade)
 
