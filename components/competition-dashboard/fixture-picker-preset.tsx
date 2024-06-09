@@ -22,9 +22,9 @@ export function FixturesPickerPreset({
       disabled={disabled}
       defaultValue={defaultValue}
       values={values}
-      searchParam="period"
-      icon="calendar"
-      placeholder="Pick a range"
+      searchParam="status"
+      icon="tag"
+      placeholder="Pick status"
       formatter={fixtureStatusFormatter}
     />
   );
