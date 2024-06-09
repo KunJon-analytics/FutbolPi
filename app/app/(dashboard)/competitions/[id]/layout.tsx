@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 
 import prisma from "@/lib/prisma";
 import { Header } from "@/components/dashboard/header";
 import AppPageWithSidebarLayout from "@/components/layout/app-page-with-sidebar-layout";
 import { StatusDotWithTooltip } from "@/components/competition/status-dot-with-tooltip";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default async function Layout({
   children,
@@ -37,13 +37,13 @@ export default async function Layout({
             />
 
             <span className="text-muted-foreground/50 text-xs">•</span>
-            {/*  change avatar to <Image/> to help cache image...add remote patterns image*/}
-            <Avatar>
-              <AvatarImage src={competition.logo} alt={competition.name} />
-              <AvatarFallback>
-                {competition.name.substring(0, 2)}
-              </AvatarFallback>
-            </Avatar>
+            <Image
+              className="w-10 h-10 rounded-full"
+              src={competition.logo}
+              alt={competition.name}
+              width={10}
+              height={10}
+            />
           </div>
         }
       />
