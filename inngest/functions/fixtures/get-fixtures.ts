@@ -32,11 +32,11 @@ export const getFixtures = inngest.createFunction(
             const competition = activeCompetitions[index];
             const { response } = await getCompetitionFixtures({
               params: {
-                from: format(new Date(), "YYYY-MM-DD"),
+                from: format(new Date(), "yyyy-MM-dd"),
                 league: competition.apiLeagueId,
                 season: competition.season,
                 status: "NS",
-                to: format(addDays(new Date(), 7), "YYYY-MM-DD"),
+                to: format(addDays(new Date(), 7), "yyyy-MM-dd"),
               },
             });
             if (response && response.length > 0) {

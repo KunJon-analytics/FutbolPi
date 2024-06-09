@@ -7,7 +7,7 @@ import { getTodayFixtures } from "@/inngest/utils/api-calls";
 type SendFinishEventParam = FinishFixture & { name: "fixtures/fixture.finish" };
 
 //call every hour
-export const getFixtures = inngest.createFunction(
+export const updateTodayFixtures = inngest.createFunction(
   { id: "fixtures/today.update" },
   { cron: "0 * * * *" },
   async ({ step }) => {

@@ -27,3 +27,11 @@ export const copaAmerica: League = {
   logo: "https://media.api-sports.io/football/leagues/9.png",
   season: 2024,
 };
+
+export const carioca2: League = {
+  id: 1106,
+  logo: "https://media.api-sports.io/football/leagues/1106.png",
+  name: "Carioca C",
+  season: 2024,
+  type: "League",
+};

@@ -22,7 +22,7 @@ export type TodayFixturesParams = {
 export const getCompetitionFixtures = async (_opts: CompFixturesParams) => {
   const options = { ..._opts, headers: footHeaders };
   const data: { response?: FixtureReturnType[] } = await getApi(
-    "/fixtures",
+    "fixtures",
     options
   );
   return data;
@@ -32,7 +32,7 @@ export const getCompetitionFixtures = async (_opts: CompFixturesParams) => {
 export const getTodayFixtures = async (_opts: TodayFixturesParams) => {
   const options = { ..._opts, headers: footHeaders };
   const data: { response?: FixtureReturnType[] } = await getApi(
-    "/fixtures",
+    "fixtures",
     options
   );
   return data;
