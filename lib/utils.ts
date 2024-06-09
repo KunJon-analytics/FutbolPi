@@ -1,5 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { addHours, fromUnixTime, isFuture } from "date-fns";
 
 import { SessionData } from "@/types";
 import { env } from "@/env.mjs";
@@ -46,3 +47,12 @@ export const getOutcome = (
 export async function copyToClipboard(value: string) {
   navigator.clipboard.writeText(value);
 }
+
+export const canPredict = (timestamp?: number) => {
+  if (!timestamp) {
+    return false;
+  }
+  const kickoff = fromUnixTime(timestamp);
+  const deadlineNotReached = isFuture(addHours(kickoff, 1));
+  return deadlineNotReached;
+};

@@ -1,3 +1,4 @@
+import { Prisma } from "@prisma/client";
 import { AxiosResponse } from "axios";
 
 export type SiteConfig = {
@@ -92,3 +93,7 @@ export type OnIncompletePaymentFound = (
 ) => Promise<void>;
 
 export type SessionData = { username: string; isLoggedIn: boolean; id: string };
+
+export type FixturesResult = Prisma.FixtureGetPayload<{
+  include: { awayTeam: true; homeTeam: true };
+}>;

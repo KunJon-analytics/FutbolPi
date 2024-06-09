@@ -1,10 +1,6 @@
-import { FixtureStatus } from "@prisma/client";
+export const fixtureStatus = ["NOT_STARTED", "COMPLETED", "ALL"] as const;
 
-const fixtureStatus = Object.values(FixtureStatus);
-
-export const extendedFixtureStatus = [...fixtureStatus, "ALL"] as const;
-
-export type FixtureFilter = (typeof extendedFixtureStatus)[number];
+export type FixtureFilter = (typeof fixtureStatus)[number];
 
 export function fixtureStatusFormatter(status: FixtureFilter) {
   switch (status) {
@@ -12,8 +8,6 @@ export function fixtureStatusFormatter(status: FixtureFilter) {
       return "All Fixtures";
     case "COMPLETED":
       return "Completed Fixtures";
-    case "FINISHED":
-      return "Finished Fixtures";
     case "NOT_STARTED":
       return "Scheduled Fixtures";
     default: {
