@@ -1,7 +1,7 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
-import { formatDistanceToNowStrict } from "date-fns";
+import { formatDistanceToNowStrict, fromUnixTime } from "date-fns";
 import Image from "next/image";
 
 import { DataTableColumnHeader } from "@/components/data-table/data-table-column-header";
@@ -16,7 +16,7 @@ export const columns: ColumnDef<FixturesResult>[] = [
     cell: ({ row }) => {
       const timestamp = row.original.timestamp;
 
-      const distance = formatDistanceToNowStrict(new Date(timestamp), {
+      const distance = formatDistanceToNowStrict(fromUnixTime(timestamp), {
         addSuffix: true,
       });
       return (

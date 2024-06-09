@@ -1,4 +1,4 @@
-import { formatDistanceToNowStrict } from "date-fns";
+import { formatDistanceToNowStrict, fromUnixTime } from "date-fns";
 
 import {
   Table,
@@ -13,7 +13,7 @@ import { FixturesResult } from "@/types";
 
 export function FixtureDetailTable({ fixture }: { fixture: FixturesResult }) {
   const teams = `${fixture.homeTeam.name} vs ${fixture.awayTeam.logo}`;
-  const kickoff = formatDistanceToNowStrict(new Date(fixture.timestamp), {
+  const kickoff = formatDistanceToNowStrict(fromUnixTime(fixture.timestamp), {
     addSuffix: true,
   });
   const scores =
