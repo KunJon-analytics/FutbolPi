@@ -1,16 +1,19 @@
 import Link from "next/link";
+import { Suspense } from "react";
 
 import { MetricsCard } from "./metrics-card";
+import { NumberOfPlayersCard } from "./no-of-players-card";
+import { Skeleton } from "../ui/skeleton";
 
 type CompetitionMetrics = {
   notStartedFixtures: number;
   completedFixtures: number;
   noOfTeams: number;
-  activePlayers: number;
+  competitionId: string;
   noOfPredictions: number;
 };
 
-export function Metrics({ metrics }: { metrics: CompetitionMetrics }) {
+export async function Metrics({ metrics }: { metrics: CompetitionMetrics }) {
   return (
     <div className="@container grid gap-6">
       <div className="grid grid-cols-2 gap-4 @3xl:grid-cols-5 @xl:grid-cols-4 @3xl:gap-6">
@@ -20,12 +23,10 @@ export function Metrics({ metrics }: { metrics: CompetitionMetrics }) {
           suffix="#"
           variant="info"
         />
-        <MetricsCard
-          title="players"
-          value={metrics.activePlayers}
-          suffix="#"
-          variant="info"
-        />
+
+        <Suspense fallback={<Skeleton className="h-16 w-full" />}>
+          <NumberOfPlayersCard competitionId={metrics.competitionId} />
+        </Suspense>
 
         <MetricsCard
           title="predictions"

@@ -24,13 +24,12 @@ model User {
 model Competition {
   id String @id @default(cuid())
 
-  apiLeagueId   Int
-  name          String
-  type          CompetitionType
-  logo          String
-  season        Int
-  activePlayers Int             @default(0)
-  isActive      Boolean
+  apiLeagueId Int
+  name        String
+  type        CompetitionType
+  logo        String
+  season      Int
+  isActive    Boolean
 
   fixtures Fixture[]
 

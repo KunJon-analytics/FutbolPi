@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import * as React from "react";
 
 import { Metrics } from "@/components/competition-dashboard/metrics";
-import { Separator } from "@/components/ui/separator";
 import prisma from "@/lib/prisma";
 
 export default async function Page({ params }: { params: { id: string } }) {
@@ -65,13 +64,12 @@ export default async function Page({ params }: { params: { id: string } }) {
     completedFixtures,
     noOfPredictions,
     noOfTeams,
-    activePlayers: competition.activePlayers,
+    competitionId: id,
   };
 
   return (
     <div className="grid gap-4">
       <Metrics metrics={metrics} />
-      <Separator className="my-8" />
     </div>
   );
 }
