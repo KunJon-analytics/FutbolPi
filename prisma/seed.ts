@@ -1,4 +1,4 @@
-import { copaAmerica, euros, carioca2 } from "@/lib/api-football/constants";
+import { copaAmerica, euros } from "@/lib/api-football/constants";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
@@ -17,23 +17,6 @@ async function main() {
         name: euros.name,
         season: euros.season,
         type: "Cup",
-      },
-    });
-  }
-
-  const existingCarioca = await prisma.competition.findFirst({
-    where: { apiLeagueId: carioca2.id },
-  });
-
-  if (!existingCarioca) {
-    await prisma.competition.create({
-      data: {
-        apiLeagueId: carioca2.id,
-        isActive: true,
-        logo: carioca2.logo,
-        name: carioca2.name,
-        season: carioca2.season,
-        type: carioca2.type,
       },
     });
   }
