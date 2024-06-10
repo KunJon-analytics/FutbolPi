@@ -38,11 +38,11 @@ export default async function Layout({
 
             <span className="text-muted-foreground/50 text-xs">•</span>
             <Image
-              className="w-10 h-10 rounded-full"
+              className="w-8 h-8 rounded-full"
               src={competition.logo}
               alt={competition.name}
-              width={10}
-              height={10}
+              width={8}
+              height={8}
             />
           </div>
         }

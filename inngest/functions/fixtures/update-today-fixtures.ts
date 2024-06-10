@@ -42,6 +42,28 @@ export const updateTodayFixtures = inngest.createFunction(
       }
     );
 
+    // update game date and time stamp just in case it was changed
+    const updatedTimestamps = await step.run(
+      "update-fixtures-timestamp",
+      async () => {
+        if (todayFixturesApi.length < 1) {
+          return [];
+        }
+        const result = await prisma.$transaction(
+          todayFixturesApi.map((fixture) =>
+            prisma.fixture.update({
+              where: { id: fixture.fixture.id },
+              data: {
+                date: new Date(fixture.fixture.date),
+                timestamp: fixture.fixture.timestamp,
+              },
+            })
+          )
+        );
+        return result;
+      }
+    );
+
     // get finshed fixtures by filtering
     const finishedFixtures = await step.run(
       "get-fixtures-finished",
