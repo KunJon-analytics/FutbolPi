@@ -35,14 +35,20 @@ export async function FixtureDetailTabs({
         ) : null}
       </TabsContent>
       <TabsContent value="predict">
-        <PredictionForm
-          fixture={{
-            awayTeam: fixture.awayTeam.name,
-            homeTeam: fixture.homeTeam.name,
-            timestamp: fixture.timestamp,
-          }}
-          defaultValues={{ awayGoals: 0, homeGoals: 0, fixtureId: fixture.id }}
-        />
+        {!prediction ? (
+          <PredictionForm
+            fixture={{
+              awayTeam: fixture.awayTeam.name,
+              homeTeam: fixture.homeTeam.name,
+              timestamp: fixture.timestamp,
+            }}
+            defaultValues={{
+              awayGoals: 0,
+              homeGoals: 0,
+              fixtureId: fixture.id,
+            }}
+          />
+        ) : null}
       </TabsContent>
       {/* <TabsContent value="fixture">
         <FixtureDetailTable fixture={fixture} />

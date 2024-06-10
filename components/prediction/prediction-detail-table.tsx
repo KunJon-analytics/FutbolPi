@@ -33,7 +33,7 @@ export function PredictionDetailTable({
 
   return (
     <Table>
-      <TableCaption className="mt-2">Fixture Detail</TableCaption>
+      <TableCaption className="mt-2">Your Prediction Detail</TableCaption>
       <TableHeader>
         <TableRow>
           <TableHead className="md:min-w-[200px]">Key</TableHead>

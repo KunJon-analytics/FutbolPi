@@ -31,6 +31,7 @@ export default async function Page({
   const fixtures = await prisma.fixture.findMany({
     where: { competitionId: id },
     include: { awayTeam: true, homeTeam: true },
+    orderBy: { timestamp: "asc" },
   });
 
   if (!search.success) {
