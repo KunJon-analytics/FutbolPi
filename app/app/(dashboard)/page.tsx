@@ -1,7 +1,7 @@
-import React from "react";
+import { redirect } from "next/navigation";
 
-const AppPage = () => {
-  return <div>AppPage</div>;
-};
+import { defaultRedirectTo } from "@/config/pages";
 
-export default AppPage;
+export default function Page() {
+  return redirect(defaultRedirectTo);
+}

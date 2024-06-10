@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 
 import { Shell } from "@/components/dashboard/shell";
 import { getSession } from "@/actions/session";
+import { defaultRedirectTo } from "@/config/pages";
 
 import { LoginForm } from "./_components/login-form";
 
@@ -12,7 +13,7 @@ import { LoginForm } from "./_components/login-form";
  * allowed URL search params
  */
 const searchParamsSchema = z.object({
-  redirectTo: z.string().optional().default("/app"),
+  redirectTo: z.string().optional().default(defaultRedirectTo),
 });
 
 export default async function Page({
@@ -22,7 +23,9 @@ export default async function Page({
 }) {
   const session = await getSession();
   const search = searchParamsSchema.safeParse(searchParams);
-  const redirectTo = search.success ? search.data.redirectTo : "/app";
+  const redirectTo = search.success
+    ? search.data.redirectTo
+    : defaultRedirectTo;
 
   if (session.isLoggedIn) redirect(redirectTo);
 

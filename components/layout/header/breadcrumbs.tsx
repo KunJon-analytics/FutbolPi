@@ -5,6 +5,7 @@ import { Fragment } from "react";
 
 import { notEmpty } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
+import { defaultRedirectTo } from "@/config/pages";
 
 export function Breadcrumbs() {
   const breadcrumbs = [
@@ -14,7 +15,7 @@ export function Breadcrumbs() {
 
   return (
     <div className="flex items-center">
-      <Link href="/app" className="shrink-0">
+      <Link href={defaultRedirectTo} className="shrink-0">
         <Image
           src="/icon.png"
           alt={siteConfig.name}

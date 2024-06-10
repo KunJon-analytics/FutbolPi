@@ -11,34 +11,6 @@ export type Page = {
 };
 
 export const settingsPagesConfig: Page[] = [
-  // {
-  //   title: "General",
-  //   description: "General settings for the workspace.",
-  //   href: "/settings/general",
-  //   icon: "cog",
-  //   segment: "general",
-  // },
-  // {
-  //   title: "Team",
-  //   description: "Team settings for the workspace.",
-  //   href: "/settings/team",
-  //   icon: "users",
-  //   segment: "team",
-  // },
-  // {
-  //   title: "API Token",
-  //   description: "API token settings for the workspace.",
-  //   href: "/settings/api-token",
-  //   icon: "key",
-  //   segment: "api-token",
-  // },
-  // {
-  //   title: "Billing",
-  //   description: "Billing settings for the workspace.",
-  //   href: "/settings/billing",
-  //   icon: "credit-card",
-  //   segment: "billing",
-  // },
   {
     title: "Appearance",
     description: "Appearance settings for the user.",
@@ -79,67 +51,6 @@ export const competitionPagesConfig: Page[] = [
   },
 ];
 
-export const statusPagesPagesConfig: Page[] = [
-  {
-    title: "Settings",
-    description: "Edit section for the status page.",
-    href: "/status-pages/[id]/edit",
-    icon: "cog",
-    segment: "edit",
-  },
-  {
-    title: "Domain",
-    description: "Where you can see the domain settings.",
-    href: "/status-pages/[id]/domain",
-    icon: "globe",
-    segment: "domain",
-  },
-  {
-    title: "Subscribers",
-    description: "Where you can see all the subscribers.",
-    href: "/status-pages/[id]/subscribers",
-    icon: "users",
-    segment: "subscribers",
-  },
-];
-
-const incidentPagesConfig: Page[] = [
-  {
-    title: "Overview",
-    description: "Timeline with all the actions.",
-    href: "/incidents/[id]/overview",
-    icon: "file-clock",
-    segment: "overview",
-  },
-];
-
-export const statusReportsPagesConfig: Page[] = [
-  {
-    title: "Overview",
-    description: "Overview of the status report.",
-    href: "/status-reports/[id]/overview",
-    icon: "megaphone",
-    segment: "overview",
-  },
-  {
-    title: "Settings",
-    description: "Edit section for the status report.",
-    href: "/status-reports/[id]/edit",
-    icon: "cog",
-    segment: "edit",
-  },
-];
-
-export const notificationsPagesConfig: Page[] = [
-  {
-    title: "Settings",
-    description: "Edit section for the notifications.",
-    href: "/notifications/[id]/edit",
-    icon: "cog",
-    segment: "edit",
-  },
-];
-
 export type PageId = (typeof pagesConfig)[number]["segment"];
 
 export const pagesConfig = [
@@ -151,45 +62,6 @@ export const pagesConfig = [
     segment: "competitions",
     children: competitionPagesConfig,
   },
-  // {
-  //   title: "Incidents",
-  //   description: "All your incidents.",
-  //   href: "/incidents",
-  //   icon: "siren",
-  //   segment: "incidents",
-  //   children: incidentPagesConfig,
-  // },
-  // {
-  //   title: "Status Pages",
-  //   description: "Where you can see all the pages.",
-  //   href: "/status-pages",
-  //   icon: "panel-top",
-  //   segment: "status-pages",
-  //   children: statusPagesPagesConfig,
-  // },
-  // {
-  //   title: "Status Reports",
-  //   description: "War room where you handle the incidents.",
-  //   href: "/status-reports",
-  //   icon: "megaphone",
-  //   segment: "status-reports",
-  //   children: statusReportsPagesConfig,
-  // },
-  // {
-  //   title: "Notifications",
-  //   description: "Where you can see all the notifications.",
-  //   href: "/notifications",
-  //   icon: "bell",
-  //   segment: "notifications",
-  //   children: notificationsPagesConfig,
-  // },
-  // {
-  //   title: "Real User Monitoring",
-  //   description: "Get speed insights for your application.",
-  //   href: "/rum",
-  //   icon: "ratio",
-  //   segment: "rum",
-  // },
   {
     title: "Settings",
     description: "Your profile settings",
@@ -256,3 +128,5 @@ export function getPageBySegment(
   }
   return undefined;
 }
+
+export const defaultRedirectTo = "/app/competitions";

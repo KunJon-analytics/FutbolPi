@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { siteConfig } from "@/config/site";
+
 export default async function AuthLayout({
   children,
 }: {
@@ -12,7 +14,7 @@ export default async function AuthLayout({
         <Link href="/" className="relative h-8 w-8">
           <Image
             src="/icon.png"
-            alt="OpenStatus"
+            alt={siteConfig.name}
             height={32}
             width={32}
             className="rounded-full border border-border"
