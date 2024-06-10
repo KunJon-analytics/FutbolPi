@@ -6,6 +6,7 @@ import prisma from "@/lib/prisma";
 import { DataTableWrapper } from "./_components/data-table-wrapper";
 import { fixtureStatus } from "@/lib/competition/utils";
 import { FixturesPickerPreset } from "@/components/competition-dashboard/fixture-picker-preset";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 /**
  * allowed URL search params
@@ -56,13 +57,16 @@ export default async function Page({
             Click on a fixture to view or create a prediction.
           </p>
         </div>
-        <DataTableWrapper
-          data={data}
-          pagination={{
-            pageIndex: search.data.pageIndex,
-            pageSize: search.data.pageSize,
-          }}
-        />
+        <ScrollArea className="w-full whitespace-nowrap rounded-md border">
+          <DataTableWrapper
+            data={data}
+            pagination={{
+              pageIndex: search.data.pageIndex,
+              pageSize: search.data.pageSize,
+            }}
+          />
+          <ScrollBar orientation="horizontal" />
+        </ScrollArea>
       </div>
     </>
   );

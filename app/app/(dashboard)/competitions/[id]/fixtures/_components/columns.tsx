@@ -59,6 +59,15 @@ export const columns: ColumnDef<FixturesResult>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Round" />
     ),
+    cell: ({ row }) => {
+      const round = row.original.round;
+
+      return (
+        <div className="flex max-w-[84px] text-muted-foreground sm:max-w-none">
+          <span className="truncate">{round}</span>
+        </div>
+      );
+    },
   },
 ];
 
@@ -82,7 +91,10 @@ const TeamCell = ({
       />
       <div className="ps-3">
         <div className="text-base font-semibold">{score}</div>
-        <div className="font-normal text-muted-foreground text-sm">{name}</div>
+
+        <div className="flex font-normal max-w-[84px] sm:max-w-none text-muted-foreground text-sm">
+          <span className="truncate">{name}</span>
+        </div>
       </div>
     </div>
   );

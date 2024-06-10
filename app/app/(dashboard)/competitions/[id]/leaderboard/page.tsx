@@ -35,14 +35,12 @@ export default async function Page({
   });
 
   return (
-    <div className="grid gap-4">
-      <DataTableWrapper
-        data={data}
-        pagination={{
-          pageIndex: search.data.pageIndex,
-          pageSize: search.data.pageSize,
-        }}
-      />
-    </div>
+    <DataTableWrapper
+      data={data}
+      pagination={{
+        pageIndex: search.data.pageIndex,
+        pageSize: search.data.pageSize,
+      }}
+    />
   );
 }

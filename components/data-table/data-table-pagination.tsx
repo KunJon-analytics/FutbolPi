@@ -42,7 +42,7 @@ export function DataTablePagination<TData>({
   return (
     <div className="flex items-center justify-between px-2">
       <div>
-        <p className="text-muted-foreground text-sm">
+        <p className="text-muted-foreground text-sm hidden sm:flex">
           {table.getFilteredRowModel().rows.length} row(s) filtered
         </p>
       </div>
