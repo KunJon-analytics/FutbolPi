@@ -11,37 +11,37 @@ export type Page = {
 };
 
 export const settingsPagesConfig: Page[] = [
-  {
-    title: "General",
-    description: "General settings for the workspace.",
-    href: "/settings/general",
-    icon: "cog",
-    segment: "general",
-  },
-  {
-    title: "Team",
-    description: "Team settings for the workspace.",
-    href: "/settings/team",
-    icon: "users",
-    segment: "team",
-  },
-  {
-    title: "API Token",
-    description: "API token settings for the workspace.",
-    href: "/settings/api-token",
-    icon: "key",
-    segment: "api-token",
-  },
-  {
-    title: "Billing",
-    description: "Billing settings for the workspace.",
-    href: "/settings/billing",
-    icon: "credit-card",
-    segment: "billing",
-  },
+  // {
+  //   title: "General",
+  //   description: "General settings for the workspace.",
+  //   href: "/settings/general",
+  //   icon: "cog",
+  //   segment: "general",
+  // },
+  // {
+  //   title: "Team",
+  //   description: "Team settings for the workspace.",
+  //   href: "/settings/team",
+  //   icon: "users",
+  //   segment: "team",
+  // },
+  // {
+  //   title: "API Token",
+  //   description: "API token settings for the workspace.",
+  //   href: "/settings/api-token",
+  //   icon: "key",
+  //   segment: "api-token",
+  // },
+  // {
+  //   title: "Billing",
+  //   description: "Billing settings for the workspace.",
+  //   href: "/settings/billing",
+  //   icon: "credit-card",
+  //   segment: "billing",
+  // },
   {
     title: "Appearance",
-    description: "Appearance settings for the workspace.",
+    description: "Appearance settings for the user.",
     href: "/settings/appearance",
     icon: "sun",
     segment: "appearance",
@@ -190,14 +190,14 @@ export const pagesConfig = [
   //   icon: "ratio",
   //   segment: "rum",
   // },
-  // {
-  //   title: "Settings",
-  //   description: "Your workspace settings",
-  //   href: "/settings/general",
-  //   icon: "cog",
-  //   segment: "settings",
-  //   children: settingsPagesConfig,
-  // },
+  {
+    title: "Settings",
+    description: "Your profile settings",
+    href: "/settings/user",
+    icon: "user",
+    segment: "settings",
+    children: settingsPagesConfig,
+  },
 ] as const satisfies readonly Page[];
 
 export const marketingPagesConfig = [

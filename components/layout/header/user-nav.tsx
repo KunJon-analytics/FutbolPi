@@ -38,7 +38,7 @@ export async function UserNav() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem asChild>
-            <Link href={`/app/settings/billing`}>Billing</Link>
+            <Link href={`/app/settings/appearance`}>Appearance</Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
             <Link href={`/app/settings/user`}>Profile</Link>
