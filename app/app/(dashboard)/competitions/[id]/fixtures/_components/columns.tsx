@@ -33,30 +33,11 @@ export const columns: ColumnDef<FixturesResult>[] = [
       <DataTableColumnHeader column={column} title="Home Team" />
     ),
     cell: ({ row }) => {
-      const { homeTeam } = row.original;
-      return <TeamCell logo={homeTeam.logo} name={homeTeam.name} />;
-    },
-  },
-  {
-    accessorKey: "homeGoals",
-    header: "Home Goals",
-    cell: ({ row }) => {
-      const goals = row.original.homeGoals;
-      if (goals) {
-        return <span className="">{goals}</span>;
-      }
-      return <span className="text-muted-foreground">-</span>;
-    },
-  },
-  {
-    accessorKey: "awayGoals",
-    header: "Away Goals",
-    cell: ({ row }) => {
-      const goals = row.original.awayGoals;
-      if (goals) {
-        return <span className="">{goals}</span>;
-      }
-      return <span className="text-muted-foreground">-</span>;
+      const { homeTeam, homeGoals } = row.original;
+      const score = homeGoals === null ? "-" : homeGoals.toString();
+      return (
+        <TeamCell logo={homeTeam.logo} name={homeTeam.name} score={score} />
+      );
     },
   },
   {
@@ -66,8 +47,11 @@ export const columns: ColumnDef<FixturesResult>[] = [
       <DataTableColumnHeader column={column} title="Away Team" />
     ),
     cell: ({ row }) => {
-      const { awayTeam } = row.original;
-      return <TeamCell logo={awayTeam.logo} name={awayTeam.name} />;
+      const { awayTeam, awayGoals } = row.original;
+      const score = awayGoals === null ? "-" : awayGoals.toString();
+      return (
+        <TeamCell logo={awayTeam.logo} name={awayTeam.name} score={score} />
+      );
     },
   },
   {
@@ -78,18 +62,27 @@ export const columns: ColumnDef<FixturesResult>[] = [
   },
 ];
 
-const TeamCell = ({ logo, name }: { logo: string; name: string }) => {
+const TeamCell = ({
+  logo,
+  name,
+  score,
+}: {
+  logo: string;
+  name: string;
+  score: string;
+}) => {
   return (
-    <div className="flex items-center px-6 py-4 whitespace-nowrap">
+    <div className="flex items-center whitespace-nowrap">
       <Image
-        className="w-10 h-10 rounded-full"
+        className="w-8 h-8 rounded-full"
         src={logo}
         alt={name}
-        width={10}
-        height={10}
+        width={8}
+        height={8}
       />
       <div className="ps-3">
-        <div className="text-base font-semibold">{name}</div>
+        <div className="text-base font-semibold">{score}</div>
+        <div className="font-normal text-muted-foreground text-sm">{name}</div>
       </div>
     </div>
   );

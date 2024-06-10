@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 import { useForm } from "react-hook-form";
+import { useQueryClient } from "@tanstack/react-query";
 
 import { toastAction } from "@/lib/toast";
 import {
@@ -46,6 +47,7 @@ export function PredictionForm({
   });
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
+  const queryClient = useQueryClient();
   const isAllowed = canPredict(fixture.timestamp);
 
   async function onSubmit(data: PredictionInsertSchema) {
@@ -55,9 +57,16 @@ export function PredictionForm({
           toastAction("error");
           router.refresh();
         }
-        await predict(data);
-        toastAction("saved");
-        router.refresh();
+        const result = await predict(data);
+        if (result.success) {
+          toastAction("saved");
+          queryClient.invalidateQueries({
+            queryKey: ["fixtures", defaultValues.fixtureId, "predictions"],
+          });
+          router.refresh();
+        } else {
+          toastAction("error");
+        }
       } catch {
         toastAction("error");
       }

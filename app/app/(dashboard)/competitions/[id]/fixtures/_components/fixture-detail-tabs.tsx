@@ -4,7 +4,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/dashboard/tabs";
-import { FixtureDetailTable } from "@/components/fixture/fixture-detail-table";
+// import { FixtureDetailTable } from "@/components/fixture/fixture-detail-table";
 import { PredictionForm } from "@/components/forms/prediction-form";
 import { PredictionDetailTable } from "@/components/prediction/prediction-detail-table";
 import { FixturesResult } from "@/types";
@@ -27,7 +27,7 @@ export async function FixtureDetailTabs({
         <TabsTrigger value="predict" disabled={!!prediction}>
           Make Prediction
         </TabsTrigger>
-        <TabsTrigger value="fixture">Fixture</TabsTrigger>
+        {/* <TabsTrigger value="fixture">Fixture</TabsTrigger> */}
       </TabsList>
       <TabsContent value="prediction">
         {!!prediction ? (
@@ -44,9 +44,9 @@ export async function FixtureDetailTabs({
           defaultValues={{ awayGoals: 0, homeGoals: 0, fixtureId: fixture.id }}
         />
       </TabsContent>
-      <TabsContent value="fixture">
+      {/* <TabsContent value="fixture">
         <FixtureDetailTable fixture={fixture} />
-      </TabsContent>
+      </TabsContent> */}
     </Tabs>
   );
 }

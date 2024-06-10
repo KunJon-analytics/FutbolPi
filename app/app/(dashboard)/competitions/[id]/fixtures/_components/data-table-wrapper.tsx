@@ -8,12 +8,12 @@ import type {
   PaginationState,
   Row,
 } from "@tanstack/react-table";
-import { Suspense, use } from "react";
+import { Suspense } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 import { LoadingAnimation } from "@/components/loading-animation";
 import { DataTable } from "@/components/data-table/data-table";
 import { FixturesResult } from "@/types";
-import { getPrediction } from "@/lib/prediction/schema";
 
 import { columns } from "./columns";
 import { FixtureDetailTabs } from "./fixture-detail-tabs";
@@ -54,9 +54,28 @@ function renderSubComponent({ row }: { row: Row<FixturesResult> }) {
 }
 
 function Details({ row }: { row: Row<FixturesResult> }) {
-  const data = use(getPrediction(row.original.id));
+  const fixtureId = row.original.id;
 
-  if (!data) return <p>Something went wrong</p>;
+  const { status, data } = useQuery({
+    queryKey: ["fixtures", fixtureId, "predictions"],
+    queryFn: async () => {
+      const response = await fetch(`/api/fixtures/${fixtureId}/predictions`);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    },
+  });
+
+  if (status === "pending") {
+    return (
+      <div className="py-4">
+        <LoadingAnimation variant="inverse" />
+      </div>
+    );
+  }
+
+  if (status === "error") return <p>Something went wrong</p>;
 
   return <FixtureDetailTabs fixture={row.original} prediction={data} />;
 }

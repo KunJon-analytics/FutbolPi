@@ -14,6 +14,7 @@ import Background from "@/components/background";
 import { PiProvider } from "@/components/pi-provider";
 
 import "./globals.css";
+import ReactQueryProvider from "@/components/providers/react-query";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,9 +47,11 @@ export default function RootLayout({
         } ${calSans.variable}`}
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <Background>{children}</Background>
-          <Toaster richColors />
-          <TailwindIndicator />
+          <ReactQueryProvider>
+            <Background>{children}</Background>
+            <Toaster richColors />
+            <TailwindIndicator />
+          </ReactQueryProvider>
         </ThemeProvider>
         <PiProvider />
       </body>

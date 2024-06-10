@@ -12,7 +12,7 @@ import {
 import { FixturesResult } from "@/types";
 
 export function FixtureDetailTable({ fixture }: { fixture: FixturesResult }) {
-  const teams = `${fixture.homeTeam.name} vs ${fixture.awayTeam.logo}`;
+  const teams = `${fixture.homeTeam.name} vs ${fixture.awayTeam.name}`;
   const kickoff = formatDistanceToNowStrict(fromUnixTime(fixture.timestamp), {
     addSuffix: true,
   });
@@ -33,28 +33,34 @@ export function FixtureDetailTable({ fixture }: { fixture: FixturesResult }) {
         </TableRow>
       </TableHeader>
       <TableBody>
-        <FixtureTableRow key="Kick Off" value={kickoff} />
-        <FixtureTableRow key="Teams" value={teams} />
-        <FixtureTableRow key="Scores" value={scores} />
-        <FixtureTableRow key="Status" value={status} />
-        <FixtureTableRow key="Round" value={fixture.round} />
+        <FixtureTableRow heading="Kick Off" value={kickoff} />
+        <FixtureTableRow heading="Teams" value={teams} />
+        <FixtureTableRow heading="Scores" value={scores} />
+        <FixtureTableRow heading="Status" value={status} />
+        <FixtureTableRow heading="Round" value={fixture.round} />
       </TableBody>
     </Table>
   );
 }
 
-const FixtureTableRow = ({ key, value }: { key: string; value: string }) => {
+const FixtureTableRow = ({
+  heading,
+  value,
+}: {
+  heading: string;
+  value: string;
+}) => {
   return (
     <TableRow>
       <TableCell className="group">
         <div className="flex min-w-[130px] items-center justify-between gap-2">
           <div className="flex items-center justify-between gap-2">
-            <code className="break-all font-medium">{key}</code>
+            <code className="break-all font-medium">{heading}</code>
           </div>
         </div>
       </TableCell>
       <TableCell className="group">
-        <div className="flex items-center justify-between gap-1"></div>
+        <div className="flex items-center justify-between gap-1">{value}</div>
       </TableCell>
     </TableRow>
   );
