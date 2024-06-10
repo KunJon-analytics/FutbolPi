@@ -46,17 +46,24 @@ export default async function Page({
       : fixtures.filter((fixture) => fixture.status === status);
 
   return (
-    <div className="grid gap-4">
-      <div className="flex flex-row items-center justify-between gap-4">
-        <FixturesPickerPreset defaultValue={status} values={fixtureStatus} />
+    <>
+      <div className="grid gap-4">
+        <div className="flex flex-row items-center justify-between gap-4">
+          <FixturesPickerPreset defaultValue={status} values={fixtureStatus} />
+        </div>
+        <div className="grid gap-2">
+          <p className="text-muted-foreground text-xs">
+            Click on a fixture to view or create a prediction.
+          </p>
+        </div>
+        <DataTableWrapper
+          data={data}
+          pagination={{
+            pageIndex: search.data.pageIndex,
+            pageSize: search.data.pageSize,
+          }}
+        />
       </div>
-      <DataTableWrapper
-        data={data}
-        pagination={{
-          pageIndex: search.data.pageIndex,
-          pageSize: search.data.pageSize,
-        }}
-      />
-    </div>
+    </>
   );
 }

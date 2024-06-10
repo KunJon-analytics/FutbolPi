@@ -90,6 +90,8 @@ model Prediction {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@unique([username, fixtureId], name: "predictionId")
 }
 
 enum CompetitionType {

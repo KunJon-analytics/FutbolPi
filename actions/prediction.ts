@@ -20,8 +20,8 @@ export const predict = async (params: unknown) => {
 
     const { fixtureId, awayGoals, homeGoals } = parsedParam.data;
 
-    const prevPrediction = await prisma.prediction.findFirst({
-      where: { fixtureId, username: session.username },
+    const prevPrediction = await prisma.prediction.findUnique({
+      where: { predictionId: { username: session.username, fixtureId } },
       select: { id: true },
     });
     if (!!prevPrediction?.id) {
