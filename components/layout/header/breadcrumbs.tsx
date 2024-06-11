@@ -6,6 +6,7 @@ import { Fragment } from "react";
 import { notEmpty } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import { defaultRedirectTo } from "@/config/pages";
+import { Icons } from "@/components/icons";
 
 export function Breadcrumbs() {
   const breadcrumbs = [
@@ -15,14 +16,8 @@ export function Breadcrumbs() {
 
   return (
     <div className="flex items-center">
-      <Link href={defaultRedirectTo} className="shrink-0">
-        <Image
-          src="/icon.png"
-          alt={siteConfig.name}
-          height={30}
-          width={30}
-          className="rounded-full border border-border"
-        />
+      <Link href="/" className="shrink-0">
+        <Icons.logo className="rounded-full border border-border h-8 w-8" />
       </Link>
       <Slash className="-rotate-12 mr-0.5 ml-2.5 h-4 w-4 text-muted-foreground" />
 

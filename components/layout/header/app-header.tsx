@@ -23,8 +23,8 @@ export function AppHeader() {
             <ul className="hidden gap-1 sm:flex">
               <li className="w-full">
                 <Button variant="link" asChild>
-                  <Link href="/">
-                    Home
+                  <Link href="/telegram" target="_blank">
+                    Telegram
                     <ArrowUpRight className="ml-1 h-4 w-4 flex-shrink-0" />
                   </Link>
                 </Button>

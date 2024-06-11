@@ -8,21 +8,14 @@ export function HelpCallout() {
       <HelpCircle className="h-4 w-4" />
       <AlertTitle className="">Need help?</AlertTitle>
       <AlertDescription className="text-muted-foreground">
-        Let us know at{" "}
+        Let us know by joining our{" "}
         <a
-          href="mailto:ping@openstatus.dev"
-          className="font-medium text-foreground underline hover:no-underline"
-        >
-          ping@openstatus.dev
-        </a>{" "}
-        or join our{" "}
-        <a
-          href="/discord"
+          href="/telegram"
           target="_blank"
           className="font-medium text-foreground underline hover:no-underline"
           rel="noreferrer"
         >
-          Discord
+          Telegram
         </a>
         .
       </AlertDescription>

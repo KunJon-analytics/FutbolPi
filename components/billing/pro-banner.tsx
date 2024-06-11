@@ -49,7 +49,7 @@ export function ProBanner() {
         </Button>
       </div>
       <p className="text-muted-foreground text-xs">
-        Unlock custom domains, teams, 1 min. checks and more.
+        Create guilds, get AI predictions, and more!
       </p>
       <Button variant="secondary" size="sm" asChild>
         <Link href={`/app/settings/billing`}>

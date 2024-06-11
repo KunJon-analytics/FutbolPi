@@ -34,9 +34,7 @@ export function AppSidebar({ page }: { page?: Page }) {
           })}
         </ul>
       </div>
-      <div className="hidden lg:block">
-        <ProBanner />
-      </div>
+      <div className="hidden lg:block">{/* <ProBanner /> */}</div>
     </div>
   );
 }

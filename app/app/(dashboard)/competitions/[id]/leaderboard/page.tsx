@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 
 import { DataTableWrapper } from "./_components/data-table-wrapper";
 import prisma from "@/lib/prisma";
+import Link from "next/link";
 
 /**
  * allowed URL search params
@@ -35,12 +36,26 @@ export default async function Page({
   });
 
   return (
-    <DataTableWrapper
-      data={data}
-      pagination={{
-        pageIndex: search.data.pageIndex,
-        pageSize: search.data.pageSize,
-      }}
-    />
+    <>
+      <div className="grid gap-2">
+        <p className="text-muted-foreground text-xs">
+          On the leaderboard, every prediction counts! Want to climb higher?{" "}
+          <Link
+            href={`./fixtures`}
+            className="underline underline-offset-4 hover:no-underline"
+          >
+            Make your predictions
+          </Link>{" "}
+          now.
+        </p>
+      </div>
+      <DataTableWrapper
+        data={data}
+        pagination={{
+          pageIndex: search.data.pageIndex,
+          pageSize: search.data.pageSize,
+        }}
+      />
+    </>
   );
 }

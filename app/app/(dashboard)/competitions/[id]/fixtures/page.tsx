@@ -1,12 +1,14 @@
 import { notFound } from "next/navigation";
 import * as React from "react";
 import * as z from "zod";
+import Link from "next/link";
 
 import prisma from "@/lib/prisma";
-import { DataTableWrapper } from "./_components/data-table-wrapper";
 import { fixtureStatus } from "@/lib/competition/utils";
 import { FixturesPickerPreset } from "@/components/competition-dashboard/fixture-picker-preset";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+
+import { DataTableWrapper } from "./_components/data-table-wrapper";
 
 /**
  * allowed URL search params
@@ -54,7 +56,14 @@ export default async function Page({
         </div>
         <div className="grid gap-2">
           <p className="text-muted-foreground text-xs">
-            Click on a fixture to view or create a prediction.
+            Click on fixtures to predict or view. Check{" "}
+            <Link
+              href={`./leaderboard`}
+              className="underline underline-offset-4 hover:no-underline"
+            >
+              leaderboard
+            </Link>{" "}
+            too!
           </p>
         </div>
         <ScrollArea className="w-full whitespace-nowrap rounded-md border">
