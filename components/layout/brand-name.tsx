@@ -7,6 +7,7 @@ import {
   ContextMenuItem,
   ContextMenuTrigger,
 } from "../ui/context-menu";
+import { siteConfig } from "@/config/site";
 
 // Hottake: you don't need a features page if you have a changelog page
 // Except for SEO
@@ -19,7 +20,7 @@ export function BrandName() {
           href="/"
           className="font-cal text-lg text-muted-foreground hover:text-foreground"
         >
-          OpenStatus
+          {siteConfig.name}
         </Link>
       </ContextMenuTrigger>
       <ContextMenuContent>

@@ -1,5 +1,7 @@
 import type { ValidIcon } from "@/components/icons";
 
+import { siteConfig } from "./site";
+
 export type Page = {
   title: string;
   description: string;
@@ -74,39 +76,20 @@ export const pagesConfig = [
 
 export const marketingPagesConfig = [
   {
-    href: "/blog",
-    title: "Blog",
-    description: "All the latest articles and news from OpenStatus.",
-    segment: "blog",
-    icon: "book",
-  },
-  {
-    href: "/play",
-    title: "Playground",
-    description: "All the latest tools build by OpenStatus.",
-    segment: "play",
+    href: "/app/competitions",
+    title: "Predict",
+    description:
+      "Explore upcoming fixtures and make your predictions for active leagues and cups!",
+    segment: "predict",
     icon: "toy-brick",
   },
   {
-    href: "/changelog",
-    title: "Changelog",
-    description: "All the latest features, fixes and work to OpenStatus.",
-    segment: "changelog",
-    icon: "newspaper",
-  },
-  {
-    href: "/pricing",
-    title: "Pricing",
-    description: "The pricing for OpenStatus.",
-    segment: "pricing",
-    icon: "credit-card",
-  },
-  {
-    href: "https://docs.openstatus.dev",
-    description: "The documentation for OpenStatus.",
-    title: "Docs",
-    segment: "docs",
-    icon: "book",
+    href: siteConfig.links.telegram,
+    title: "Telegram",
+    description:
+      "Join our lively Telegram group to discuss football, share predictions, and connect with fellow fans",
+    segment: "telegram",
+    icon: "telegram",
   },
 ] as const satisfies readonly Page[];
 

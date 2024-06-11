@@ -81,31 +81,23 @@ export const updateTodayFixtures = inngest.createFunction(
       }
     );
 
-    // send finish event using fan out
-    const sentFinishFixture = await step.run(
-      "send-fan-out-finish-event",
-      async () => {
-        if (finishedFixtures.length < 1) {
-          return {
-            ids: [],
-          };
-        }
-        const eventParam: SendFinishEventParam[] = finishedFixtures.map(
-          (fixture) => {
-            return {
-              name: "fixtures/fixture.finish",
-              data: {
-                awayGoals: fixture.goals.away || 0,
-                homeGoals: fixture.goals.home || 0,
-                fixtureId: fixture.fixture.id,
-              },
-            };
-          }
-        );
+    let sentFinishFixture: SendFinishEventParam[] = [];
 
-        return await step.sendEvent("send-finish-fixture-event", eventParam);
-      }
-    );
+    // send finish event using fan out ... don't nest steps
+    if (finishedFixtures.length > 0) {
+      sentFinishFixture = finishedFixtures.map((fixture) => {
+        return {
+          name: "fixtures/fixture.finish",
+          data: {
+            awayGoals: fixture.goals.away || 0,
+            homeGoals: fixture.goals.home || 0,
+            fixtureId: fixture.fixture.id,
+          },
+        };
+      });
+
+      await step.sendEvent("send-finish-fixture-event", sentFinishFixture);
+    }
 
     // get cancelled fixtures
     const cancelledFixtures = await step.run(
@@ -132,6 +124,6 @@ export const updateTodayFixtures = inngest.createFunction(
       });
     }
 
-    return { sentFinishFixture, cancelledFixtures };
+    return { sentFinishFixture, cancelledFixtures, updatedTimestamps };
   }
 );
