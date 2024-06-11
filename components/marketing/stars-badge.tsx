@@ -14,7 +14,7 @@ export function StarsBadgeFallback() {
   );
 }
 
-async function StarsBadge() {
+function StarsBadge() {
   const { data, status } = useStats();
 
   if (status === "pending") {
