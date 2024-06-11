@@ -3,6 +3,9 @@ import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import { StatsType, defaultStats } from "@/lib/site/stats";
 
+export const revalidate = 3600;
+// false | 0 | number
+
 export async function GET(req: Request) {
   try {
     // Run all queries in parallel
