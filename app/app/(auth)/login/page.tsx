@@ -34,7 +34,7 @@ export default async function Page({
       <div className="flex flex-col gap-2 text-center">
         <h1 className="font-semibold text-3xl tracking-tight">Sign In</h1>
         <p className="text-muted-foreground text-sm">
-          Get started now. No credit card required.
+          Get started now. No Pi payments required.
         </p>
       </div>
       <div className="grid gap-3">

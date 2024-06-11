@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Icons } from "@/components/icons";
+import { siteConfig } from "@/config/site";
 
 export default async function AuthLayout({
   children,
@@ -16,22 +17,23 @@ export default async function AuthLayout({
         <div className="flex w-full max-w-lg flex-1 flex-col justify-center gap-8 text-left">
           <div className="mx-auto grid gap-3">
             <h1 className="font-cal text-2xl text-foreground">
-              Open Source Monitoring Service
+              Unlock the Game: Sign In with Pi Network
             </h1>
             <p className="text-muted-foreground">
-              Monitor your website or API and create your own status page within
-              a couple of minutes. Want to know how it works? <br />
+              Welcome to FootballPi! To access our exclusive predictions and
+              leaderboards, sign in using your Pi Network credentials via the Pi
+              Browser. <br />
               <br />
-              Check out{" "}
+              Don{"'"}t have Pi Browser yet? No worries!{" "}
               <a
-                href="https://github.com/openstatushq/openstatus"
+                href={siteConfig.links.piNetwork}
                 target="_blank"
                 rel="noreferrer"
                 className="text-foreground underline underline-offset-4 hover:no-underline"
               >
-                GitHub
+                Join Pi Network
               </a>{" "}
-              and let us know your use case!
+              and download the browser.
             </p>
           </div>
         </div>
