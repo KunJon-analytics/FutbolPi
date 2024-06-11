@@ -2,11 +2,12 @@ import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { Suspense } from "react";
 
-import { getGitHubStars } from "@/lib/github";
-import { cn, numberFormatter } from "@/lib/utils";
+import { cn } from "@/lib/utils";
+import { siteConfig } from "@/config/site";
 
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
+import StarsBadge, { StarsBadgeFallback } from "./stars-badge";
 
 export function Hero() {
   return (
@@ -14,12 +15,12 @@ export function Hero() {
       <div>
         <Badge variant="outline" className="backdrop-blur-[2px]">
           <Link
-            href="https://github.com/openstatusHQ/openstatus/stargazers"
+            href={siteConfig.links.telegram}
             target="_blank"
             rel="noreferrer"
             className="flex items-center"
           >
-            Proudly Open Source
+            Get Latest News
             <ChevronRight className="ml-1 h-3 w-3" />
           </Link>
         </Badge>
@@ -62,27 +63,5 @@ export function Hero() {
         </div>
       </div>
     </div>
-  );
-}
-
-function StarsBadgeFallback() {
-  return (
-    <Badge variant="secondary" className="ml-1">
-      ~
-    </Badge>
-  );
-}
-
-async function StarsBadge() {
-  const stars = await getGitHubStars();
-  return (
-    <>
-      <Badge variant="secondary" className="ml-1 hidden sm:block">
-        {numberFormatter(stars)}
-      </Badge>
-      <Badge variant="secondary" className="ml-1 block sm:hidden">
-        {stars}
-      </Badge>
-    </>
   );
 }
