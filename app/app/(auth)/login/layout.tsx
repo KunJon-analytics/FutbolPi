@@ -1,7 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 
-import { siteConfig } from "@/config/site";
+import { Icons } from "@/components/icons";
 
 export default async function AuthLayout({
   children,
@@ -12,13 +11,7 @@ export default async function AuthLayout({
     <div className="grid min-h-screen grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-5">
       <aside className="col-span-1 flex w-full flex-col gap-4 border border-border p-4 backdrop-blur-[2px] xl:col-span-2 md:p-8">
         <Link href="/" className="relative h-8 w-8">
-          <Image
-            src="/icon.png"
-            alt={siteConfig.name}
-            height={32}
-            width={32}
-            className="rounded-full border border-border"
-          />
+          <Icons.logo className="rounded-full border h-8 w-8 border-border" />
         </Link>
         <div className="flex w-full max-w-lg flex-1 flex-col justify-center gap-8 text-left">
           <div className="mx-auto grid gap-3">

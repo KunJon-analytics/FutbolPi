@@ -76,6 +76,14 @@ export const pagesConfig = [
 
 export const marketingPagesConfig = [
   {
+    href: "/about",
+    title: "About",
+    description:
+      "Discover our story, mission, and the exciting world of FootballPi!",
+    segment: "about",
+    icon: "search",
+  },
+  {
     href: "/app/competitions",
     title: "Predict",
     description:
