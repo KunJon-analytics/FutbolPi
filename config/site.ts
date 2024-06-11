@@ -8,8 +8,7 @@ export const siteConfig: SiteConfig = {
   url: env.NEXT_PUBLIC_APP_URL,
   ogImage: `${env.NEXT_PUBLIC_APP_URL}/og.jpg`,
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/taxonomy",
     telegram: "https://t.me/futbolpioneers",
+    piNetwork: "https://minepi.com/gshawn",
   },
 };

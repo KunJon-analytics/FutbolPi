@@ -2,8 +2,9 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 import { socialsConfig } from "@/config/socials";
-
+import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
+
 import { Shell } from "../dashboard/shell";
 import { ThemeToggle } from "../theme-toggle";
 import { BrandName } from "./brand-name";
@@ -22,34 +23,34 @@ export function MarketingFooter({ className }: Props) {
             <div>
               <BrandName />
               <p className="mt-2 font-light text-muted-foreground text-sm">
-                We are on a mission to provide a reliable, easy and fast way to
-                monitor the performance of your APIs and websites.
-                <br />
-                <span className="underline decoration-dotted underline-offset-2">
-                  Speed Matters
-                </span>
+                Score big with FootballPi! Predict, compete, and win – powered
+                by Pi Network. Join the game and kick off your winning streak!
+                ⚽🏆🔥
               </p>
             </div>
           </div>
           <div className="order-2 flex flex-col gap-3 text-sm">
             <p className="font-semibold text-foreground">Resources</p>
-            <FooterLink href="/blog" label="Blog" />
-            <FooterLink href="/pricing" label="Pricing" />
+            <FooterLink href={siteConfig.links.telegram} label="Telegram" />
+            {/* <FooterLink href="/pricing" label="Pricing" />
             <FooterLink href="https://docs.openstatus.dev" label="Docs" />
             <FooterLink href="/oss-friends" label="OSS Friends" />
-            <FooterLink href="/status" label="External Providers Monitoring" />
+            <FooterLink href="/status" label="External Providers Monitoring" /> */}
           </div>
           <div className="order-3 flex flex-col gap-3 text-sm">
             <p className="font-semibold text-foreground">Company</p>
-            <FooterLink href="/about" label="About" />
+            {/* <FooterLink href="/about" label="About" />
             <FooterLink href="/changelog" label="Changelog" />
             <FooterLink href="/legal/terms" label="Terms" />
-            <FooterLink href="/legal/privacy" label="Privacy" />
+            <FooterLink href="/legal/privacy" label="Privacy" /> */}
           </div>
           <div className="order-3 flex flex-col gap-3 text-sm">
             <p className="font-semibold text-foreground">Tools</p>
-            <FooterLink href="/play/checker" label="Speed Checker" />
-            <FooterLink href="https://openstat.us" label="All Status Codes" />
+            <FooterLink
+              href={siteConfig.links.piNetwork}
+              label="Join Pi Network"
+            />
+            {/* <FooterLink href="https://openstat.us" label="All Status Codes" /> */}
           </div>
         </div>
         <div className="flex items-center justify-between gap-3">

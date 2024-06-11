@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { defaultRedirectTo } from "@/config/pages";
+
 import { Button } from "../ui/button";
 
 interface InBetweenCTAProps {
@@ -53,8 +55,7 @@ export function BottomCTA() {
         primary: { label: "Invite Friends", href: "/app/login" },
         secondary: {
           label: "Start Predicting",
-          href: "/cal",
-          target: "_blank",
+          href: defaultRedirectTo,
         },
       }}
     />
