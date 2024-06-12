@@ -10,6 +10,10 @@ export type SiteConfig = {
     telegram: string;
     piNetwork: string;
   };
+  businessLogic: {
+    tipsPoint: number;
+    tipsAmount: number;
+  };
 };
 
 export type AuthResult = {
@@ -87,10 +91,6 @@ export type PiCallbacks<T> = {
   onCancel: (paymentId: string) => Promise<AxiosResponse<any, any>>;
   onError: (error: Error, payment?: PaymentDTO<T>) => void;
 };
-
-export type OnIncompletePaymentFound = (
-  payment: PaymentDTO<null>
-) => Promise<void>;
 
 export type SessionData = { username: string; isLoggedIn: boolean; id: string };
 

@@ -9,6 +9,7 @@ import { Shell } from "../dashboard/shell";
 import { ThemeToggle } from "../theme-toggle";
 import { BrandName } from "./brand-name";
 import { SocialIconButton } from "./social-icon-button";
+import BuyMeCoffee from "./buy-me-coffee";
 
 interface Props {
   className?: string;
@@ -58,6 +59,7 @@ export function MarketingFooter({ className }: Props) {
             {socialsConfig.map(({ title, href, icon }) => (
               <SocialIconButton key={title} {...{ href, icon, title }} />
             ))}
+            <BuyMeCoffee />
           </div>
           <div className="text-right md:text-left">
             <ThemeToggle />

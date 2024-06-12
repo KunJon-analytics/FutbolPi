@@ -99,6 +99,30 @@ model Prediction {
   @@unique([username, fixtureId], name: "predictionId")
 }
 
+/// A Near Nest payment
+model Payment {
+  amount     Float
+  txId       String?
+  paymentId  String              @unique
+  isRefunded Boolean             @default(false)
+  type       PiTransactionType
+  status     PiTransactionStatus @default(INITIALIZED)
+  purposeId  String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum PiTransactionType {
+  TIP
+}
+
+enum PiTransactionStatus {
+  INITIALIZED
+  COMPLETED
+  CANCELLED
+}
+
 enum CompetitionType {
   Cup
   League

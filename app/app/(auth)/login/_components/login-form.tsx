@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useQueryClient } from "@tanstack/react-query";
 
 import { AuthResult, Scope } from "@/types";
 import { toast, toastAction } from "@/lib/toast";
@@ -14,6 +15,7 @@ type LoginFormProps = { redirectTo: string };
 
 export function LoginForm({ redirectTo }: LoginFormProps) {
   const router = useRouter();
+  const queryClient = useQueryClient();
 
   return (
     <form
@@ -24,6 +26,9 @@ export function LoginForm({ redirectTo }: LoginFormProps) {
             onIncompletePaymentFound
           );
           await login(authResult);
+          queryClient.invalidateQueries({
+            queryKey: ["session"],
+          });
           toast.success("You are successfully signed in");
           router.push(redirectTo);
         } catch (_e) {
