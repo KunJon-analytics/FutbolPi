@@ -9,6 +9,7 @@ export type SiteConfig = {
   links: {
     telegram: string;
     piNetwork: string;
+    twitter: string;
   };
   businessLogic: {
     tipsPoint: number;

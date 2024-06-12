@@ -32,7 +32,10 @@ export function MarketingFooter({ className }: Props) {
           </div>
           <div className="order-2 flex flex-col gap-3 text-sm">
             <p className="font-semibold text-foreground">Resources</p>
-            <FooterLink href={siteConfig.links.telegram} label="Telegram" />
+            <FooterLink
+              href={siteConfig.links.telegram}
+              label="Announcements"
+            />
             {/* <FooterLink href="/pricing" label="Pricing" />
             <FooterLink href="https://docs.openstatus.dev" label="Docs" />
             <FooterLink href="/oss-friends" label="OSS Friends" />

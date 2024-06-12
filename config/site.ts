@@ -9,6 +9,7 @@ export const siteConfig: SiteConfig = {
   links: {
     telegram: "https://t.me/futbolpioneers",
     piNetwork: "https://minepi.com/gshawn",
+    twitter: "https://x.com/FutbolPioneers",
   },
   businessLogic: { tipsPoint: 30, tipsAmount: 1 },
 };

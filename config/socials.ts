@@ -17,11 +17,11 @@ export const socialsConfig: Social[] = [
   //   href: "/github",
   //   icon: "github",
   // },
-  // {
-  //   title: "Twitter",
-  //   href: "/twitter",
-  //   icon: "twitter",
-  // },
+  {
+    title: "Twitter",
+    href: "/twitter",
+    icon: "twitter",
+  },
   // {
   //   title: "LinkedIn",
   //   href: "/linkedin",
