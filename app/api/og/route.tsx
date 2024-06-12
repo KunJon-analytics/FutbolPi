@@ -1,11 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from "next/og";
 
-import { DEFAULT_URL, SIZE, calSemiBold } from "./utils";
+import { calSemiBold } from "./utils";
 
 export const runtime = "edge";
 
-const LOGO_IMAGE = "assets/logos/logo.svg";
 const TITLE = "FutbolPi";
 const DESCRIPTION = "Predict, compete, win! FutbolPi – powered by Pi Network";
 
@@ -44,7 +43,7 @@ export async function GET(req: Request) {
         >
           <img
             alt="Brand Logo"
-            src={new URL(LOGO_IMAGE, DEFAULT_URL).toString()}
+            src={"https://futbolpi.vercel.app/assets/logos/logo.png"}
             style={{
               width: 250,
               height: 250,
@@ -79,7 +78,8 @@ export async function GET(req: Request) {
       </div>
     ),
     {
-      ...SIZE,
+      width: 1200,
+      height: 630,
       fonts: [
         {
           name: "Cal",
