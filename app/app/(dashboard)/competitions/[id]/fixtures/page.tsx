@@ -14,7 +14,7 @@ import { DataTableWrapper } from "./_components/data-table-wrapper";
  * allowed URL search params
  */
 const searchParamsSchema = z.object({
-  status: z.enum(fixtureStatus).optional().default("ALL"),
+  status: z.enum(fixtureStatus).optional().default("NOT_STARTED"),
   // improve coersion + array + ...
 
   pageSize: z.coerce.number().optional().default(10),
@@ -41,7 +41,8 @@ export default async function Page({
     return notFound(); // maybe not if search.success is false, add a toast message
   }
 
-  const status = fixtureStatus.find((fs) => fs === search.data.status) || "ALL";
+  const status =
+    fixtureStatus.find((fs) => fs === search.data.status) || "NOT_STARTED";
 
   const data =
     status === "ALL"
