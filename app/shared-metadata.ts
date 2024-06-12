@@ -17,12 +17,12 @@ export const twitterMetadata: Metadata["twitter"] = {
   title: TITLE,
   description: DESCRIPTION,
   card: "summary_large_image",
-  images: ["/api/og"],
+  images: [`${siteConfig.url}/api/og`],
 };
 
 export const ogMetadata: Metadata["openGraph"] = {
   title: TITLE,
   description: DESCRIPTION,
   type: "website",
-  images: ["/api/og"],
+  images: [`${siteConfig.url}/api/og`],
 };
