@@ -12,9 +12,11 @@ import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
 import Background from "@/components/background";
 import { PiProvider } from "@/components/pi-provider";
+import ReactQueryProvider from "@/components/providers/react-query";
+import GoogleAnalytics from "@/components/providers/google-analytics";
+import { env } from "@/env.mjs";
 
 import "./globals.css";
-import ReactQueryProvider from "@/components/providers/react-query";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,6 +48,7 @@ export default function RootLayout({
           // biome-ignore lint/nursery/useSortedClasses: <explanation>
         } ${calSans.variable}`}
       >
+        <GoogleAnalytics ga_id={env.NEXT_PUBLIC_GOOGLE_TAG} />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <ReactQueryProvider>
             <Background>{children}</Background>

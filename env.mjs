@@ -13,6 +13,7 @@ export const env = createEnv({
     NEXT_PUBLIC_APP_URL: z.string().url(),
     NEXT_PUBLIC_SUPPORT_EMAIL: z.string().email(),
     NEXT_PUBLIC_ADMIN_USERNAME: z.string().min(1),
+    NEXT_PUBLIC_GOOGLE_TAG: z.string().min(1),
   },
   runtimeEnv: {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
@@ -25,5 +26,7 @@ export const env = createEnv({
     PI_API_KEY: process.env.PI_API_KEY,
     // FOOTBALL API
     FOOTBALL_API_KEY: process.env.FOOTBALL_API_KEY,
+    // GOOGLE ANALYTICS
+    NEXT_PUBLIC_GOOGLE_TAG: process.env.NEXT_PUBLIC_GOOGLE_TAG,
   },
 });
