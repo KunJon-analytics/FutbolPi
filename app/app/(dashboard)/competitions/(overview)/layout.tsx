@@ -8,7 +8,7 @@ export default async function Layout({ children }: { children: ReactNode }) {
     <AppPageLayout withHelpCallout>
       <Header
         title="Active Competitions"
-        description="Predict outcomes for top leagues and cups. Score big with FootballPi!"
+        description="Predict outcomes for top leagues and cups. Score big with FutbolPi!"
       />
       {children}
     </AppPageLayout>

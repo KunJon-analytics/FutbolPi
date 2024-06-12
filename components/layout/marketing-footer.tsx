@@ -23,8 +23,8 @@ export function MarketingFooter({ className }: Props) {
             <div>
               <BrandName />
               <p className="mt-2 font-light text-muted-foreground text-sm">
-                Score big with FootballPi! Predict, compete, and win – powered
-                by Pi Network. Join the game and kick off your winning streak!
+                Score big with FutbolPi! Predict, compete, and win – powered by
+                Pi Network. Join the game and kick off your winning streak!
                 ⚽🏆🔥
               </p>
             </div>

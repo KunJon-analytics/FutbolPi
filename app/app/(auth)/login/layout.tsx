@@ -20,7 +20,7 @@ export default async function AuthLayout({
               Unlock the Game: Sign In with Pi Network
             </h1>
             <p className="text-muted-foreground">
-              Welcome to FootballPi! To access our exclusive predictions and
+              Welcome to FutbolPi! To access our exclusive predictions and
               leaderboards, sign in using your Pi Network credentials via the Pi
               Browser. <br />
               <br />

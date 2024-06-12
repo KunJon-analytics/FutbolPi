@@ -79,7 +79,7 @@ export const marketingPagesConfig = [
     href: "/about",
     title: "About",
     description:
-      "Discover our story, mission, and the exciting world of FootballPi!",
+      "Discover our story, mission, and the exciting world of FutbolPi!",
     segment: "about",
     icon: "search",
   },
