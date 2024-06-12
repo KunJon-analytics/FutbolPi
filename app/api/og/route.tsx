@@ -1,12 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from "next/og";
 
-import { DESCRIPTION, TITLE } from "@/app/shared-metadata";
 import { DEFAULT_URL, SIZE, calSemiBold } from "./utils";
 
 export const runtime = "edge";
 
-const LOGO_IMAGE = "assets/logos/logo.png";
+const LOGO_IMAGE = "assets/logos/logo.svg";
+const TITLE = "FutbolPi";
+const DESCRIPTION = "Predict, compete, win! FutbolPi – powered by Pi Network";
 
 export async function GET(req: Request) {
   const [calSemiBoldData] = await Promise.all([calSemiBold]);
