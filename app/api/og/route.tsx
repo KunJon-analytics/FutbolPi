@@ -2,22 +2,14 @@
 import { ImageResponse } from "next/og";
 
 import { DESCRIPTION, TITLE } from "@/app/shared-metadata";
-import {
-  DEFAULT_URL,
-  SIZE,
-  calSemiBold,
-  interLight,
-  interMedium,
-  interRegular,
-} from "./utils";
+import { DEFAULT_URL, SIZE, calSemiBold } from "./utils";
 
 export const runtime = "edge";
 
 const LOGO_IMAGE = "assets/logos/logo.png";
 
 export async function GET(req: Request) {
-  const [interRegularData, interLightData, calSemiBoldData, interMediumData] =
-    await Promise.all([interRegular, interLight, calSemiBold, interMedium]);
+  const [calSemiBoldData] = await Promise.all([calSemiBold]);
 
   const { searchParams } = new URL(req.url);
 
@@ -88,24 +80,6 @@ export async function GET(req: Request) {
     {
       ...SIZE,
       fonts: [
-        {
-          name: "Inter",
-          data: interMediumData,
-          style: "normal",
-          weight: 500,
-        },
-        {
-          name: "Inter",
-          data: interRegularData,
-          style: "normal",
-          weight: 400,
-        },
-        {
-          name: "Inter",
-          data: interLightData,
-          style: "normal",
-          weight: 300,
-        },
         {
           name: "Cal",
           data: calSemiBoldData,
