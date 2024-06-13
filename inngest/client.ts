@@ -1,7 +1,10 @@
 import { EventSchemas, Inngest } from "inngest";
 
 import { siteConfig } from "@/config/site";
-import { TelegramEventType } from "@/lib/notifications/telegram";
+import {
+  CompetitionNewFixture,
+  TelegramEventType,
+} from "@/lib/notifications/telegram";
 
 type CompleteFixture = {
   data: {
@@ -30,6 +33,12 @@ export type FinishFixture = {
   };
 };
 
+type NewFixtures = {
+  data: {
+    competitions: CompetitionNewFixture[];
+  };
+};
+
 type Events = {
   "fixtures/current-week.get": {};
   "fixtures/today.update": {};
@@ -37,6 +46,7 @@ type Events = {
   "fixtures/fixture.finish": FinishFixture;
   "fixtures/fixture.cancel": CancelFixture;
   "notifications/telegram.send": TelegramEvent;
+  "notifications/fixtures.new": NewFixtures;
 };
 
 // Create a client to send and receive events

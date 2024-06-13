@@ -5,6 +5,7 @@ import { getCompetitionFixtures } from "@/inngest/utils/api-calls";
 import prisma from "@/lib/prisma";
 import { FixtureReturnType } from "@/types/football-api";
 import { Prisma } from "@prisma/client";
+import { CompetitionNewFixture } from "@/lib/notifications/telegram";
 
 //call once everyday at 00:00hrs
 export const getFixtures = inngest.createFunction(
@@ -28,6 +29,7 @@ export const getFixtures = inngest.createFunction(
       async () => {
         if (activeCompetitions.length > 0) {
           let fixtures: FixtureReturnType[] = [];
+          let newAlert: CompetitionNewFixture[] = [];
           for (let index = 0; index < activeCompetitions.length; index++) {
             const competition = activeCompetitions[index];
             const { response } = await getCompetitionFixtures({
@@ -41,22 +43,43 @@ export const getFixtures = inngest.createFunction(
             });
             if (response && response.length > 0) {
               fixtures = [...fixtures, ...response];
+              const newCompetitionFixtures: CompetitionNewFixture = {
+                competitionName: response[0].league.name,
+                fixtures: response.map((returnedFixture) => {
+                  return {
+                    awayTeam: returnedFixture.teams.away.name,
+                    homeTeam: returnedFixture.teams.home.name,
+                    round: returnedFixture.league.round,
+                    timestamp: returnedFixture.fixture.timestamp,
+                  };
+                }),
+              };
+
+              newAlert = [...newAlert, newCompetitionFixtures];
             }
           }
-          return fixtures;
+          return { fixtures, newAlert };
         } else {
-          return [];
+          return { fixtures: [], newAlert: [] };
         }
       }
     );
+
+    // send new fixtures alert
+    if (notStartedFixtures.newAlert.length > 0) {
+      await step.sendEvent("invoke-send-new-fixtures-event", {
+        name: "notifications/fixtures.new",
+        data: { competitions: notStartedFixtures.newAlert },
+      });
+    }
 
     // get teams and fixtures createmany params.
     const createManyParams = await step.run(
       "get-create-many-params",
       async () => {
-        if (notStartedFixtures.length > 0) {
+        if (notStartedFixtures.fixtures.length > 0) {
           const teamsInput: Prisma.TeamCreateManyInput[] =
-            notStartedFixtures.flatMap((notStartedFixture) => {
+            notStartedFixtures.fixtures.flatMap((notStartedFixture) => {
               const homeTeam = {
                 id: notStartedFixture.teams.home.id,
                 logo: notStartedFixture.teams.home.logo,
@@ -70,7 +93,7 @@ export const getFixtures = inngest.createFunction(
               return [homeTeam, awayTeam];
             });
           const fixturesInput: Prisma.FixtureCreateManyInput[] =
-            notStartedFixtures.map((notStartedFixture) => {
+            notStartedFixtures.fixtures.map((notStartedFixture) => {
               const currentCompetition = activeCompetitions.find(
                 ({ apiLeagueId, season }) => {
                   return (

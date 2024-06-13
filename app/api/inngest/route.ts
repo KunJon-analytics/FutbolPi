@@ -7,6 +7,7 @@ import { finishFixture } from "@/inngest/functions/fixtures/finish-fixture";
 import { getFixtures } from "@/inngest/functions/fixtures/get-fixtures";
 import { updateTodayFixtures } from "@/inngest/functions/fixtures/update-today-fixtures";
 import { telegramMessage } from "@/inngest/functions/notifications/telegram-message";
+import { newFixturesAlert } from "@/inngest/functions/notifications/new-fixtures-alert";
 
 // Create an API that serves zero functions
 export const { GET, POST, PUT } = serve({
@@ -19,5 +20,6 @@ export const { GET, POST, PUT } = serve({
     getFixtures,
     updateTodayFixtures,
     telegramMessage,
+    newFixturesAlert,
   ],
 });
