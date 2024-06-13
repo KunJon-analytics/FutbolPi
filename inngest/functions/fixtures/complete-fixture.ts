@@ -14,6 +14,11 @@ export const completeFixtures = inngest.createFunction(
       async () => {
         return await prisma.fixture.findUnique({
           where: { id: fixtureId, status: "FINISHED" },
+          select: {
+            outcome: true,
+            awayGoals: true,
+            homeGoals: true,
+          },
         });
       }
     );
@@ -51,18 +56,62 @@ export const completeFixtures = inngest.createFunction(
 
       // mark fixture as complete
       const completedFixture = await step.run(
-        "update-correct-score-predictions",
+        "mark-fixture-complete",
         async () => {
           return await prisma.fixture.update({
             where: {
               id: fixtureId,
             },
             data: { status: "COMPLETED" },
+            select: {
+              outcome: true,
+              awayGoals: true,
+              homeGoals: true,
+              homeTeam: { select: { name: true } },
+              awayTeam: { select: { name: true } },
+              _count: { select: { predictions: true } },
+            },
           });
         }
       );
 
       // send notification
+      const correctOutcome =
+        correctOutcomePredictions.count === 0
+          ? "0.00"
+          : (
+              (correctOutcomePredictions.count /
+                completedFixture._count.predictions) *
+              100
+            ).toFixed(2);
+      const correctScoreline =
+        correctScorePredictions.count === 0
+          ? "0.00"
+          : (
+              (correctScorePredictions.count /
+                completedFixture._count.predictions) *
+              100
+            ).toFixed(2);
+      const message = `🔔 <b>Fixture Update: Results In!</b>
+
+Dear FutbolPi predictors,
+
+The matches are in, and here are the results:
+
+1. <b>${completedFixture.homeTeam.name}</b> vs. <b>${completedFixture.awayTeam.name}</b>
+   - Scoreline: <b>${completedFixture.homeGoals}-${completedFixture.awayGoals}</b>
+   - Correct outcome predictions: <b>${correctOutcome}%</b>
+   - Correct scoreline predictions: <b>${correctScoreline}%</b>
+
+Keep up the great work, and stay tuned for more exciting matches! ⚽️🔮
+
+Best regards,
+The FutbolPi Team 🚀`;
+
+      await step.sendEvent("send-completed-fixtures-notification", {
+        name: "notifications/telegram.send",
+        data: { message, type: "BROADCAST" },
+      });
 
       return {
         completedFixture,

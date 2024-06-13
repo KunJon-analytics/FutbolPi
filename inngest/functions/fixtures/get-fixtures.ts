@@ -9,7 +9,7 @@ import { Prisma } from "@prisma/client";
 //call once everyday at 00:00hrs
 export const getFixtures = inngest.createFunction(
   { id: "fixtures/current-week.get" },
-  { cron: "0 0 * * *" },
+  { cron: "5 0 * * *" },
   async ({ step }) => {
     // get active competitions
     const activeCompetitions = await step.run(
