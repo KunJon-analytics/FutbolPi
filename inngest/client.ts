@@ -1,10 +1,18 @@
 import { EventSchemas, Inngest } from "inngest";
 
 import { siteConfig } from "@/config/site";
+import { TelegramEventType } from "@/lib/notifications/telegram";
 
 type CompleteFixture = {
   data: {
     fixtureId: number;
+  };
+};
+
+type TelegramEvent = {
+  data: {
+    message: string;
+    type: TelegramEventType;
   };
 };
 
@@ -28,6 +36,7 @@ type Events = {
   "fixtures/fixture.complete": CompleteFixture;
   "fixtures/fixture.finish": FinishFixture;
   "fixtures/fixture.cancel": CancelFixture;
+  "notifications/telegram.send": TelegramEvent;
 };
 
 // Create a client to send and receive events

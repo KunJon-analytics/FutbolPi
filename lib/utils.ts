@@ -1,6 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { addHours, fromUnixTime, isFuture } from "date-fns";
+import { fromUnixTime, isFuture, subHours } from "date-fns";
 import * as z from "zod";
 
 import { env } from "@/env.mjs";
@@ -61,6 +61,6 @@ export const canPredict = (timestamp?: number) => {
     return false;
   }
   const kickoff = fromUnixTime(timestamp);
-  const deadlineNotReached = isFuture(addHours(kickoff, 1));
-  return deadlineNotReached;
+  const kickoffMinus1hourIsFuture = isFuture(subHours(kickoff, 1));
+  return kickoffMinus1hourIsFuture;
 };

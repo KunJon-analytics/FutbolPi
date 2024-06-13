@@ -7,6 +7,9 @@ export const env = createEnv({
     PI_API_KEY: z.string().min(1),
     AUTH_SECRET: z.string().min(1),
     FOOTBALL_API_KEY: z.string().min(1),
+    TELEGRAM_BOT_TOKEN: z.string().min(1),
+    TELEGRAM_PRIVATE_CHANNEL: z.string().min(1),
+    TELEGRAM_PUBLIC_CHANNEL: z.string().min(1),
     NODE_ENV: z.enum(["development", "production", "test"]),
   },
   client: {
@@ -28,5 +31,9 @@ export const env = createEnv({
     FOOTBALL_API_KEY: process.env.FOOTBALL_API_KEY,
     // GOOGLE ANALYTICS
     NEXT_PUBLIC_GOOGLE_TAG: process.env.NEXT_PUBLIC_GOOGLE_TAG,
+    // TELEGRAM BOT
+    TELEGRAM_BOT_TOKEN: process.env.TELEGRAM_BOT_TOKEN,
+    TELEGRAM_PUBLIC_CHANNEL: process.env.TELEGRAM_PUBLIC_CHANNEL,
+    TELEGRAM_PRIVATE_CHANNEL: process.env.TELEGRAM_PRIVATE_CHANNEL,
   },
 });

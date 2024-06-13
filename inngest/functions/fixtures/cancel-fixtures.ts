@@ -8,6 +8,8 @@ export const cancelFixtures = inngest.createFunction(
   async ({ event, step }) => {
     const { idsToDelete } = event.data;
 
+    // send cancelled event notification
+
     // delete fixtures
     const deletedFixtures = await step.run("bulk-delete-fixtures", async () => {
       return await prisma.fixture.deleteMany({

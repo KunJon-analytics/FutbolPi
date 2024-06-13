@@ -1,8 +1,10 @@
-import { addHours, subHours } from "date-fns";
+import { addHours, fromUnixTime, isThisHour, subHours } from "date-fns";
 
 import { FinishFixture, inngest } from "@/inngest/client";
 import prisma from "@/lib/prisma";
 import { getTodayFixtures } from "@/inngest/utils/api-calls";
+import { fixtureReminder } from "@/lib/notifications/telegram";
+import { env } from "@/env.mjs";
 
 type SendFinishEventParam = FinishFixture & { name: "fixtures/fixture.finish" };
 
@@ -57,12 +59,42 @@ export const updateTodayFixtures = inngest.createFunction(
                 date: new Date(fixture.fixture.date),
                 timestamp: fixture.fixture.timestamp,
               },
+              select: {
+                timestamp: true,
+                competitionId: true,
+                homeTeam: true,
+                awayTeam: true,
+              },
             })
           )
         );
         return result;
       }
     );
+
+    // send notification of updatedFixtures about to start (2 hours ahead)
+    const deadlineFixtures = updatedTimestamps.filter((fixture) => {
+      const kickoff = fromUnixTime(fixture.timestamp);
+      const kickoffTimeSubTwoHours = subHours(kickoff, 2);
+      return isThisHour(kickoffTimeSubTwoHours);
+    });
+
+    if (deadlineFixtures.length > 0) {
+      let message = fixtureReminder;
+
+      for (let index = 0; index < deadlineFixtures.length; index++) {
+        const fixture = deadlineFixtures[index];
+        const fixtureText = `\n\n${fixture.homeTeam.name} vs. ${fixture.awayTeam.name}
+📲 <a href='${env.NEXT_PUBLIC_APP_URL}/app/competitions/${fixture.competitionId}/fixtures'>Predict now!!!</a>`;
+
+        message = message.concat(fixtureText);
+      }
+      message = message.concat("\n\n Get ready to score big! ⚽️🔮");
+      await step.sendEvent("send-deadline-fixtures-reminder", {
+        name: "notifications/telegram.send",
+        data: { message, type: "BROADCAST" },
+      });
+    }
 
     // get finshed fixtures by filtering
     const finishedFixtures = await step.run(
