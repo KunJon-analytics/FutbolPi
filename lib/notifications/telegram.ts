@@ -29,6 +29,6 @@ export const fixtureReminder = `<b>⚽️ FutbolPi Match Prediction Reminder!</b
 
 🔔 Attention, FutbolPi Predictors!
 
-You have 1 hour left to make your predictions for the upcoming matches:
+You have <b>1 hour left</b> to make your predictions for the upcoming matches:
 
 🏆 Fixtures: `;
