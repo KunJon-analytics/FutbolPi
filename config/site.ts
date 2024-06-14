@@ -7,7 +7,10 @@ export const siteConfig: SiteConfig = {
   url: env.NEXT_PUBLIC_APP_URL,
   ogImage: `${env.NEXT_PUBLIC_APP_URL}/og.jpg`,
   links: {
-    telegram: "https://t.me/futbolpioneers",
+    telegram: {
+      channel: "https://t.me/futbolpioneers",
+      group: "https://t.me/futbolpichat",
+    },
     piNetwork: "https://minepi.com/gshawn",
     twitter: "https://x.com/FutbolPioneers",
   },

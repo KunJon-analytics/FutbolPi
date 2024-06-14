@@ -92,7 +92,7 @@ export const marketingPagesConfig = [
     icon: "toy-brick",
   },
   {
-    href: siteConfig.links.telegram,
+    href: siteConfig.links.telegram.group,
     title: "Telegram",
     description:
       "Join our lively Telegram group to discuss football, share predictions, and connect with fellow fans",

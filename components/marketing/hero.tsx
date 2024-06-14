@@ -15,7 +15,7 @@ export function Hero() {
       <div>
         <Badge variant="outline" className="backdrop-blur-[2px]">
           <Link
-            href={siteConfig.links.telegram}
+            href={siteConfig.links.telegram.channel}
             target="_blank"
             rel="noreferrer"
             className="flex items-center"

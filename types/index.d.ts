@@ -7,7 +7,7 @@ export type SiteConfig = {
   url: string;
   ogImage: string;
   links: {
-    telegram: string;
+    telegram: { group: string; channel: string };
     piNetwork: string;
     twitter: string;
   };
