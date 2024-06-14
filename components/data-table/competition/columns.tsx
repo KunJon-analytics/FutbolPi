@@ -19,7 +19,7 @@ export const columns: ColumnDef<Competition>[] = [
       return (
         <div className="flex gap-2">
           <Link
-            href={`./competitions/${id}/overview`}
+            href={`./competitions/${id}/fixtures`}
             className="group flex max-w-[150px] items-center gap-2 md:max-w-[250px]"
           >
             <StatusDotWithTooltip isActive={isActive} type={type} />
