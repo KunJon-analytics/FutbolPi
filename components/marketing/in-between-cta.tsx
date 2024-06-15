@@ -50,7 +50,7 @@ export function MiddleCTA() {
 export function BottomCTA() {
   return (
     <InBetweenCTA
-      description=" Invite your friends to FutbolPi and battle it out in match predictions. The more, the merrier! 🚀⚽️"
+      description="Invite your friends to FutbolPi and battle it out in match predictions. The more, the merrier! 🚀⚽️"
       actions={{
         primary: { label: "Invite Friends", href: "/app/login" },
         secondary: {

@@ -34,7 +34,7 @@ export const updateTodayFixtures = inngest.createFunction(
         if (todayFixtures.length < 1) {
           return [];
         }
-        const ids = todayFixtures.map(({ id }) => id).toString();
+        const ids = todayFixtures.map(({ id }) => id).join("-");
         const { response } = await getTodayFixtures({
           params: {
             ids,

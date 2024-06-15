@@ -1,0 +1,15 @@
+{
+  "Index": {
+    "heroBadgeText": "Get Latest News",
+    "heroTitle": "Predict, Compete, Win: Score Big with FutbolPi",
+    "heroDescription": "Kick off the excitement! Invite friends and family to FutbolPi, the ultimate match prediction platform. Earn points, climb the leaderboard, and prove your football prowess. Ready to predict? 🚀⚽️",
+    "heroPrimaryBtnText": "Predict Matches",
+    "heroSecondaryBtnText": "Join Now ",
+    "statsTotalPredictions": "Total Predictions",
+    "statsFixturesPredicted": "Fixtures Predicted",
+    "statsActivePlayers": "Active Players",
+    "buttomCTADescription": "Invite your friends to FutbolPi and battle it out in match predictions. The more, the merrier! 🚀⚽️",
+    "buttomCTAPrimaryAction": "Invite Friends",
+    "buttomCTASecondaryAction": "Start Predicting"
+  }
+}
