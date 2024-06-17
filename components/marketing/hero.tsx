@@ -3,16 +3,16 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 
+import { Link as IntlLink } from "@/intl/navigation";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
-import { Link as IntlLink } from "@/intl/navigation";
 import StarsBadge, { StarsBadgeFallback } from "./stars-badge";
 
 export async function Hero() {
-  const t = await getTranslations("Index");
+  const t = await getTranslations("Index.hero");
 
   return (
     <div className="my-10 flex w-full flex-col justify-center gap-1 px-3 py-4 text-center md:my-20 md:p-6">
