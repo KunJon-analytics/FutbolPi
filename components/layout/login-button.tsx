@@ -12,9 +12,9 @@ export function LoginButton({ className, ...props }: ButtonProps) {
   return (
     <Button asChild className={cn("rounded-full", className)} {...props}>
       {session.status === "authenticated" ? (
-        <Link href="/app">Dashboard</Link>
+        <Link href="/app/competitions">Dashboard</Link>
       ) : (
-        <Link href="/app/login">Sign In</Link>
+        <Link href="/app/competitions">Sign In</Link>
       )}
     </Button>
   );

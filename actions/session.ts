@@ -27,7 +27,7 @@ export async function logout() {
   // false => no db call for logout
   const session = await getSession();
   session.destroy();
-  revalidatePath("/app");
+  revalidatePath("/");
   redirect(`/`);
 }
 
@@ -60,5 +60,5 @@ export async function login(auth: AuthResult) {
 
   session.id = user.id;
   await session.save();
-  revalidatePath("/app");
+  revalidatePath("/");
 }

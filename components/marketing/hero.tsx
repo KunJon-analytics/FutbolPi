@@ -53,7 +53,7 @@ export async function Hero() {
             asChild
           >
             {/* // change to number of active users */}
-            <Link href="/app/login">
+            <Link href="/app/competitions">
               Join Now{" "}
               <Suspense fallback={<StarsBadgeFallback />}>
                 <StarsBadge />

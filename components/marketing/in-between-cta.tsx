@@ -52,7 +52,7 @@ export function BottomCTA() {
     <InBetweenCTA
       description="Invite your friends to FutbolPi and battle it out in match predictions. The more, the merrier! 🚀⚽️"
       actions={{
-        primary: { label: "Invite Friends", href: "/app/login" },
+        primary: { label: "Invite Friends", href: "/app/competitions" },
         secondary: {
           label: "Start Predicting",
           href: defaultRedirectTo,

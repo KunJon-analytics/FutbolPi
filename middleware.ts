@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse, userAgent } from "next/server";
 import type { NextRequest } from "next/server";
 import { cookies } from "next/headers";
 import { getIronSession } from "iron-session";
@@ -16,6 +16,7 @@ const publicAppPaths = [
   "/about",
   "/legal/privacy",
   "/legal/terms",
+  "/blog/iphone-enable-cookies",
 ];
 
 const intlMiddleware = createMiddleware({
@@ -39,9 +40,15 @@ export async function middleware(req: NextRequest) {
   const isPublicPage = publicPathnameRegex.test(req.nextUrl.pathname);
 
   if (!session.isLoggedIn && !isPublicPage) {
+    const { os } = userAgent(req);
+    const fixIphonebugString = os.name?.toLowerCase().includes("iphone")!
+      ? "&iPhone=true"
+      : "";
     return NextResponse.redirect(
       new URL(
-        `/app/login?redirectTo=${encodeURIComponent(req.nextUrl.href)}`,
+        `/app/login?redirectTo=${encodeURIComponent(
+          req.nextUrl.href
+        )}${fixIphonebugString}`,
         req.url
       )
     );
