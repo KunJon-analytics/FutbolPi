@@ -1,15 +1,19 @@
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { Suspense } from "react";
+import { getTranslations } from "next-intl/server";
 
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
+import { Link as IntlLink } from "@/intl/navigation";
 import StarsBadge, { StarsBadgeFallback } from "./stars-badge";
 
 export async function Hero() {
+  const t = await getTranslations("Index");
+
   return (
     <div className="my-10 flex w-full flex-col justify-center gap-1 px-3 py-4 text-center md:my-20 md:p-6">
       <div>
@@ -20,7 +24,7 @@ export async function Hero() {
             rel="noreferrer"
             className="flex items-center"
           >
-            Get Latest News
+            {t("heroBadgeText")}
             <ChevronRight className="ml-1 h-3 w-3" />
           </Link>
         </Badge>
@@ -32,18 +36,18 @@ export async function Hero() {
             "bg-gradient-to-tl from-0% from-[hsl(var(--muted))] to-40% to-[hsl(var(--foreground))] bg-clip-text text-transparent"
           )}
         >
-          Predict, Compete, Win: Score Big with FutbolPi
+          {t("heroTitle")}
         </h1>
         <p className="mx-auto max-w-md text-lg text-muted-foreground md:max-w-xl md:text-xl">
-          Kick off the excitement! Invite friends and family to FutbolPi, the
-          ultimate match prediction platform. Earn points, climb the
-          leaderboard, and prove your football prowess. Ready to predict? 🚀⚽️
+          {t("heroDescription")}
         </p>
       </div>
       <div className="my-4 grid gap-2 sm:grid-cols-2">
         <div className="text-center sm:block sm:text-right">
           <Button className="w-48 rounded-full sm:w-auto" asChild>
-            <Link href="/app/competitions">Predict Matches</Link>
+            <IntlLink href="/app/competitions">
+              {t("heroPrimaryBtnText")}
+            </IntlLink>
           </Button>
         </div>
         <div className="text-center sm:block sm:text-left">
@@ -53,12 +57,12 @@ export async function Hero() {
             asChild
           >
             {/* // change to number of active users */}
-            <Link href="/app/competitions">
-              Join Now{" "}
+            <IntlLink href="/app/competitions">
+              {t("heroSecondaryBtnText")}
               <Suspense fallback={<StarsBadgeFallback />}>
                 <StarsBadge />
               </Suspense>
-            </Link>
+            </IntlLink>
           </Button>
         </div>
       </div>

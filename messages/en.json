@@ -11,5 +11,12 @@
     "buttomCTADescription": "Invite your friends to FutbolPi and battle it out in match predictions. The more, the merrier! 🚀⚽️",
     "buttomCTAPrimaryAction": "Invite Friends",
     "buttomCTASecondaryAction": "Start Predicting"
+  },
+  "NotFoundPage": {
+    "firstParagraph": "404 Page not found",
+    "secondParagraph": "The page you are looking for doesn't exist.",
+    "backButton": "Go Back",
+    "homeButton": "Home",
+    "title": " Oops, something went wrong."
   }
 }

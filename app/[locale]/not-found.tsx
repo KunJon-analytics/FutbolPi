@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { Shell } from "@/components/dashboard/shell";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 export default function NotFound() {
   const router = useRouter();
   const locale = useLocale();
+  const t = useTranslations("NotFoundPage");
   // user should go back to dashboard
 
   return (
@@ -20,13 +21,11 @@ export default function NotFound() {
             <div className="flex flex-col gap-4 p-6 sm:p-12">
               <div className="flex flex-col gap-2">
                 <p className="font-medium text-muted-foreground sm:text-lg">
-                  404 Page not found
+                  {t("firstParagraph")}
                 </p>
-                <h2 className="font-cal text-2xl sm:text-3xl">
-                  Oops, something went wrong.
-                </h2>
+                <h2 className="font-cal text-2xl sm:text-3xl">{t("title")}</h2>
                 <p className="text-muted-foreground text-sm sm:text-base">
-                  The page you are looking for doesn&apos;t exist.
+                  {t("secondParagraph")}
                 </p>
               </div>
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -35,10 +34,10 @@ export default function NotFound() {
                   size="lg"
                   onClick={() => void router.back()}
                 >
-                  Go Back
+                  {t("backButton")}
                 </Button>
                 <Button size="lg" asChild>
-                  <Link href={`/${locale}`}>Home</Link>
+                  <Link href={`/${locale}`}>{t("homeButton")}</Link>
                 </Button>
               </div>
             </div>

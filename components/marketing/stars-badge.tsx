@@ -1,5 +1,7 @@
 "use client";
 
+import { useFormatter } from "next-intl";
+
 import useStats from "@/hooks/use-stats";
 import { numberFormatter } from "@/lib/utils";
 import { defaultStats } from "@/lib/site/stats";
@@ -16,6 +18,7 @@ export function StarsBadgeFallback() {
 
 function StarsBadge() {
   const { data, status } = useStats();
+  const format = useFormatter();
 
   if (status === "pending") {
     return <StarsBadgeFallback />;
@@ -24,7 +27,7 @@ function StarsBadge() {
   return (
     <>
       <Badge variant="secondary" className="ml-1 hidden sm:block">
-        {numberFormatter(data?.users || defaultStats.users)}
+        {format.number(data?.users || defaultStats.users, "compact")}
       </Badge>
       <Badge variant="secondary" className="ml-1 block sm:hidden">
         {data?.users || defaultStats.users}
