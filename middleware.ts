@@ -40,15 +40,9 @@ export async function middleware(req: NextRequest) {
   const isPublicPage = publicPathnameRegex.test(req.nextUrl.pathname);
 
   if (!session.isLoggedIn && !isPublicPage) {
-    const { os } = userAgent(req);
-    const fixIphonebugString = os.name?.toLowerCase().includes("iphone")!
-      ? "&iPhone=true"
-      : "";
     return NextResponse.redirect(
       new URL(
-        `/app/login?redirectTo=${encodeURIComponent(
-          req.nextUrl.href
-        )}${fixIphonebugString}`,
+        `/app/login?redirectTo=${encodeURIComponent(req.nextUrl.href)}`,
         req.url
       )
     );

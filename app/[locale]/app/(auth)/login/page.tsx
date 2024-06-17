@@ -6,17 +6,15 @@ import { redirect } from "next/navigation";
 import { Shell } from "@/components/dashboard/shell";
 import { getSession } from "@/actions/session";
 import { defaultRedirectTo } from "@/config/pages";
+import { HelpCallout } from "@/components/dashboard/help-callout";
 
 import { LoginForm } from "./_components/login-form";
-import { AlertWithButton } from "@/components/alert-components";
-import { Button } from "@/components/ui/button";
 
 /**
  * allowed URL search params
  */
 const searchParamsSchema = z.object({
   redirectTo: z.string().optional().default(defaultRedirectTo),
-  iPhone: z.string().optional(),
 });
 
 export default async function Page({
@@ -26,7 +24,6 @@ export default async function Page({
 }) {
   const session = await getSession();
   const search = searchParamsSchema.safeParse(searchParams);
-  const isIphone = search.success ? !!search.data.iPhone : false;
   const redirectTo = search.success
     ? search.data.redirectTo
     : defaultRedirectTo;
@@ -47,17 +44,7 @@ export default async function Page({
         </Suspense>
       </div>
 
-      {isIphone && (
-        <AlertWithButton
-          title="For iPhone Users!"
-          description="To ensure full functionality of FutbolPi in the Pi Browser, please enable cookies on your device."
-          button={
-            <Button asChild variant={"outline"}>
-              <Link href="/blog/iphone-enable-cookies">Guide</Link>
-            </Button>
-          }
-        />
-      )}
+      <HelpCallout />
 
       <p className="px-8 text-center text-muted-foreground text-sm">
         By clicking continue, you agree to our{" "}
