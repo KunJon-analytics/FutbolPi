@@ -12,7 +12,7 @@ export const sessionOptions: SessionOptions = {
     // if your localhost is not on `https`, then use: `secure: process.env.NODE_ENV === "production"`
     secure: env.NODE_ENV === "production",
     maxAge: undefined,
-    sameSite: env.NODE_ENV === "production" ? "lax" : "none",
+    sameSite: "none",
     httpOnly: true,
   },
 };
