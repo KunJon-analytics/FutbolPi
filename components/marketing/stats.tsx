@@ -11,7 +11,7 @@ import { Skeleton } from "../ui/skeleton";
 export function Stats() {
   const { data, status } = useStats();
   const format = useFormatter();
-  const t = useTranslations("Index.stats");
+  const t = useTranslations("Index.Stats");
 
   if (status === "pending") {
     return (

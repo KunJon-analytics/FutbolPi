@@ -1,6 +1,5 @@
 import Link from "next/link";
-
-import { defaultRedirectTo } from "@/config/pages";
+import { useLocale, useTranslations } from "next-intl";
 
 import { Button } from "../ui/button";
 
@@ -48,14 +47,19 @@ export function MiddleCTA() {
 }
 
 export function BottomCTA() {
+  const t = useTranslations("Index.BottomCTA");
+  const locale = useLocale();
   return (
     <InBetweenCTA
-      description="Invite your friends to FutbolPi and battle it out in match predictions. The more, the merrier! 🚀⚽️"
+      description={t("description")}
       actions={{
-        primary: { label: "Invite Friends", href: "/app/competitions" },
+        primary: {
+          label: t("primaryAction.label"),
+          href: t("primaryAction.href", { locale: locale }),
+        },
         secondary: {
-          label: "Start Predicting",
-          href: defaultRedirectTo,
+          label: t("secondaryAction.label"),
+          href: t("secondaryAction.href", { locale: locale }),
         },
       }}
     />

@@ -1,6 +1,6 @@
 {
   "Index": {
-    "hero": {
+    "Hero": {
       "heroBadgeText": "Get Latest News",
       "heroTitle": "Predict, Compete, Win: Score Big with FutbolPi",
       "heroDescription": "Kick off the excitement! Invite friends and family to FutbolPi, the ultimate match prediction platform. Earn points, climb the leaderboard, and prove your football prowess. Ready to predict? 🚀⚽️",
@@ -13,10 +13,21 @@
       "buttomCTAPrimaryAction": "Invite Friends",
       "buttomCTASecondaryAction": "Start Predicting"
     },
-    "stats": {
+    "Stats": {
       "totalPredictions": "Total Predictions",
       "fixturesPredicted": "Fixtures Predicted",
       "activePlayers": "Active Players"
+    },
+    "BottomCTA": {
+      "description": "Invite your friends to FutbolPi and battle it out in match predictions. The more, the merrier! 🚀⚽️",
+      "primaryAction": {
+        "label": "Invite Friends",
+        "href": "/{locale}/app/competitions"
+      },
+      "secondaryAction": {
+        "label": "Start Predicting",
+        "href": "/{locale}/app/competitions"
+      }
     }
   },
   "NotFoundPage": {

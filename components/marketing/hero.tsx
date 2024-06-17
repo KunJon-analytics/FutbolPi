@@ -12,7 +12,7 @@ import { Button } from "../ui/button";
 import StarsBadge, { StarsBadgeFallback } from "./stars-badge";
 
 export async function Hero() {
-  const t = await getTranslations("Index.hero");
+  const t = await getTranslations("Index.Hero");
 
   return (
     <div className="my-10 flex w-full flex-col justify-center gap-1 px-3 py-4 text-center md:my-20 md:p-6">
