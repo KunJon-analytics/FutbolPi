@@ -9,7 +9,7 @@ import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import StarsBadge, { StarsBadgeFallback } from "./stars-badge";
 
-export function Hero() {
+export async function Hero() {
   return (
     <div className="my-10 flex w-full flex-col justify-center gap-1 px-3 py-4 text-center md:my-20 md:p-6">
       <div>

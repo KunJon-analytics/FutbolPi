@@ -2,33 +2,56 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { cookies } from "next/headers";
 import { getIronSession } from "iron-session";
+import createMiddleware from "next-intl/middleware";
 
 import { SessionData } from "./types";
+import { locales, defaultLocale, localePrefix, pathnames } from "./intl/config";
 import { sessionOptions } from "./lib/session";
 
-const publicAppPaths = ["/app/sign-in", "/app/sign-up", "/app/login"];
+const publicAppPaths = [
+  "/app/sign-in",
+  "/app/sign-up",
+  "/app/login",
+  "/",
+  "/about",
+  "/legal/privacy",
+  "/legal/terms",
+];
+
+const intlMiddleware = createMiddleware({
+  defaultLocale,
+  locales,
+  localePrefix,
+  pathnames,
+});
 
 // This function can be marked `async` if using `await` inside
 export async function middleware(req: NextRequest) {
   const session = await getIronSession<SessionData>(cookies(), sessionOptions);
 
-  const pathname = req.nextUrl.pathname;
-
-  const isPublicAppPath = publicAppPaths.some((path) =>
-    pathname.startsWith(path)
+  const publicPathnameRegex = RegExp(
+    `^(/(${locales.join("|")}))?(${publicAppPaths
+      .flatMap((p) => (p === "/" ? ["", "/"] : p))
+      .join("|")})/?$`,
+    "i"
   );
 
-  if (!session.isLoggedIn && !isPublicAppPath) {
+  const isPublicPage = publicPathnameRegex.test(req.nextUrl.pathname);
+
+  if (!session.isLoggedIn && !isPublicPage) {
     return NextResponse.redirect(
       new URL(
         `/app/login?redirectTo=${encodeURIComponent(req.nextUrl.href)}`,
         req.url
       )
     );
+  } else {
+    return intlMiddleware(req);
   }
 }
 
 // See "Matching Paths" below to learn more
 export const config = {
-  matcher: "/app/:path*",
+  // Skip all paths that should not be internationalized
+  matcher: ["/((?!api|_next|.*\\..*).*)"],
 };
