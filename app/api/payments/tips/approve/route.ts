@@ -8,14 +8,13 @@ import platformAPIClient from "@/lib/pi/platform-api-client";
 import { siteConfig } from "@/config/site";
 
 export async function POST(req: Request) {
+  const session = await getSession();
+
+  if (!session.isLoggedIn) {
+    console.log("[TIPS_APPROVE]", "User not authenticated");
+    return new NextResponse("Unauthorized", { status: 401 });
+  }
   try {
-    const session = await getSession();
-
-    if (!session.isLoggedIn) {
-      console.log("[TIPS_APPROVE]", "User not authenticated");
-      return new NextResponse("Unauthorized", { status: 401 });
-    }
-
     const {
       paymentId,
     }: {

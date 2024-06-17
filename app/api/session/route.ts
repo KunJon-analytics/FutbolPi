@@ -1,16 +1,18 @@
 import { NextRequest } from "next/server";
+import { cookies } from "next/headers";
 
 import { defaultSession } from "@/lib/utils";
-import { getSession } from "@/actions/session";
+import { getIronSession } from "iron-session";
+import { SessionData } from "@/types";
+import { sessionOptions } from "@/lib/session";
 
 export async function GET(request: NextRequest) {
+  const session = await getIronSession<SessionData>(cookies(), sessionOptions);
+
+  if (!session.isLoggedIn) {
+    return Response.json(defaultSession);
+  }
   try {
-    const session = await getSession();
-
-    if (!session.isLoggedIn) {
-      return Response.json(defaultSession);
-    }
-
     return Response.json({
       username: session.username,
       isLoggedIn: session.isLoggedIn,
