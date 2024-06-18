@@ -1,7 +1,13 @@
+import { unstable_setRequestLocale } from "next-intl/server";
+import { useLocale } from "next-intl";
+
 import { cn } from "@/lib/utils";
 import { MarketingLayout } from "@/components/layout/marketing-layout";
 
 export default function MdxLayout({ children }: { children: React.ReactNode }) {
+  // Enable static rendering
+  const locale = useLocale();
+  unstable_setRequestLocale(locale);
   // Create any shared layout or styles here
   return (
     <MarketingLayout>

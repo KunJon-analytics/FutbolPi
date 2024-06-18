@@ -1,4 +1,6 @@
 import { Metadata } from "next";
+import { useLocale } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 import {
   defaultMetadata,
@@ -43,6 +45,8 @@ export default function AboutLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const locale = useLocale();
+  unstable_setRequestLocale(locale);
   // Create any shared layout or styles here
   return <>{children}</>;
 }
