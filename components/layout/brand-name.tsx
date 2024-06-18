@@ -1,5 +1,8 @@
 import Link from "next/link";
 import * as React from "react";
+import { useTranslations } from "next-intl";
+
+import { siteConfig } from "@/config/site";
 
 import {
   ContextMenu,
@@ -7,12 +10,13 @@ import {
   ContextMenuItem,
   ContextMenuTrigger,
 } from "../ui/context-menu";
-import { siteConfig } from "@/config/site";
 
 // Hottake: you don't need a features page if you have a changelog page
 // Except for SEO
 
 export function BrandName() {
+  const t = useTranslations("Layout.MarketingHeader.BrandName");
+
   return (
     <ContextMenu>
       <ContextMenuTrigger>
@@ -25,8 +29,8 @@ export function BrandName() {
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuItem asChild>
-          <a href="/assets/logos/OpenStatus.svg" download="openstatus.svg">
-            Download SVG
+          <a href="/assets/logos/logo.svg" download="logo.svg">
+            {t("downloadSVG")}
           </a>
         </ContextMenuItem>
       </ContextMenuContent>

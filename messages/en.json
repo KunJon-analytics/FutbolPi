@@ -30,6 +30,49 @@
       }
     }
   },
+  "Layout": {
+    "MarketingHeader": {
+      "BrandName": { "downloadSVG": "Download SVG" },
+      "LoginButton": { "text": "Play Now" },
+      "marketingMenuTitle": "Menu"
+    },
+    "MarketingFooter": {
+      "tagline": "Score big with FutbolPi! Predict, compete, and win – powered by Pi Network. Join the game and kick off your winning streak! ⚽🏆🔥",
+      "resources": {
+        "title": "Resources",
+        "links": { "announcements": { "title": "Announcements" } }
+      },
+      "company": {
+        "title": "Company",
+        "links": {
+          "about": { "title": "About" },
+          "terms": { "title": "Terms" },
+          "privacy": { "title": "Privacy" }
+        }
+      },
+      "tools": {
+        "title": "Tools",
+        "links": { "pi": { "title": "Join Pi Network" } }
+      }
+    },
+    "MarketingPages": {
+      "about": {
+        "title": "About",
+        "href": "/about",
+        "description": "Discover our story, mission, and the exciting world of FutbolPi!"
+      },
+      "predict": {
+        "title": "Predict",
+        "href": "/app/competitions",
+        "description": "Explore upcoming fixtures and make your predictions for active leagues and cups!"
+      },
+      "telegram": {
+        "title": "Telegram",
+        "href": "/telegram",
+        "description": "Join our lively Telegram group to discuss football, share predictions, and connect with fellow fans"
+      }
+    }
+  },
   "NotFoundPage": {
     "firstParagraph": "404 Page not found",
     "secondParagraph": "The page you are looking for doesn't exist.",

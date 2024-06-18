@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 import { socialsConfig } from "@/config/socials";
 import { siteConfig } from "@/config/site";
@@ -10,12 +10,15 @@ import { ThemeToggle } from "../theme-toggle";
 import { BrandName } from "./brand-name";
 import { SocialIconButton } from "./social-icon-button";
 import BuyMeCoffee from "./buy-me-coffee";
+import { Link } from "@/intl/navigation";
 
 interface Props {
   className?: string;
 }
 
 export function MarketingFooter({ className }: Props) {
+  const t = useTranslations("Layout.MarketingFooter");
+
   return (
     <footer className={cn("w-full", className)}>
       <Shell className="grid gap-6">
@@ -24,17 +27,17 @@ export function MarketingFooter({ className }: Props) {
             <div>
               <BrandName />
               <p className="mt-2 font-light text-muted-foreground text-sm">
-                Score big with FutbolPi! Predict, compete, and win – powered by
-                Pi Network. Join the game and kick off your winning streak!
-                ⚽🏆🔥
+                {t("tagline")}
               </p>
             </div>
           </div>
           <div className="order-2 flex flex-col gap-3 text-sm">
-            <p className="font-semibold text-foreground">Resources</p>
+            <p className="font-semibold text-foreground">
+              {t("resources.title")}
+            </p>
             <FooterLink
               href={siteConfig.links.telegram.channel}
-              label="Announcements"
+              label={t("resources.links.announcements.title")}
             />
             {/* <FooterLink href="/pricing" label="Pricing" />
             <FooterLink href="https://docs.openstatus.dev" label="Docs" />
@@ -42,17 +45,25 @@ export function MarketingFooter({ className }: Props) {
             <FooterLink href="/status" label="External Providers Monitoring" /> */}
           </div>
           <div className="order-3 flex flex-col gap-3 text-sm">
-            <p className="font-semibold text-foreground">Company</p>
+            <p className="font-semibold text-foreground">
+              {t("company.title")}
+            </p>
             <FooterLink href="/about" label="About" />
             {/* <FooterLink href="/changelog" label="Changelog" /> */}
-            <FooterLink href="/legal/terms" label="Terms" />
-            <FooterLink href="/legal/privacy" label="Privacy" />
+            <FooterLink
+              href="/legal/terms"
+              label={t("company.links.terms.title")}
+            />
+            <FooterLink
+              href="/legal/privacy"
+              label={t("company.links.privacy.title")}
+            />
           </div>
           <div className="order-3 flex flex-col gap-3 text-sm">
-            <p className="font-semibold text-foreground">Tools</p>
+            <p className="font-semibold text-foreground">{t("tools.title")}</p>
             <FooterLink
               href={siteConfig.links.piNetwork}
-              label="Join Pi Network"
+              label={t("tools.links.pi.title")}
             />
             {/* <FooterLink href="https://openstat.us" label="All Status Codes" /> */}
           </div>

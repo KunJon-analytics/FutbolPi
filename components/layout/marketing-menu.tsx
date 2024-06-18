@@ -18,10 +18,13 @@ import {
   SheetTrigger,
 } from "../ui/sheet";
 import { Button } from "../ui/button";
+import { useTranslations } from "next-intl";
 
 export function MarketingMenu() {
   const [open, setOpen] = React.useState(false);
   const pathname = usePathname();
+  const t = useTranslations("Layout.MarketingHeader");
+  const pagesTranslation = useTranslations("Layout.MarketingPages");
 
   React.useEffect(() => {
     setOpen(false);
@@ -41,12 +44,14 @@ export function MarketingMenu() {
       </SheetTrigger>
       <SheetContent side="top" className="flex flex-col">
         <SheetHeader>
-          <SheetTitle className="ml-2 text-left">Menu</SheetTitle>
+          <SheetTitle className="ml-2 text-left">
+            {t("marketingMenuTitle")}
+          </SheetTitle>
         </SheetHeader>
         <div className="flex flex-1 flex-col justify-between gap-4">
           <ul className="grid gap-1">
             {/* biome-ignore lint/correctness/noUnusedVariables: <explanation> */}
-            {marketingPagesConfig.map(({ href, title, segment }) => {
+            {marketingPagesConfig.map(({ href, segment }) => {
               const isExternal = href.startsWith("http");
               const externalProps = isExternal ? { target: "_blank" } : {};
               const isActive = pathname.startsWith(href);
@@ -54,7 +59,7 @@ export function MarketingMenu() {
                 <li key={href} className="w-full">
                   <AppLink
                     href={href}
-                    label={title}
+                    label={pagesTranslation(`${segment}.title`)}
                     active={isActive}
                     {...externalProps}
                   />

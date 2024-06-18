@@ -8,6 +8,15 @@ export const pathnames: Pathnames<typeof locales> = {
   "/app/competitions": {
     en: "/app/competitions",
   },
+  "/legal/terms": {
+    en: "/legal/terms",
+  },
+  "/legal/privacy": {
+    en: "/legal/privacy",
+  },
+  "/about": {
+    en: "/about",
+  },
 };
 
 export const localePrefix: LocalePrefix<typeof locales> = "always";

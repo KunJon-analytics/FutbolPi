@@ -1,21 +1,18 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 import { cn } from "@/lib/utils";
+import { Link } from "@/intl/navigation";
 
 import { Button, ButtonProps } from "../ui/button";
 
 export function LoginButton({ className, ...props }: ButtonProps) {
-  const session = { status: "unauthenticated" };
+  const t = useTranslations("Layout.MarketingHeader.LoginButton");
 
   return (
     <Button asChild className={cn("rounded-full", className)} {...props}>
-      {session.status === "authenticated" ? (
-        <Link href="/app/competitions">Dashboard</Link>
-      ) : (
-        <Link href="/app/competitions">Sign In</Link>
-      )}
+      <Link href="/app/competitions">{t("text")}</Link>
     </Button>
   );
 }

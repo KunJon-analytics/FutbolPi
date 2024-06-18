@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 import { marketingPagesConfig } from "@/config/pages";
 import { cn } from "@/lib/utils";
+import { Link as IntlLink } from "@/intl/navigation";
 
 import { BrandName } from "./brand-name";
 import { LoginButton } from "./login-button";
@@ -17,6 +19,7 @@ interface Props {
 
 export function MarketingHeader({ className }: Props) {
   const pathname = usePathname();
+  const t = useTranslations("Layout.MarketingPages");
 
   return (
     <header
@@ -26,7 +29,7 @@ export function MarketingHeader({ className }: Props) {
         <BrandName />
       </div>
       <div className="mx-auto hidden items-center justify-center rounded-full border border-border px-2 backdrop-blur-[2px] md:col-span-3 md:flex md:gap-1">
-        {marketingPagesConfig.map(({ href, title, segment }) => {
+        {marketingPagesConfig.map(({ href, segment }) => {
           const isExternal = href.startsWith("http");
           const externalProps = isExternal ? { target: "_blank" } : {};
           const isActive = pathname.startsWith(href);
@@ -37,9 +40,9 @@ export function MarketingHeader({ className }: Props) {
               className={isActive ? "font-semibold" : undefined}
               asChild
             >
-              <Link href={href} {...externalProps}>
-                {title}
-              </Link>
+              <IntlLink href={href} {...externalProps}>
+                {t(`${segment}.title`)}
+              </IntlLink>
             </Button>
           );
         })}
