@@ -8,6 +8,9 @@ export const pathnames: Pathnames<typeof locales> = {
   "/app/competitions": {
     en: "/app/competitions",
   },
+  "/app/login": {
+    en: "/app/login",
+  },
   "/legal/terms": {
     en: "/legal/terms",
   },

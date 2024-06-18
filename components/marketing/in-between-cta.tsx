@@ -1,5 +1,6 @@
-import Link from "next/link";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
+
+import { Link } from "@/intl/navigation";
 
 import { Button } from "../ui/button";
 
@@ -48,18 +49,18 @@ export function MiddleCTA() {
 
 export function BottomCTA() {
   const t = useTranslations("Index.BottomCTA");
-  const locale = useLocale();
+
   return (
     <InBetweenCTA
       description={t("description")}
       actions={{
         primary: {
           label: t("primaryAction.label"),
-          href: t("primaryAction.href", { locale: locale }),
+          href: "/app/competitions",
         },
         secondary: {
           label: t("secondaryAction.label"),
-          href: t("secondaryAction.href", { locale: locale }),
+          href: "/app/competitions",
         },
       }}
     />

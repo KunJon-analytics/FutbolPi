@@ -1,8 +1,8 @@
-import Link from "next/link";
 import * as React from "react";
 import { useTranslations } from "next-intl";
 
 import { siteConfig } from "@/config/site";
+import { Link } from "@/intl/navigation";
 
 import {
   ContextMenu,

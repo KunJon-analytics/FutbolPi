@@ -4,13 +4,13 @@ import { useTranslations } from "next-intl";
 import { socialsConfig } from "@/config/socials";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
+import { Link } from "@/intl/navigation";
 
 import { Shell } from "../dashboard/shell";
 import { ThemeToggle } from "../theme-toggle";
 import { BrandName } from "./brand-name";
 import { SocialIconButton } from "./social-icon-button";
 import BuyMeCoffee from "./buy-me-coffee";
-import { Link } from "@/intl/navigation";
 
 interface Props {
   className?: string;

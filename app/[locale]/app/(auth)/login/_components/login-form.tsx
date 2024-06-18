@@ -8,6 +8,7 @@ import { toast, toastAction } from "@/lib/toast";
 import { onIncompletePaymentFound } from "@/lib/pi/callbacks";
 import { login } from "@/actions/session";
 import { SubmitButton } from "@/components/submit-button";
+import { useTranslations } from "next-intl";
 
 const scopes: Scope[] = ["payments", "username", "wallet_address"];
 
@@ -16,6 +17,7 @@ type LoginFormProps = { redirectTo: string };
 export function LoginForm({ redirectTo }: LoginFormProps) {
   const router = useRouter();
   const queryClient = useQueryClient();
+  const t = useTranslations("Auth.LoginPage.LoginForm");
 
   return (
     <form
@@ -29,7 +31,7 @@ export function LoginForm({ redirectTo }: LoginFormProps) {
           queryClient.invalidateQueries({
             queryKey: ["session"],
           });
-          toast.success("You are successfully signed in");
+          toast.success(t("successMessage"));
           router.push(redirectTo);
         } catch (_e) {
           toastAction("error");
@@ -37,7 +39,7 @@ export function LoginForm({ redirectTo }: LoginFormProps) {
         }
       }}
     >
-      <SubmitButton buttonText="Sign in with Pi Wallet" icon="pi" />
+      <SubmitButton buttonText={t("buttonText")} icon="pi" />
     </form>
   );
 }

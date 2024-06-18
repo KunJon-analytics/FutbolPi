@@ -1,9 +1,8 @@
 import { ChevronRight } from "lucide-react";
-import Link from "next/link";
 import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 
-import { Link as IntlLink } from "@/intl/navigation";
+import { Link } from "@/intl/navigation";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 
@@ -45,9 +44,7 @@ export async function Hero() {
       <div className="my-4 grid gap-2 sm:grid-cols-2">
         <div className="text-center sm:block sm:text-right">
           <Button className="w-48 rounded-full sm:w-auto" asChild>
-            <IntlLink href="/app/competitions">
-              {t("heroPrimaryBtnText")}
-            </IntlLink>
+            <Link href="/app/competitions">{t("heroPrimaryBtnText")}</Link>
           </Button>
         </div>
         <div className="text-center sm:block sm:text-left">
@@ -57,12 +54,12 @@ export async function Hero() {
             asChild
           >
             {/* // change to number of active users */}
-            <IntlLink href="/app/competitions">
+            <Link href="/app/competitions">
               {t("heroSecondaryBtnText")}
               <Suspense fallback={<StarsBadgeFallback />}>
                 <StarsBadge />
               </Suspense>
-            </IntlLink>
+            </Link>
           </Button>
         </div>
       </div>

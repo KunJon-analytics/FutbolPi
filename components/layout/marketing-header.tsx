@@ -1,12 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 
 import { marketingPagesConfig } from "@/config/pages";
 import { cn } from "@/lib/utils";
-import { Link as IntlLink } from "@/intl/navigation";
+import { Link } from "@/intl/navigation";
 
 import { BrandName } from "./brand-name";
 import { LoginButton } from "./login-button";
@@ -40,9 +39,9 @@ export function MarketingHeader({ className }: Props) {
               className={isActive ? "font-semibold" : undefined}
               asChild
             >
-              <IntlLink href={href} {...externalProps}>
+              <Link href={href} {...externalProps}>
                 {t(`${segment}.title`)}
-              </IntlLink>
+              </Link>
             </Button>
           );
         })}
