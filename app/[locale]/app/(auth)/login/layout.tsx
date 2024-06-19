@@ -1,16 +1,16 @@
 import { unstable_setRequestLocale } from "next-intl/server";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 import { Link } from "@/intl/navigation";
 import { Icons } from "@/components/icons";
 import { siteConfig } from "@/config/site";
 
-export default function AuthLayout({
-  children,
-}: {
+type Props = {
   children: React.ReactNode;
-}) {
-  const locale = useLocale();
+  params: { locale: string };
+};
+
+export default function AuthLayout({ children, params: { locale } }: Props) {
   unstable_setRequestLocale(locale);
   const t = useTranslations("Auth.Layout");
 

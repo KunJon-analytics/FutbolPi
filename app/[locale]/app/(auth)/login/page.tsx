@@ -10,6 +10,10 @@ import { redirect, Link } from "@/intl/navigation";
 
 import { LoginForm } from "./_components/login-form";
 
+type Props = {
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
 /**
  * allowed URL search params
  */
@@ -17,11 +21,7 @@ const searchParamsSchema = z.object({
   redirectTo: z.string().optional().default(defaultRedirectTo),
 });
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
+export default async function Page({ searchParams }: Props) {
   const session = await getSession();
   const search = searchParamsSchema.safeParse(searchParams);
   const t = await getTranslations("Auth.LoginPage");
