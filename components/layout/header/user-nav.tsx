@@ -1,3 +1,4 @@
+import { getLocale, getTranslations } from "next-intl/server";
 import Link from "next/link";
 
 import { getSession } from "@/actions/session";
@@ -17,6 +18,8 @@ import UserNavLogout from "./user-nav-logout";
 
 export async function UserNav() {
   const session = await getSession();
+  const t = await getTranslations("DashboardLayout.UserNav");
+  const locale = await getLocale();
 
   if (!session.isLoggedIn) {
     return <UserNavLoading />;
@@ -38,10 +41,12 @@ export async function UserNav() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem asChild>
-            <Link href={`/app/settings/appearance`}>Appearance</Link>
+            <Link href={`/${locale}/app/settings/appearance`}>
+              {t("appearance")}
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link href={`/app/settings/user`}>Profile</Link>
+            <Link href={`/${locale}/app/settings/user`}>{t("profile")}</Link>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />

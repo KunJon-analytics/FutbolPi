@@ -7,13 +7,17 @@ import Link from "next/link";
 import { Competition } from "@prisma/client";
 import { StatusDotWithTooltip } from "@/components/competition/status-dot-with-tooltip";
 
+import { DataTableColumnHeader } from "./data-table-column-header";
+
 // import { DataTableRowActions } from "./data-table-row-actions";
 
 export const columns: ColumnDef<Competition>[] = [
   {
     accessorKey: "name",
     accessorFn: (row) => row.name,
-    header: "Name",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="name" />
+    ),
     cell: ({ row }) => {
       const { name, id, isActive, type } = row.original;
       return (
@@ -33,12 +37,16 @@ export const columns: ColumnDef<Competition>[] = [
     // REMINDER: visibility is handled within the `<DataTable />`
     accessorKey: "season",
     accessorFn: (row) => row.season,
-    header: "Season",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="season" />
+    ),
   },
 
   {
     accessorKey: "createdAt",
-    header: "Created",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="created" />
+    ),
     cell: ({ row }) => {
       const timestamp = row.original.createdAt;
 

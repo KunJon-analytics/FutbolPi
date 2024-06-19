@@ -1,10 +1,11 @@
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 import { Suspense } from "react";
 
 import { Shell } from "@/components/dashboard/shell";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Link } from "@/intl/navigation";
+import { siteConfig } from "@/config/site";
 
 import { AppTabs } from "./app-tabs";
 import { Breadcrumbs } from "./breadcrumbs";
@@ -23,7 +24,7 @@ export function AppHeader() {
             <ul className="hidden gap-1 sm:flex">
               <li className="w-full">
                 <Button variant="link" asChild>
-                  <Link href="/telegram" target="_blank">
+                  <Link href={siteConfig.links.telegram.group} target="_blank">
                     Telegram
                     <ArrowUpRight className="ml-1 h-4 w-4 flex-shrink-0" />
                   </Link>

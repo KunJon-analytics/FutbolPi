@@ -11,6 +11,12 @@ export const pathnames: Pathnames<typeof locales> = {
   "/app/login": {
     en: "/app/login",
   },
+  "/app/settings/appearance": {
+    en: "/app/settings/appearance",
+  },
+  "/app/settings/user": {
+    en: "/app/settings/user",
+  },
   "/legal/terms": {
     en: "/legal/terms",
   },

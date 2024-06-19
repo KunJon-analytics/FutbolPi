@@ -93,5 +93,23 @@
   "HelpCallOut": {
     "title": "Need help?",
     "description": "Let us know by joining our <telegram>Telegram</telegram>."
+  },
+  "CompetitionPage": {
+    "headerTitle": "Active Competitions",
+    "headerDescription": "Predict outcomes for top leagues and cups. Score big with FutbolPi!"
+  },
+  "DashboardLayout": {
+    "UserNav": { "appearance": "Appearance", "profile": "Profile" },
+    "Pages": {
+      "Competitions": { "title": "Competition" },
+      "Settings": { "title": "Settings" }
+    },
+    "DataTableToolbar": { "filterInput": "Filter names...", "reset": "Reset" }
+  },
+  "DataTable": {
+    "noResult": "No results.",
+    "CompetitionsTable": {
+      "Header": { "name": "Name", "season": "Season", "created": "Created" }
+    }
   }
 }

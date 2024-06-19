@@ -1,12 +1,9 @@
 import { Slash } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
 import { Fragment } from "react";
 
 import { notEmpty } from "@/lib/utils";
-import { siteConfig } from "@/config/site";
-import { defaultRedirectTo } from "@/config/pages";
 import { Icons } from "@/components/icons";
+import { Link } from "@/intl/navigation";
 
 export function Breadcrumbs() {
   const breadcrumbs = [
