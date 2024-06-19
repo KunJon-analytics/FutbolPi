@@ -1,11 +1,14 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 
 import { getSession } from "@/actions/session";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import prisma from "@/lib/prisma";
 
-export default async function UserPage() {
+type Props = { params: { locale: string } };
+
+export default async function UserPage({ params: { locale } }: Props) {
+  unstable_setRequestLocale(locale);
   const t = await getTranslations("Settings.User");
 
   const session = await getSession();
