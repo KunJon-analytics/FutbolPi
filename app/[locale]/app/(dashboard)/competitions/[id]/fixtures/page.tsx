@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import * as React from "react";
 import * as z from "zod";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 
 import prisma from "@/lib/prisma";
 import { fixtureStatus } from "@/lib/competition/utils";
@@ -31,6 +32,8 @@ export default async function Page({
   const id = params.id;
   const search = searchParamsSchema.safeParse(searchParams);
 
+  const t = await getTranslations("CompetitionDetail.Fixtures");
+
   const fixtures = await prisma.fixture.findMany({
     where: { competitionId: id },
     include: { awayTeam: true, homeTeam: true },
@@ -57,14 +60,16 @@ export default async function Page({
         </div>
         <div className="grid gap-2">
           <p className="text-muted-foreground text-xs">
-            Click on fixtures to predict or view. Check{" "}
-            <Link
-              href={`./leaderboard`}
-              className="underline underline-offset-4 hover:no-underline"
-            >
-              leaderboard
-            </Link>{" "}
-            too!
+            {t.rich("leaderboardLink", {
+              action: (chunks) => (
+                <Link
+                  href={`./leaderboard`}
+                  className="underline underline-offset-4 hover:no-underline"
+                >
+                  {chunks}
+                </Link>
+              ),
+            })}
           </p>
         </div>
         <ScrollArea className="w-full whitespace-nowrap rounded-md border">

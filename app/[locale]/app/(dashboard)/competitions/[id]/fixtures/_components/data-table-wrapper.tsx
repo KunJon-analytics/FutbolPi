@@ -10,6 +10,7 @@ import type {
 } from "@tanstack/react-table";
 import { Suspense } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { useTranslations } from "next-intl";
 
 import { LoadingAnimation } from "@/components/loading-animation";
 import { DataTable } from "@/components/data-table/data-table";
@@ -55,13 +56,14 @@ function renderSubComponent({ row }: { row: Row<FixturesResult> }) {
 
 function Details({ row }: { row: Row<FixturesResult> }) {
   const fixtureId = row.original.id;
+  const t = useTranslations("CompetitionDetail.Fixtures.FixtureDetailTabs");
 
   const { status, data } = useQuery({
     queryKey: ["fixtures", fixtureId, "predictions"],
     queryFn: async () => {
       const response = await fetch(`/api/fixtures/${fixtureId}/predictions`);
       if (!response.ok) {
-        throw new Error("Network response was not ok");
+        throw new Error(t("networkError"));
       }
       return response.json();
     },
@@ -75,7 +77,7 @@ function Details({ row }: { row: Row<FixturesResult> }) {
     );
   }
 
-  if (status === "error") return <p>Something went wrong</p>;
+  if (status === "error") return <p>{t("errorMessage")}</p>;
 
   return <FixtureDetailTabs fixture={row.original} prediction={data} />;
 }

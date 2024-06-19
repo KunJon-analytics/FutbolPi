@@ -1,5 +1,6 @@
 import type { Column } from "@tanstack/react-table";
 import { ChevronsUpDown, SortAsc, SortDesc } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { cn } from "@/lib/utils";
 
@@ -11,10 +12,18 @@ import {
 } from "../ui/dropdown-menu";
 import { Button } from "../ui/button";
 
+type ColumnHeaderTitle =
+  | "username"
+  | "points"
+  | "kickoff"
+  | "homeTeam"
+  | "awayTeam"
+  | "round";
+
 interface DataTableColumnHeaderProps<TData, TValue>
   extends React.HTMLAttributes<HTMLDivElement> {
   column: Column<TData, TValue>;
-  title: string;
+  title: ColumnHeaderTitle;
 }
 
 export function DataTableColumnHeader<TData, TValue>({
@@ -22,8 +31,10 @@ export function DataTableColumnHeader<TData, TValue>({
   title,
   className,
 }: DataTableColumnHeaderProps<TData, TValue>) {
+  const t = useTranslations("DataTable.DefaultTable.Header");
+  const displayedTitle = t(title);
   if (!column.getCanSort()) {
-    return <div className={cn(className)}>{title}</div>;
+    return <div className={cn(className)}>{displayedTitle}</div>;
   }
 
   return (
@@ -35,7 +46,7 @@ export function DataTableColumnHeader<TData, TValue>({
             size="sm"
             className="-ml-3 h-8 data-[state=open]:bg-accent"
           >
-            <span>{title}</span>
+            <span>{displayedTitle}</span>
             {column.getIsSorted() === "desc" ? (
               <SortDesc className="ml-2 h-4 w-4" />
             ) : column.getIsSorted() === "asc" ? (

@@ -1,3 +1,6 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import { formatDistanceToNowStrict, fromUnixTime } from "date-fns";
 
 import {
@@ -19,6 +22,8 @@ export function PredictionDetailTable({
   fixture: FixturesResult;
   prediction: Prediction;
 }) {
+  const t = useTranslations("CompetitionDetail.Fixtures.TabsDetailTable");
+
   const teams = `${fixture.homeTeam.name} vs ${fixture.awayTeam.name}`;
   const kickoff = formatDistanceToNowStrict(fromUnixTime(fixture.timestamp), {
     addSuffix: true,
@@ -33,24 +38,29 @@ export function PredictionDetailTable({
 
   return (
     <Table>
-      <TableCaption className="mt-2">Your Prediction Detail</TableCaption>
+      <TableCaption className="mt-2">
+        {t("predictionTableCaption")}
+      </TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead className="md:min-w-[200px]">Key</TableHead>
-          <TableHead>Value</TableHead>
+          <TableHead className="md:min-w-[200px]">{t("key")}</TableHead>
+          <TableHead>{t("value")}</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        <FixtureTableRow heading="Teams" value={teams} />
-        <FixtureTableRow heading="Real Scores" value={scores} />
-        <FixtureTableRow heading="Predicted Scores" value={predictedScores} />
-        <FixtureTableRow heading="Kick Off" value={kickoff} />
-        <FixtureTableRow heading="Status" value={status} />
+        <FixtureTableRow heading={t("teams")} value={teams} />
+        <FixtureTableRow heading={t("realScores")} value={scores} />
         <FixtureTableRow
-          heading="Points Won"
+          heading={t("predictedScores")}
+          value={predictedScores}
+        />
+        <FixtureTableRow heading={t("kickoff")} value={kickoff} />
+        <FixtureTableRow heading={t("status")} value={status} />
+        <FixtureTableRow
+          heading={t("pointsWon")}
           value={prediction.points.toString()}
         />
-        <FixtureTableRow heading="Round" value={fixture.round} />
+        <FixtureTableRow heading={t("round")} value={fixture.round} />
       </TableBody>
     </Table>
   );

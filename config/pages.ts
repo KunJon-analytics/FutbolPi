@@ -2,8 +2,20 @@ import type { ValidIcon } from "@/components/icons";
 
 import { siteConfig } from "./site";
 
+type PageTitle =
+  | "Appearance"
+  | "User"
+  | "Overview"
+  | "Leaderboard"
+  | "Fixtures"
+  | "Competitions"
+  | "About"
+  | "Telegram"
+  | "Predict"
+  | "Settings";
+
 export type Page = {
-  title: string;
+  title: PageTitle;
   description: string;
   href: string;
   icon: ValidIcon;

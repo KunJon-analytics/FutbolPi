@@ -108,8 +108,89 @@
   },
   "DataTable": {
     "noResult": "No results.",
+    "Pagination": {
+      "rowsPerPage": "Rows per page",
+      "rowsFiltered": "row(s) filtered",
+      "page": "Page {pageIndex} of {pageCount}",
+      "firstPage": "Go to first page",
+      "previousPage": "Go to previous page",
+      "nextPage": "Go to next page",
+      "lastPage": "Go to last page"
+    },
     "CompetitionsTable": {
       "Header": { "name": "Name", "season": "Season", "created": "Created" }
+    },
+    "DefaultTable": {
+      "Header": {
+        "username": "Username",
+        "points": "Points",
+        "round": "Round",
+        "homeTeam": "Home Team",
+        "awayTeam": "Away Team",
+        "kickoff": "Kickoff"
+      }
+    }
+  },
+  "PageTitles": {
+    "Appearance": "Appearance",
+    "User": "User",
+    "Overview": "Overview",
+    "Leaderboard": "Leaderboard",
+    "Fixtures": "Fixtures",
+    "Competitions": "Competitions",
+    "About": "About",
+    "Telegram": "Telegram",
+    "Predict": "Predict",
+    "Settings": "Settings"
+  },
+  "CompetitionDetail": {
+    "Overview": {
+      "teams": "teams",
+      "predictions": "predictions",
+      "scheduled": "scheduled fixtures",
+      "players": "players",
+      "leaderboardLink": "Start making predictions in the <action>competition fixtures</action>",
+      "finished": "finished fixtures"
+    },
+    "Leaderboard": {
+      "fixturesLink": "On the leaderboard, every prediction counts! Want to climb higher? <action>Make your predictions</action> now."
+    },
+    "Fixtures": {
+      "Status": {
+        "ALL": "All Fixtures",
+        "COMPLETED": "Completed Fixtures",
+        "NOT_STARTED": "Scheduled Fixtures"
+      },
+      "leaderboardLink": "Click on fixtures to predict or view. Check <action>leaderboard</action> too!",
+      "FixtureDetailTabs": {
+        "yourPrediction": "Your Prediction",
+        "makePrediction": "Make Prediction",
+        "errorMessage": "Something went wrong",
+        "networkError": "Network response was not ok",
+        "fixture": "Fixture"
+      },
+      "TabsDetailTable": {
+        "predictionTableCaption": "Your Prediction Detail",
+        "fixtureTableCaption": "Fixture Detail",
+        "key": "Key",
+        "value": "Value",
+        "round": "Round",
+        "teams": "Teams",
+        "realScores": "Real Scores",
+        "scores": "Scores",
+        "predictedScores": "Predicted Scores",
+        "kickoff": "Kickoff",
+        "status": "Status",
+        "pointsWon": "Points Won"
+      },
+      "PredictionForm": {
+        "homeTeam": "Home Team",
+        "awayTeam": "Away Team",
+        "allowed": "Allowed",
+        "confirm": "Confirm",
+        "notAllowed": "Not Allowed",
+        "canPredict": "Can Predict?"
+      }
     }
   }
 }

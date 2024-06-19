@@ -1,3 +1,7 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 import {
   Tabs,
   TabsContent,
@@ -10,24 +14,27 @@ import { PredictionDetailTable } from "@/components/prediction/prediction-detail
 import { FixturesResult } from "@/types";
 import { Prediction } from "@prisma/client";
 
-export async function FixtureDetailTabs({
+export function FixtureDetailTabs({
   fixture,
   prediction,
 }: {
   fixture: FixturesResult;
   prediction: Prediction | null;
 }) {
+  const t = useTranslations("CompetitionDetail.Fixtures.FixtureDetailTabs");
+
   const defaultValue = prediction ? "prediction" : "predict";
+
   return (
     <Tabs defaultValue={defaultValue}>
       <TabsList>
         <TabsTrigger value="prediction" disabled={!prediction}>
-          Your Prediction
+          {t("yourPrediction")}
         </TabsTrigger>
         <TabsTrigger value="predict" disabled={!!prediction}>
-          Make Prediction
+          {t("makePrediction")}
         </TabsTrigger>
-        <TabsTrigger value="fixture">Fixture</TabsTrigger>
+        <TabsTrigger value="fixture">{t("fixture")}</TabsTrigger>
       </TabsList>
       <TabsContent value="prediction">
         {!!prediction ? (

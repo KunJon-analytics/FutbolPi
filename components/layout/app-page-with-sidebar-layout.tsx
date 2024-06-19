@@ -2,6 +2,7 @@ import { Shell } from "@/components/dashboard/shell";
 import type { PageId } from "@/config/pages";
 import { pagesConfig } from "@/config/pages";
 import { cn } from "@/lib/utils";
+
 import { AppMenu } from "./app-menu";
 import { AppSidebar } from "./app-sidebar";
 
@@ -28,7 +29,7 @@ export default function AppPageWithSidebarLayout({
         <div
           className={cn(
             "flex h-full flex-1 flex-col gap-6 md:gap-8",
-            className,
+            className
           )}
         >
           {children}

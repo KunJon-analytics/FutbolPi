@@ -1,18 +1,19 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 import prisma from "@/lib/prisma";
 import { Header } from "@/components/dashboard/header";
 import AppPageWithSidebarLayout from "@/components/layout/app-page-with-sidebar-layout";
 import { StatusDotWithTooltip } from "@/components/competition/status-dot-with-tooltip";
 
-export default async function Layout({
-  children,
-  params,
-}: {
+type Props = {
   children: React.ReactNode;
-  params: { id: string };
-}) {
+  params: { id: string; locale: string };
+};
+
+export default async function Layout({ children, params }: Props) {
+  unstable_setRequestLocale(params.locale);
   const id = params.id;
 
   const competition = await prisma.competition.findUnique({ where: { id } });

@@ -11,7 +11,7 @@ export const columns: ColumnDef<FixturesResult>[] = [
   {
     accessorKey: "timestamp",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Kickoff" />
+      <DataTableColumnHeader column={column} title="kickoff" />
     ),
     cell: ({ row }) => {
       const timestamp = row.original.timestamp;
@@ -30,7 +30,7 @@ export const columns: ColumnDef<FixturesResult>[] = [
     id: "homeTeam",
     accessorFn: (row) => row.homeTeam.name,
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Home Team" />
+      <DataTableColumnHeader column={column} title="homeTeam" />
     ),
     cell: ({ row }) => {
       const { homeTeam, homeGoals } = row.original;
@@ -44,7 +44,7 @@ export const columns: ColumnDef<FixturesResult>[] = [
     id: "awayTeam",
     accessorFn: (row) => row.awayTeam.name,
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Away Team" />
+      <DataTableColumnHeader column={column} title="awayTeam" />
     ),
     cell: ({ row }) => {
       const { awayTeam, awayGoals } = row.original;
@@ -57,7 +57,7 @@ export const columns: ColumnDef<FixturesResult>[] = [
   {
     accessorKey: "round",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Round" />
+      <DataTableColumnHeader column={column} title="round" />
     ),
     cell: ({ row }) => {
       const round = row.original.round;

@@ -15,7 +15,7 @@ export const columns: ColumnDef<
   {
     accessorKey: "username",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Username" />
+      <DataTableColumnHeader column={column} title="username" />
     ),
   },
 
@@ -23,7 +23,7 @@ export const columns: ColumnDef<
     accessorKey: "_sum.points",
     id: "points",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Points" />
+      <DataTableColumnHeader column={column} title="points" />
     ),
   },
 ];

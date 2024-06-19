@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import type {
   ColumnDef,
   ColumnFiltersState,
@@ -54,6 +55,8 @@ export function DataTable<TData, TValue>({
   const [expanded, setExpanded] = React.useState<ExpandedState>({});
   const [pagination, setPagination] =
     React.useState<PaginationState>(defaultPagination);
+
+  const t = useTranslations("DataTable");
 
   const table = useReactTable({
     data,
@@ -142,7 +145,7 @@ export function DataTable<TData, TValue>({
                   colSpan={columns.length}
                   className="h-24 text-center"
                 >
-                  No results.
+                  {t("noResult")}
                 </TableCell>
               </TableRow>
             )}

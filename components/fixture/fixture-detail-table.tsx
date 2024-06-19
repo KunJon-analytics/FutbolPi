@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { formatDistanceToNowStrict, fromUnixTime } from "date-fns";
 
 import {
@@ -12,6 +13,8 @@ import {
 import { FixturesResult } from "@/types";
 
 export function FixtureDetailTable({ fixture }: { fixture: FixturesResult }) {
+  const t = useTranslations("CompetitionDetail.Fixtures.TabsDetailTable");
+
   const teams = `${fixture.homeTeam.name} vs ${fixture.awayTeam.name}`;
   const kickoff = formatDistanceToNowStrict(fromUnixTime(fixture.timestamp), {
     addSuffix: true,
@@ -25,19 +28,19 @@ export function FixtureDetailTable({ fixture }: { fixture: FixturesResult }) {
 
   return (
     <Table>
-      <TableCaption className="mt-2">Fixture Detail</TableCaption>
+      <TableCaption className="mt-2">{t("fixtureTableCaption")}</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead className="md:min-w-[200px]">Key</TableHead>
-          <TableHead>Value</TableHead>
+          <TableHead className="md:min-w-[200px]">{t("key")}</TableHead>
+          <TableHead>{t("value")}</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        <FixtureTableRow heading="Kick Off" value={kickoff} />
-        <FixtureTableRow heading="Teams" value={teams} />
-        <FixtureTableRow heading="Scores" value={scores} />
-        <FixtureTableRow heading="Status" value={status} />
-        <FixtureTableRow heading="Round" value={fixture.round} />
+        <FixtureTableRow heading={t("kickoff")} value={kickoff} />
+        <FixtureTableRow heading={t("teams")} value={teams} />
+        <FixtureTableRow heading={t("scores")} value={scores} />
+        <FixtureTableRow heading={t("status")} value={status} />
+        <FixtureTableRow heading={t("round")} value={fixture.round} />
       </TableBody>
     </Table>
   );

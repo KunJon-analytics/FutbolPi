@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
@@ -41,6 +42,7 @@ export function PredictionForm({
   defaultValues: PredictionInsertSchema;
   fixture: { homeTeam: string; awayTeam: string; timestamp: number };
 }) {
+  const t = useTranslations("CompetitionDetail.Fixtures.PredictionForm");
   const form = useForm<PredictionInsertSchema>({
     resolver: zodResolver(predictionInsertSchema),
     defaultValues,
@@ -79,9 +81,9 @@ export function PredictionForm({
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Home Team</TableHead>
-              <TableHead>Away Team</TableHead>
-              <TableHead className="w-[100px]">Can Predict?</TableHead>
+              <TableHead>{t("homeTeam")}</TableHead>
+              <TableHead>{t("homeTeam")}</TableHead>
+              <TableHead className="w-[100px]">{t("canPredict")}</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -132,9 +134,9 @@ export function PredictionForm({
               </TableCell>
               <TableCell>
                 {isAllowed ? (
-                  <span className="">Allowed</span>
+                  <span className="">{t("allowed")}</span>
                 ) : (
-                  <span className="text-destructive">Not Allowed</span>
+                  <span className="text-destructive">{t("notAllowed")}</span>
                 )}
               </TableCell>
             </TableRow>
@@ -143,7 +145,7 @@ export function PredictionForm({
 
         <div className="sm:col-span-full">
           <Button className="w-full sm:w-auto" size="lg" disabled={!isAllowed}>
-            {!isPending ? "Confirm" : <LoadingAnimation />}
+            {!isPending ? t("confirm") : <LoadingAnimation />}
           </Button>
         </div>
       </form>
