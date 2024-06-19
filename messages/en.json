@@ -132,16 +132,40 @@
     }
   },
   "PageTitles": {
-    "Appearance": "Appearance",
-    "User": "User",
-    "Overview": "Overview",
-    "Leaderboard": "Leaderboard",
-    "Fixtures": "Fixtures",
-    "Competitions": "Competitions",
-    "About": "About",
-    "Telegram": "Telegram",
-    "Predict": "Predict",
-    "Settings": "Settings"
+    "Appearance": {
+      "title": "Appearance",
+      "description": "Appearance settings for the user."
+    },
+    "User": {
+      "title": "User",
+      "description": "Profile settings for the user."
+    },
+    "Overview": { "title": "Overview", "description": "View all competitions" },
+    "Leaderboard": {
+      "title": "Leaderboard",
+      "description": "View top players"
+    },
+    "Fixtures": {
+      "title": "Fixtures",
+      "description": "View all competition fixtures."
+    },
+    "Competitions": {
+      "title": "Competitions",
+      "description": "See all available competitions"
+    },
+    "About": {
+      "title": "About",
+      "description": "Discover our story, mission, and the exciting world of FutbolPi!"
+    },
+    "Telegram": {
+      "title": "Telegram",
+      "description": "Join our lively Telegram group to discuss football, share predictions, and connect with fellow fans"
+    },
+    "Predict": {
+      "title": "Predict",
+      "description": "Explore upcoming fixtures and make your predictions for active leagues and cups!"
+    },
+    "Settings": { "title": "Settings", "description": "Your profile settings" }
   },
   "CompetitionDetail": {
     "Overview": {
@@ -192,5 +216,13 @@
         "canPredict": "Can Predict?"
       }
     }
+  },
+  "Settings": {
+    "User": {
+      "username": "Username",
+      "predictions": "Predictions",
+      "points": "Points"
+    },
+    "Appearance": { "light": "Light", "dark": "Dark", "system": "System" }
   }
 }

@@ -30,7 +30,7 @@ export function AppMenu({ page }: { page?: Page }) {
     <Collapsible open={open} onOpenChange={(value) => setOpen(value)}>
       <CollapsibleTrigger className="flex w-full items-center justify-between">
         <span className="font-medium text-foreground">
-          {activeChild?.title && t(activeChild.title)}
+          {activeChild?.title && t(`${activeChild.title}.title`)}
         </span>
         <span className="inline-flex h-9 w-9 items-center justify-center rounded-md font-medium text-sm transition-colors disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground disabled:opacity-50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
           <ChevronsUpDown className="h-4 w-4" />

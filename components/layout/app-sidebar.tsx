@@ -18,14 +18,14 @@ export function AppSidebar({ page }: { page?: Page }) {
     <div className="flex h-full flex-col justify-between">
       <div className="grid gap-2">
         <p className="hidden px-3 font-medium text-foreground text-lg lg:block">
-          {page?.title && t(page.title)}
+          {page?.title && t(`${page.title}.title`)}
         </p>
         <ul className="grid gap-2">
           {page?.children?.map(({ title, segment, icon, disabled }) => {
             return (
               <li key={title} className="w-full">
                 <AppLink
-                  label={t(title)}
+                  label={t(`${title}.title`)}
                   href={`./${segment}`}
                   disabled={disabled}
                   active={segment === selectedSegment}

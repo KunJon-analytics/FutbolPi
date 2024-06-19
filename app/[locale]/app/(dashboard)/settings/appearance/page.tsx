@@ -2,6 +2,7 @@
 
 import { useTheme } from "next-themes";
 import * as React from "react";
+import { useTranslations } from "next-intl";
 
 import { cn } from "@/lib/utils";
 
@@ -9,19 +10,20 @@ import { cn } from "@/lib/utils";
 
 export default function AppearancePage() {
   const { setTheme, theme } = useTheme();
+  const t = useTranslations("Settings.Appearance");
 
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-4 sm:grid-cols-2">
       <button type="button" onClick={() => setTheme("light")}>
         <LightModeCard active={theme === "light"} />
         <span className="mt-2 font-light text-muted-foreground text-sm">
-          Light
+          {t("light")}
         </span>
       </button>
       <button type="button" onClick={() => setTheme("dark")}>
         <DarkModeCard active={theme === "dark"} />
         <span className="mt-2 font-light text-muted-foreground text-sm">
-          Dark
+          {t("dark")}
         </span>
       </button>
       <button type="button" onClick={() => setTheme("system")}>
@@ -37,7 +39,7 @@ export default function AppearancePage() {
           </div>
         </div>
         <span className="mt-2 font-light text-muted-foreground text-sm">
-          System
+          {t("system")}
         </span>
       </button>
     </div>
@@ -49,7 +51,7 @@ function LightModeCard({ active }: { active: boolean }) {
     <div
       className={cn(
         "items-center rounded-md border-2 border-muted p-1",
-        active && "ring-2 ring-ring ring-offset-2 ring-offset-background",
+        active && "ring-2 ring-ring ring-offset-2 ring-offset-background"
       )}
     >
       <div className="space-y-2 rounded-sm bg-[#ecedef] p-2">
@@ -75,7 +77,7 @@ function DarkModeCard({ active }: { active: boolean }) {
     <div
       className={cn(
         "items-center rounded-md border-2 border-muted bg-popover p-1",
-        active && "ring-2 ring-ring ring-offset-2 ring-offset-background",
+        active && "ring-2 ring-ring ring-offset-2 ring-offset-background"
       )}
     >
       <div className="space-y-2 rounded-sm bg-slate-950 p-2">
