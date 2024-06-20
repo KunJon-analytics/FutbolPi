@@ -17,9 +17,9 @@ import { PiProvider } from "@/components/pi-provider";
 import ReactQueryProvider from "@/components/providers/react-query";
 import GoogleAnalytics from "@/components/providers/google-analytics";
 import { env } from "@/env.mjs";
+import { locales } from "@/intl/config";
 
 import "@/styles/globals.css";
-import { locales } from "@/intl/config";
 
 const inter = Inter({ subsets: ["latin"] });
 

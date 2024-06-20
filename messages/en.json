@@ -224,5 +224,9 @@
       "points": "Points"
     },
     "Appearance": { "light": "Light", "dark": "Dark", "system": "System" }
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, zh {🇨🇳 Chinese} en {🇺🇸 English} other {Unknown}}"
   }
 }

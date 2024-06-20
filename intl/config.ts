@@ -5,27 +5,13 @@ export const locales = ["en"] as const;
 
 export const pathnames: Pathnames<typeof locales> = {
   "/": "/",
-  "/app/competitions": {
-    en: "/app/competitions",
-  },
-  "/app/login": {
-    en: "/app/login",
-  },
-  "/app/settings/appearance": {
-    en: "/app/settings/appearance",
-  },
-  "/app/settings/user": {
-    en: "/app/settings/user",
-  },
-  "/legal/terms": {
-    en: "/legal/terms",
-  },
-  "/legal/privacy": {
-    en: "/legal/privacy",
-  },
-  "/about": {
-    en: "/about",
-  },
+  "/app/competitions": "/app/competitions",
+  "/app/login": "/app/login",
+  "/app/settings/appearance": "/app/settings/appearance",
+  "/app/settings/user": "/app/settings/user",
+  "/legal/terms": "/legal/terms",
+  "/legal/privacy": "/legal/privacy",
+  "/about": "/about",
 };
 
 export const localePrefix: LocalePrefix<typeof locales> = "always";
