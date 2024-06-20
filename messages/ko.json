@@ -1,0 +1,270 @@
+{
+  "Auth": {
+    "Layout": {
+      "description": "FutbolPi에 오신 것을 환영합니다! 독점 예측 및 순위표에 액세스하려면 Pi 브라우저를 통해 Pi 네트워크 자격 증명을 사용하여 로그인하세요. <br></br> <br></br> <pi>Pi 네트워크에 가입하세요</pi> 브라우저를 다운로드하세요.",
+      "title": "게임 잠금 해제: Pi Network로 로그인"
+    },
+    "LoginPage": {
+      "conditions": "'계속' 을 클릭하면 다음에 동의하는 것으로 간주됩니다. <terms>이용 약관</terms> 및 <privacy>개인 정보 보호 정책</privacy>.",
+      "LoginForm": {
+        "buttonText": "Pi 지갑으로 로그인 ",
+        "successMessage": "성공적으로 로그인되었습니다 "
+      },
+      "noPayments": "지금 시작하세요. Pi 결제가 필요하지 않습니다. ",
+      "title": "로그인 "
+    }
+  },
+  "CompetitionDetail": {
+    "Fixtures": {
+      "FixtureDetailTabs": {
+        "errorMessage": "문제가 발생했습니다.",
+        "fixture": "고정 장치",
+        "makePrediction": "예측하기 ",
+        "networkError": "네트워크 응답이 좋지 않았습니다. ",
+        "yourPrediction": "당신의 예측 "
+      },
+      "leaderboardLink": "예측하거나 보려면 픽스처를 클릭하십시오. 확인 <action>리더보드</action> 또한",
+      "PredictionForm": {
+        "allowed": "허용된 ",
+        "awayTeam": "원정팀",
+        "canPredict": "예측할 수 있나요? ",
+        "confirm": "확인하다 ",
+        "homeTeam": "홈팀 ",
+        "notAllowed": "허용되지 않음"
+      },
+      "Status": {
+        "ALL": "모든 픽스쳐 ",
+        "COMPLETED": "완성된 비품",
+        "NOT_STARTED": "예정된 비품"
+      },
+      "TabsDetailTable": {
+        "fixtureTableCaption": "경기 세부정보",
+        "key": "키",
+        "kickoff": "킥오프",
+        "pointsWon": "획득한 포인트",
+        "predictedScores": "예상 점수",
+        "predictionTableCaption": "내 예측 세부 정보",
+        "realScores": "실제 점수",
+        "round": "둥근",
+        "scores": "점수",
+        "status": "상태",
+        "teams": "팀",
+        "value": "값"
+      }
+    },
+    "Leaderboard": {
+      "fixturesLink": "리더보드에는 모든 예측이 중요합니다! 더 높이 올라가고 싶으신가요? <action>예측하기</action> 지금."
+    },
+    "Overview": {
+      "finished": "완성된 비품",
+      "leaderboardLink": "에서 예측을 시작하세요. <action>대회 비품</action>",
+      "players": "플레이어",
+      "predictions": "예측",
+      "scheduled": "예정된 비품",
+      "teams": "팀"
+    }
+  },
+  "CompetitionPage": {
+    "headerDescription": "최고의 리그와 컵에 대한 결과를 예측합니다. FutbolPi로 큰 점수를 획득하세요!",
+    "headerTitle": "활성화된 대회"
+  },
+  "DashboardLayout": {
+    "DataTableToolbar": {
+      "filterInput": "이름 필터링...",
+      "reset": "초기화"
+    },
+    "Pages": {
+      "Competitions": {
+        "title": "경쟁"
+      },
+      "Settings": {
+        "title": "설정"
+      }
+    },
+    "UserNav": {
+      "appearance": "외형",
+      "profile": "프로필"
+    }
+  },
+  "DataTable": {
+    "CompetitionsTable": {
+      "Header": {
+        "created": "생산 일",
+        "name": "이름",
+        "season": "계절"
+      }
+    },
+    "DefaultTable": {
+      "Header": {
+        "awayTeam": "원정팀",
+        "homeTeam": "홈팀",
+        "kickoff": "킥오프",
+        "points": "포인트들",
+        "round": "라운드",
+        "username": "사용자 이름"
+      }
+    },
+    "noResult": "결과 없음.",
+    "Pagination": {
+      "firstPage": "첫 패이지로 이동하기",
+      "lastPage": "마지막 페이지로 이동 ",
+      "nextPage": "다음 페이지로 이동",
+      "page": "{pageCount} 페이지 중 {pageIndex} 페이지",
+      "previousPage": "이전 페이지로 이동 ",
+      "rowsFiltered": "필터링된 행 수",
+      "rowsPerPage": "페이지당 행 수"
+    }
+  },
+  "HelpCallOut": {
+    "description": "우리의 가입을 통해 알려주세요 <telegram>전보</telegram>.",
+    "title": "도움이 필요하다?"
+  },
+  "Index": {
+    "BottomCTA": {
+      "description": "친구를 FutbolPi에 초대하고 경기 예측을 통해 대결해 보세요. 많을수록 더 즐겁습니다! 🚀⚽️",
+      "primaryAction": {
+        "label": "친구를 초대"
+      },
+      "secondaryAction": {
+        "label": "예측 시작"
+      }
+    },
+    "Hero": {
+      "buttomCTADescription": "친구를 FutbolPi에 초대하고 경기 예측을 통해 대결해 보세요. 많을수록 더 즐겁습니다! 🚀⚽️",
+      "buttomCTAPrimaryAction": "친구를 초대",
+      "buttomCTASecondaryAction": "예측 시작",
+      "heroBadgeText": "최신 뉴스 받기",
+      "heroDescription": "흥분을 시작하세요! 최고의 경기 예측 플랫폼인 FutbolPi에 친구와 가족을 초대하세요. 포인트를 획득하고, 리더보드에 오르고, 축구 실력을 증명하세요. 예측할 준비가 되셨나요? 🚀⚽️",
+      "heroPrimaryBtnText": "경기 예측",
+      "heroSecondaryBtnText": "지금 가입하세요 ",
+      "heroTitle": "예측하고, 경쟁하고, 승리하세요: FutbolPi로 큰 점수를 얻으세요",
+      "statsActivePlayers": "활성 플레이어 수",
+      "statsFixturesPredicted": "예상 경기 수",
+      "statsTotalPredictions": "총 예측"
+    },
+    "Stats": {
+      "activePlayers": "활성 플레이어 수",
+      "fixturesPredicted": "예상 경기 수",
+      "totalPredictions": "총 예측"
+    }
+  },
+  "Layout": {
+    "MarketingFooter": {
+      "company": {
+        "links": {
+          "about": {
+            "title": "소개"
+          },
+          "privacy": {
+            "title": "개인 정보"
+          },
+          "terms": {
+            "title": "용어"
+          }
+        },
+        "title": "회사 "
+      },
+      "resources": {
+        "links": {
+          "announcements": {
+            "title": "공지사항 "
+          }
+        },
+        "title": "리소스"
+      },
+      "tagline": "FutbolPi로 큰 점수를 획득하세요! Pi Network를 통해 예측하고, 경쟁하고, 승리하세요. 게임에 참여하여 연승 행진을 시작하세요! ⚽🏆🔥",
+      "tools": {
+        "links": {
+          "pi": {
+            "title": "Pi 네트워크에 가입하세요"
+          }
+        },
+        "title": "용구"
+      }
+    },
+    "MarketingHeader": {
+      "BrandName": {
+        "downloadSVG": "SVG 다운로드"
+      },
+      "LoginButton": {
+        "text": "지금 플레이하기"
+      },
+      "marketingMenuTitle": "메뉴"
+    },
+    "MarketingPages": {
+      "about": {
+        "description": "FutbolPi의 스토리, 미션, 흥미진진한 세계를 만나보세요!",
+        "title": "소개"
+      },
+      "predict": {
+        "description": "다가오는 경기를 살펴보고 진행 중인 리그와 컵에 대한 예측을 해보세요!",
+        "title": "예측하다"
+      },
+      "telegram": {
+        "description": "활발한 텔레그램 그룹에 참여하여 축구에 대해 토론하고, 예측을 공유하고, 동료 팬들과 소통하세요.",
+        "title": "전보"
+      }
+    }
+  },
+  "NotFoundPage": {
+    "backButton": "돌아가기",
+    "firstParagraph": "404 페이지를 찾을 수 없습니다.",
+    "homeButton": "홈페이지",
+    "secondParagraph": "찾으시는 페이지가 존재하지 않습니다.",
+    "title": " 아차! 문제가 발생했습니다."
+  },
+  "PageTitles": {
+    "About": {
+      "description": "FutbolPi의 스토리, 미션, 흥미진진한 세계를 만나보세요!",
+      "title": "소개"
+    },
+    "Appearance": {
+      "description": "사용자의 모양 설정입니다.",
+      "title": "외형"
+    },
+    "Competitions": {
+      "description": "이용 가능한 모든 대회 보기",
+      "title": "경쟁"
+    },
+    "Fixtures": {
+      "description": "모든 대회 일정을 확인하세요.",
+      "title": "비품"
+    },
+    "Leaderboard": {
+      "description": "최고의 플레이어 보기",
+      "title": "리더보드"
+    },
+    "Overview": {
+      "description": "모든 대회 보기",
+      "title": "개요"
+    },
+    "Predict": {
+      "description": "다가오는 경기를 탐색하고 활성 리그 및 컵에 대한 예측을 해보세요!",
+      "title": "예측하다"
+    },
+    "Settings": {
+      "description": "프로필 설정",
+      "title": "설정"
+    },
+    "Telegram": {
+      "description": "활발한 텔레그램 그룹에 참여하여 축구에 대해 토론하고, 예측을 공유하고, 동료 팬들과 소통하세요.",
+      "title": "전보"
+    },
+    "User": {
+      "description": "사용자의 프로필 설정입니다.",
+      "title": "사용자"
+    }
+  },
+  "Settings": {
+    "Appearance": {
+      "dark": "어두운",
+      "light": "빛",
+      "system": "체계"
+    },
+    "User": {
+      "points": "포인트들",
+      "predictions": "예측",
+      "username": "사용자 이름"
+    }
+  }
+}

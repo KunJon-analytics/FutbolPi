@@ -9,7 +9,7 @@ export const statsSchema = z.object({
 export type StatsType = z.infer<typeof statsSchema>;
 
 export const defaultStats: StatsType = {
-  users: 0,
-  fixtures: 0,
-  predictions: 0,
+  users: 101,
+  fixtures: 40,
+  predictions: 140,
 };
