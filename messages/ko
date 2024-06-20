@@ -1,0 +1,274 @@
+{
+  "Index": {
+    "Hero": {
+      "heroBadgeText": "Get Latest News",
+      "heroTitle": "Predict, Compete, Win: Score Big with FutbolPi",
+      "heroDescription": "Kick off the excitement! Invite friends and family to FutbolPi, the ultimate match prediction platform. Earn points, climb the leaderboard, and prove your football prowess. Ready to predict? 🚀⚽️",
+      "heroPrimaryBtnText": "Predict Matches",
+      "heroSecondaryBtnText": "Join Now ",
+      "statsTotalPredictions": "Total Predictions",
+      "statsFixturesPredicted": "Fixtures Predicted",
+      "statsActivePlayers": "Active Players",
+      "buttomCTADescription": "Invite your friends to FutbolPi and battle it out in match predictions. The more, the merrier! 🚀⚽️",
+      "buttomCTAPrimaryAction": "Invite Friends",
+      "buttomCTASecondaryAction": "Start Predicting"
+    },
+    "Stats": {
+      "totalPredictions": "Total Predictions",
+      "fixturesPredicted": "Fixtures Predicted",
+      "activePlayers": "Active Players"
+    },
+    "BottomCTA": {
+      "description": "Invite your friends to FutbolPi and battle it out in match predictions. The more, the merrier! 🚀⚽️",
+      "primaryAction": {
+        "label": "Invite Friends"
+      },
+      "secondaryAction": {
+        "label": "Start Predicting"
+      }
+    }
+  },
+  "Layout": {
+    "MarketingHeader": {
+      "BrandName": {
+        "downloadSVG": "Download SVG"
+      },
+      "LoginButton": {
+        "text": "Play Now"
+      },
+      "marketingMenuTitle": "Menu"
+    },
+    "MarketingFooter": {
+      "tagline": "Score big with FutbolPi! Predict, compete, and win – powered by Pi Network. Join the game and kick off your winning streak! ⚽🏆🔥",
+      "resources": {
+        "title": "Resources",
+        "links": {
+          "announcements": {
+            "title": "Announcements"
+          }
+        }
+      },
+      "company": {
+        "title": "Company",
+        "links": {
+          "about": {
+            "title": "About"
+          },
+          "terms": {
+            "title": "Terms"
+          },
+          "privacy": {
+            "title": "Privacy"
+          }
+        }
+      },
+      "tools": {
+        "title": "Tools",
+        "links": {
+          "pi": {
+            "title": "Join Pi Network"
+          }
+        }
+      }
+    },
+    "MarketingPages": {
+      "about": {
+        "title": "About",
+        "description": "Discover our story, mission, and the exciting world of FutbolPi!"
+      },
+      "predict": {
+        "title": "Predict",
+        "description": "Explore upcoming fixtures and make your predictions for active leagues and cups!"
+      },
+      "telegram": {
+        "title": "Telegram",
+        "description": "Join our lively Telegram group to discuss football, share predictions, and connect with fellow fans"
+      }
+    }
+  },
+  "NotFoundPage": {
+    "firstParagraph": "404 Page not found",
+    "secondParagraph": "The page you are looking for doesn't exist.",
+    "backButton": "Go Back",
+    "homeButton": "Home",
+    "title": " Oops, something went wrong."
+  },
+  "Auth": {
+    "Layout": {
+      "title": "Unlock the Game: Sign In with Pi Network",
+      "description": "Welcome to FutbolPi! To access our exclusive predictions and leaderboards, sign in using your Pi Network credentials via the Pi Browser. <br></br> <br></br> <pi>Join Pi Network</pi> and download the browser."
+    },
+    "LoginPage": {
+      "title": "Sign In",
+      "noPayments": "Get started now. No Pi payments required.",
+      "conditions": "By clicking continue, you agree to our <terms>Terms of Service</terms> and <privacy>Privacy Policy</privacy>.",
+      "LoginForm": {
+        "buttonText": "Sign in with Pi Wallet",
+        "successMessage": "You are successfully signed in"
+      }
+    }
+  },
+  "HelpCallOut": {
+    "title": "Need help?",
+    "description": "Let us know by joining our <telegram>Telegram</telegram>."
+  },
+  "CompetitionPage": {
+    "headerTitle": "Active Competitions",
+    "headerDescription": "Predict outcomes for top leagues and cups. Score big with FutbolPi!"
+  },
+  "DashboardLayout": {
+    "UserNav": {
+      "appearance": "Appearance",
+      "profile": "Profile"
+    },
+    "Pages": {
+      "Competitions": {
+        "title": "Competition"
+      },
+      "Settings": {
+        "title": "Settings"
+      }
+    },
+    "DataTableToolbar": {
+      "filterInput": "Filter names...",
+      "reset": "Reset"
+    }
+  },
+  "DataTable": {
+    "noResult": "No results.",
+    "Pagination": {
+      "rowsPerPage": "Rows per page",
+      "rowsFiltered": "row(s) filtered",
+      "page": "Page {pageIndex} of {pageCount}",
+      "firstPage": "Go to first page",
+      "previousPage": "Go to previous page",
+      "nextPage": "Go to next page",
+      "lastPage": "Go to last page"
+    },
+    "CompetitionsTable": {
+      "Header": {
+        "name": "Name",
+        "season": "Season",
+        "created": "Created"
+      }
+    },
+    "DefaultTable": {
+      "Header": {
+        "username": "Username",
+        "points": "Points",
+        "round": "Round",
+        "homeTeam": "Home Team",
+        "awayTeam": "Away Team",
+        "kickoff": "Kickoff"
+      }
+    }
+  },
+  "PageTitles": {
+    "Appearance": {
+      "title": "Appearance",
+      "description": "Appearance settings for the user."
+    },
+    "User": {
+      "title": "User",
+      "description": "Profile settings for the user."
+    },
+    "Overview": {
+      "title": "Overview",
+      "description": "View all competitions"
+    },
+    "Leaderboard": {
+      "title": "Leaderboard",
+      "description": "View top players"
+    },
+    "Fixtures": {
+      "title": "Fixtures",
+      "description": "View all competition fixtures."
+    },
+    "Competitions": {
+      "title": "Competitions",
+      "description": "See all available competitions"
+    },
+    "About": {
+      "title": "About",
+      "description": "Discover our story, mission, and the exciting world of FutbolPi!"
+    },
+    "Telegram": {
+      "title": "Telegram",
+      "description": "Join our lively Telegram group to discuss football, share predictions, and connect with fellow fans"
+    },
+    "Predict": {
+      "title": "Predict",
+      "description": "Explore upcoming fixtures and make your predictions for active leagues and cups!"
+    },
+    "Settings": {
+      "title": "Settings",
+      "description": "Your profile settings"
+    }
+  },
+  "CompetitionDetail": {
+    "Overview": {
+      "teams": "teams",
+      "predictions": "predictions",
+      "scheduled": "scheduled fixtures",
+      "players": "players",
+      "leaderboardLink": "Start making predictions in the <action>competition fixtures</action>",
+      "finished": "finished fixtures"
+    },
+    "Leaderboard": {
+      "fixturesLink": "On the leaderboard, every prediction counts! Want to climb higher? <action>Make your predictions</action> now."
+    },
+    "Fixtures": {
+      "Status": {
+        "ALL": "All Fixtures",
+        "COMPLETED": "Completed Fixtures",
+        "NOT_STARTED": "Scheduled Fixtures"
+      },
+      "leaderboardLink": "Click on fixtures to predict or view. Check <action>leaderboard</action> too!",
+      "FixtureDetailTabs": {
+        "yourPrediction": "Your Prediction",
+        "makePrediction": "Make Prediction",
+        "errorMessage": "Something went wrong",
+        "networkError": "Network response was not ok",
+        "fixture": "Fixture"
+      },
+      "TabsDetailTable": {
+        "predictionTableCaption": "Your Prediction Detail",
+        "fixtureTableCaption": "Fixture Detail",
+        "key": "Key",
+        "value": "Value",
+        "round": "Round",
+        "teams": "Teams",
+        "realScores": "Real Scores",
+        "scores": "Scores",
+        "predictedScores": "Predicted Scores",
+        "kickoff": "Kickoff",
+        "status": "Status",
+        "pointsWon": "Points Won"
+      },
+      "PredictionForm": {
+        "homeTeam": "Home Team",
+        "awayTeam": "Away Team",
+        "allowed": "Allowed",
+        "confirm": "Confirm",
+        "notAllowed": "Not Allowed",
+        "canPredict": "Can Predict?"
+      }
+    }
+  },
+  "Settings": {
+    "User": {
+      "username": "Username",
+      "predictions": "Predictions",
+      "points": "Points"
+    },
+    "Appearance": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    }
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, zh {🇨🇳 Chinese} en {🇺🇸 English} other {Unknown}}"
+  }
+}
