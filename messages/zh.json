@@ -206,6 +206,10 @@
       }
     }
   },
+  "LocaleSwitcher": {
+    "label": "改变语言",
+    "locale": "{locale, select, zh {🇨🇳 中文} en {🇺🇸 英语} other {未知}}"
+  },
   "NotFoundPage": {
     "backButton": "返回 ",
     "firstParagraph": "404页面不存在 ",

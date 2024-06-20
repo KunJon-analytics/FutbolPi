@@ -11,6 +11,7 @@ import { BrandName } from "./brand-name";
 import { LoginButton } from "./login-button";
 import { MarketingMenu } from "./marketing-menu";
 import { Button } from "../ui/button";
+import LocaleSwitcher from "./locale/locale-switcher";
 
 interface Props {
   className?: string;
@@ -50,6 +51,7 @@ export function MarketingHeader({ className }: Props) {
         <div className="block md:hidden">
           <MarketingMenu />
         </div>
+        <LocaleSwitcher />
         <LoginButton />
       </div>
     </header>

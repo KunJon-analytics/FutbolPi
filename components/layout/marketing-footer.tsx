@@ -48,7 +48,7 @@ export function MarketingFooter({ className }: Props) {
             <p className="font-semibold text-foreground">
               {t("company.title")}
             </p>
-            <FooterLink href="/about" label="About" />
+            <FooterLink href="/about" label={t("company.links.about.title")} />
             {/* <FooterLink href="/changelog" label="Changelog" /> */}
             <FooterLink
               href="/legal/terms"
