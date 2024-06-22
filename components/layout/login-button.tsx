@@ -9,11 +9,15 @@ import { Link, useRouter } from "@/intl/navigation";
 import { Button, ButtonProps } from "../ui/button";
 import useCurrentSession from "../providers/session-provider";
 
-type LoginButtonProps = ButtonProps & { redirectTo?: string };
+type LoginButtonProps = ButtonProps & {
+  redirectTo?: string;
+  buttonText?: string;
+};
 
 export function LoginButton({
   className,
   redirectTo,
+  buttonText,
   ...props
 }: LoginButtonProps) {
   const t = useTranslations("Layout.MarketingHeader.LoginButton");
@@ -45,7 +49,7 @@ export function LoginButton({
       onClick={onClick}
       disabled={isPending}
     >
-      {size === "icon" ? <LogIn /> : t("text")}
+      {size === "icon" ? <LogIn /> : buttonText}
     </Button>
   );
 }

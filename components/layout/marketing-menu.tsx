@@ -75,7 +75,11 @@ export function MarketingMenu() {
                 </li>
               ))}
             </ul>
-            <LoginButton variant="outline" redirectTo="/app/competitions" />
+            <LoginButton
+              buttonText={pagesTranslation("signIn")}
+              variant="outline"
+              redirectTo="/app/competitions"
+            />
           </div>
         </div>
       </SheetContent>

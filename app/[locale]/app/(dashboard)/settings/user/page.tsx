@@ -40,7 +40,7 @@ export default function UserPage() {
   if (!canFetch) {
     return (
       <div className="flex items-center justify-center">
-        <LoginButton />
+        <LoginButton buttonText={t("signIn")} />
       </div>
     );
   }
