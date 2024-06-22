@@ -26,6 +26,17 @@
       "secondaryAction": {
         "label": "Start Predicting"
       }
+    },
+    "TopBallers": {
+      "title": "FutbolPi Legends: Hall of Fame",
+      "description": "Discover the all-time top FutbolPi predictors! 🏆 These legends have mastered the art of match predictions, earning the highest points ever recorded. Will your name join theirs? Play now and aim for the leaderboard!",
+      "ctaButton": "Play Now",
+      "Table": {
+        "caption": "🌟 Join the ranks! Predict matches, earn points, and etch your name in FutbolPi history!",
+        "username": "Username",
+        "points": "Points",
+        "predictions": "Predictions"
+      }
     }
   },
   "Layout": {
@@ -83,7 +94,8 @@
       "telegram": {
         "title": "Telegram",
         "description": "Join our lively Telegram group to discuss football, share predictions, and connect with fellow fans"
-      }
+      },
+      "signIn": "Sign In"
     }
   },
   "NotFoundPage": {
@@ -229,7 +241,8 @@
         "makePrediction": "Make Prediction",
         "errorMessage": "Something went wrong",
         "networkError": "Network response was not ok",
-        "fixture": "Fixture"
+        "fixture": "Fixture",
+        "signIn": "Sign in to Predict"
       },
       "TabsDetailTable": {
         "predictionTableCaption": "Your Prediction Detail",
@@ -259,7 +272,8 @@
     "User": {
       "username": "Username",
       "predictions": "Predictions",
-      "points": "Points"
+      "points": "Points",
+      "signIn": "Sign in to view Profile"
     },
     "Appearance": {
       "light": "Light",
