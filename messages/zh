@@ -1,274 +1,274 @@
 {
   "Index": {
     "Hero": {
-      "heroBadgeText": "Get Latest News",
-      "heroTitle": "Predict, Compete, Win: Score Big with FutbolPi",
-      "heroDescription": "Kick off the excitement! Invite friends and family to FutbolPi, the ultimate match prediction platform. Earn points, climb the leaderboard, and prove your football prowess. Ready to predict? 🚀⚽️",
-      "heroPrimaryBtnText": "Predict Matches",
-      "heroSecondaryBtnText": "Join Now ",
-      "statsTotalPredictions": "Total Predictions",
-      "statsFixturesPredicted": "Fixtures Predicted",
-      "statsActivePlayers": "Active Players",
-      "buttomCTADescription": "Invite your friends to FutbolPi and battle it out in match predictions. The more, the merrier! 🚀⚽️",
-      "buttomCTAPrimaryAction": "Invite Friends",
-      "buttomCTASecondaryAction": "Start Predicting"
+      "heroBadgeText": "获取我们的最新消息！ ",
+      "heroTitle": "预测、竞争、获胜：使用 FutbolPi 获得大分 ",
+      "heroDescription": "开启激动人心的时刻！邀请亲朋好友加入终极比赛预测平台FutbolPi。赚取积分，攀登排行榜，证明您的足球实力。准备好预测了吗？ 🚀⚽️ ",
+      "heroPrimaryBtnText": "预测比赛 ",
+      "heroSecondaryBtnText": "立即加入  ",
+      "statsTotalPredictions": "预测总数 ",
+      "statsFixturesPredicted": "足球比赛总数",
+      "statsActivePlayers": "只限活跃用户 ",
+      "buttomCTADescription": "邀请您的朋友加入 FutbolPi 并在足球预测比赛中相互竞争。多多益善！ 🚀⚽️",
+      "buttomCTAPrimaryAction": "邀请朋友 ",
+      "buttomCTASecondaryAction": "开始预测 "
     },
     "Stats": {
-      "totalPredictions": "Total Predictions",
-      "fixturesPredicted": "Fixtures Predicted",
-      "activePlayers": "Active Players"
+      "totalPredictions": "预测总数",
+      "fixturesPredicted": "足球比赛总数",
+      "activePlayers": "只限活跃用户 "
     },
     "BottomCTA": {
-      "description": "Invite your friends to FutbolPi and battle it out in match predictions. The more, the merrier! 🚀⚽️",
+      "description": "邀请您的朋友加入 FutbolPi 并参与足球比赛预测。多多益善！ 🚀⚽️",
       "primaryAction": {
-        "label": "Invite Friends"
+        "label": "邀请朋友 "
       },
       "secondaryAction": {
-        "label": "Start Predicting"
+        "label": "开始预测 "
       }
     }
   },
   "Layout": {
     "MarketingHeader": {
       "BrandName": {
-        "downloadSVG": "Download SVG"
+        "downloadSVG": "下载 SVG "
       },
       "LoginButton": {
-        "text": "Play Now"
+        "text": "现在播放 "
       },
-      "marketingMenuTitle": "Menu"
+      "marketingMenuTitle": "菜单 "
     },
     "MarketingFooter": {
-      "tagline": "Score big with FutbolPi! Predict, compete, and win – powered by Pi Network. Join the game and kick off your winning streak! ⚽🏆🔥",
+      "tagline": "使用FutbolPi获得高分！预测、竞争和取胜–由Pi Network提供支持。加入游戏，开启连胜之旅！ ⚽🏆🔥 ",
       "resources": {
-        "title": "Resources",
+        "title": "资源 ",
         "links": {
           "announcements": {
-            "title": "Announcements"
+            "title": "公告 "
           }
         }
       },
       "company": {
-        "title": "Company",
+        "title": "公司 ",
         "links": {
           "about": {
-            "title": "About"
+            "title": "关于 "
           },
           "terms": {
-            "title": "Terms"
+            "title": "条款 "
           },
           "privacy": {
-            "title": "Privacy"
+            "title": "隐私 "
           }
         }
       },
       "tools": {
-        "title": "Tools",
+        "title": "工具 ",
         "links": {
           "pi": {
-            "title": "Join Pi Network"
+            "title": "加入Pi网络 "
           }
         }
       }
     },
     "MarketingPages": {
       "about": {
-        "title": "About",
-        "description": "Discover our story, mission, and the exciting world of FutbolPi!"
+        "title": "关于 ",
+        "description": "探索我们的故事、使命和激动人心的 FutbolPi 世界！ "
       },
       "predict": {
-        "title": "Predict",
-        "description": "Explore upcoming fixtures and make your predictions for active leagues and cups!"
+        "title": "预测 ",
+        "description": "探索即将到来的比赛并对活跃的联赛和杯赛做出预测！ "
       },
       "telegram": {
-        "title": "Telegram",
-        "description": "Join our lively Telegram group to discuss football, share predictions, and connect with fellow fans"
+        "title": "电报 ",
+        "description": "加入我们热闹的电报群组，讨论足球，分享预测，并与其他球迷交流 "
       }
     }
   },
   "NotFoundPage": {
-    "firstParagraph": "404 Page not found",
-    "secondParagraph": "The page you are looking for doesn't exist.",
-    "backButton": "Go Back",
-    "homeButton": "Home",
-    "title": " Oops, something went wrong."
+    "firstParagraph": "404页面不存在 ",
+    "secondParagraph": "很抱歉，您找的网页不存在。 ",
+    "backButton": "返回 ",
+    "homeButton": "首页 ",
+    "title": " 哎呀!出事了 "
   },
   "Auth": {
     "Layout": {
-      "title": "Unlock the Game: Sign In with Pi Network",
-      "description": "Welcome to FutbolPi! To access our exclusive predictions and leaderboards, sign in using your Pi Network credentials via the Pi Browser. <br></br> <br></br> <pi>Join Pi Network</pi> and download the browser."
+      "title": "解锁游戏：使用Pi Network登录",
+      "description": "欢迎来到FutbolPi ！要访问我们的独家预测和排行榜，请通过Pi浏览器使用您的Pi网络凭据登录。 <br></br> <br></br> <pi>加入Pi Network</pi> 并下载浏览器。"
     },
     "LoginPage": {
-      "title": "Sign In",
-      "noPayments": "Get started now. No Pi payments required.",
-      "conditions": "By clicking continue, you agree to our <terms>Terms of Service</terms> and <privacy>Privacy Policy</privacy>.",
+      "title": "登录 ",
+      "noPayments": "立即开始。无需支付Pi。 ",
+      "conditions": "单击继续即表示您同意我们的 <terms>服务条款</terms> 和 <privacy>隐私政策</privacy>。 ",
       "LoginForm": {
-        "buttonText": "Sign in with Pi Wallet",
-        "successMessage": "You are successfully signed in"
+        "buttonText": "使用 Pi 钱包登录 ",
+        "successMessage": "您已成功登录 "
       }
     }
   },
   "HelpCallOut": {
-    "title": "Need help?",
-    "description": "Let us know by joining our <telegram>Telegram</telegram>."
+    "title": "需要帮忙？ ",
+    "description": "通过 <telegram>Telegram</telegram> 告诉我们。"
   },
   "CompetitionPage": {
-    "headerTitle": "Active Competitions",
-    "headerDescription": "Predict outcomes for top leagues and cups. Score big with FutbolPi!"
+    "headerTitle": "活跃的比赛 ",
+    "headerDescription": "预测顶级联赛和杯赛的结果。使用FutbolPi获得高分！ "
   },
   "DashboardLayout": {
     "UserNav": {
-      "appearance": "Appearance",
-      "profile": "Profile"
+      "appearance": "外貌 ",
+      "profile": "用户信息"
     },
     "Pages": {
       "Competitions": {
-        "title": "Competition"
+        "title": "竞赛 "
       },
       "Settings": {
-        "title": "Settings"
+        "title": "设置 "
       }
     },
     "DataTableToolbar": {
-      "filterInput": "Filter names...",
-      "reset": "Reset"
+      "filterInput": "过滤器名称... ",
+      "reset": "重置 "
     }
   },
   "DataTable": {
-    "noResult": "No results.",
+    "noResult": "无结果。 ",
     "Pagination": {
-      "rowsPerPage": "Rows per page",
-      "rowsFiltered": "row(s) filtered",
-      "page": "Page {pageIndex} of {pageCount}",
-      "firstPage": "Go to first page",
-      "previousPage": "Go to previous page",
-      "nextPage": "Go to next page",
-      "lastPage": "Go to last page"
+      "rowsPerPage": "每页行数 ",
+      "rowsFiltered": "已过滤的行 ",
+      "page": "第 {pageIndex} 页，共 {pageCount} 页 ",
+      "firstPage": "转到第一页 ",
+      "previousPage": "转到上一页 ",
+      "nextPage": "转到下一页 ",
+      "lastPage": "转到最后一页 "
     },
     "CompetitionsTable": {
       "Header": {
-        "name": "Name",
-        "season": "Season",
-        "created": "Created"
+        "name": "姓名 ",
+        "season": "季节 ",
+        "created": "已创建 "
       }
     },
     "DefaultTable": {
       "Header": {
-        "username": "Username",
-        "points": "Points",
-        "round": "Round",
-        "homeTeam": "Home Team",
-        "awayTeam": "Away Team",
-        "kickoff": "Kickoff"
+        "username": "用户名 ",
+        "points": "点数 ",
+        "round": "圆形的 ",
+        "homeTeam": "主队 ",
+        "awayTeam": "客队 ",
+        "kickoff": "开球 "
       }
     }
   },
   "PageTitles": {
     "Appearance": {
-      "title": "Appearance",
-      "description": "Appearance settings for the user."
+      "title": "外貌 ",
+      "description": "用户的外观设置。 "
     },
     "User": {
-      "title": "User",
-      "description": "Profile settings for the user."
+      "title": "用户 ",
+      "description": "用户的配置文件设置。 "
     },
     "Overview": {
-      "title": "Overview",
-      "description": "View all competitions"
+      "title": "概述 ",
+      "description": "查看所有联赛"
     },
     "Leaderboard": {
-      "title": "Leaderboard",
-      "description": "View top players"
+      "title": "排行榜 ",
+      "description": "查看顶级球员 "
     },
     "Fixtures": {
-      "title": "Fixtures",
-      "description": "View all competition fixtures."
+      "title": "固定装置 ",
+      "description": "查看所有比赛赛程。 "
     },
     "Competitions": {
-      "title": "Competitions",
-      "description": "See all available competitions"
+      "title": "比赛 ",
+      "description": "查看所有可用的比赛 "
     },
     "About": {
-      "title": "About",
-      "description": "Discover our story, mission, and the exciting world of FutbolPi!"
+      "title": "关于 ",
+      "description": "探索我们的故事、使命和激动人心的 FutbolPi 世界！ "
     },
     "Telegram": {
-      "title": "Telegram",
-      "description": "Join our lively Telegram group to discuss football, share predictions, and connect with fellow fans"
+      "title": "电报 ",
+      "description": "加入我们热闹的电报群组，讨论足球，分享预测，并与其他球迷交流 "
     },
     "Predict": {
-      "title": "Predict",
-      "description": "Explore upcoming fixtures and make your predictions for active leagues and cups!"
+      "title": "预测 ",
+      "description": "探索即将到来的比赛并对活跃的联赛和杯赛做出预测！ "
     },
     "Settings": {
-      "title": "Settings",
-      "description": "Your profile settings"
+      "title": "设置 ",
+      "description": "您的个人资料设置 "
     }
   },
   "CompetitionDetail": {
     "Overview": {
-      "teams": "teams",
-      "predictions": "predictions",
-      "scheduled": "scheduled fixtures",
-      "players": "players",
-      "leaderboardLink": "Start making predictions in the <action>competition fixtures</action>",
-      "finished": "finished fixtures"
+      "teams": "团队总数",
+      "predictions": "总预测",
+      "scheduled": "未来的游戏",
+      "players": "玩家总数",
+      "leaderboardLink": "开始做出预测 <action>比赛赛程</action> ",
+      "finished": "已完成的游戏 "
     },
     "Leaderboard": {
-      "fixturesLink": "On the leaderboard, every prediction counts! Want to climb higher? <action>Make your predictions</action> now."
+      "fixturesLink": "在排行榜上，每一个预测都很重要！ <action>做出你的预测</action> 现在。"
     },
     "Fixtures": {
       "Status": {
-        "ALL": "All Fixtures",
-        "COMPLETED": "Completed Fixtures",
-        "NOT_STARTED": "Scheduled Fixtures"
+        "ALL": "所有赛程 ",
+        "COMPLETED": "已完成的赛程 ",
+        "NOT_STARTED": "未来的游戏"
       },
-      "leaderboardLink": "Click on fixtures to predict or view. Check <action>leaderboard</action> too!",
+      "leaderboardLink": "单击灯具以预测或查看。检查 <action>排行榜</action> 也 ",
       "FixtureDetailTabs": {
-        "yourPrediction": "Your Prediction",
-        "makePrediction": "Make Prediction",
-        "errorMessage": "Something went wrong",
-        "networkError": "Network response was not ok",
-        "fixture": "Fixture"
+        "yourPrediction": "您的预测",
+        "makePrediction": "做出预测",
+        "errorMessage": "出了些问题 ",
+        "networkError": "网络响应不好 ",
+        "fixture": "夹具 "
       },
       "TabsDetailTable": {
-        "predictionTableCaption": "Your Prediction Detail",
-        "fixtureTableCaption": "Fixture Detail",
-        "key": "Key",
-        "value": "Value",
-        "round": "Round",
-        "teams": "Teams",
-        "realScores": "Real Scores",
-        "scores": "Scores",
-        "predictedScores": "Predicted Scores",
-        "kickoff": "Kickoff",
-        "status": "Status",
-        "pointsWon": "Points Won"
+        "predictionTableCaption": "您的预测详细信息 ",
+        "fixtureTableCaption": "夹具细节 ",
+        "key": "密钥 ",
+        "value": "价值 ",
+        "round": "圆形的 ",
+        "teams": "团队 ",
+        "realScores": "真实分数 ",
+        "scores": "足球比分",
+        "predictedScores": "预测分数 ",
+        "kickoff": "开球 ",
+        "status": "地位 ",
+        "pointsWon": "赢得的积分 "
       },
       "PredictionForm": {
-        "homeTeam": "Home Team",
-        "awayTeam": "Away Team",
-        "allowed": "Allowed",
-        "confirm": "Confirm",
-        "notAllowed": "Not Allowed",
-        "canPredict": "Can Predict?"
+        "homeTeam": "主队 ",
+        "awayTeam": "客队 ",
+        "allowed": "前进 ",
+        "confirm": "确认 ",
+        "notAllowed": "不允许 ",
+        "canPredict": "可以预 "
       }
     }
   },
   "Settings": {
     "User": {
-      "username": "Username",
-      "predictions": "Predictions",
-      "points": "Points"
+      "username": "用户名 ",
+      "predictions": "你的预测",
+      "points": "点数 "
     },
     "Appearance": {
-      "light": "Light",
-      "dark": "Dark",
-      "system": "System"
+      "light": "光 ",
+      "dark": "深色 ",
+      "system": "系统 "
     }
   },
   "LocaleSwitcher": {
-    "label": "Change language",
-    "locale": "{locale, select, zh {🇨🇳 Chinese} en {🇺🇸 English} other {Unknown}}"
+    "label": "改变语言",
+    "locale": "{locale, select, zh {🇨🇳 中文} en {🇺🇸 英语} other {未知}}"
   }
 }
