@@ -41,27 +41,45 @@
   },
   "Layout": {
     "MarketingHeader": {
-      "BrandName": { "downloadSVG": "Download SVG" },
-      "LoginButton": { "text": "Play Now" },
+      "BrandName": {
+        "downloadSVG": "Download SVG"
+      },
+      "LoginButton": {
+        "text": "Play Now"
+      },
       "marketingMenuTitle": "Menu"
     },
     "MarketingFooter": {
       "tagline": "Score big with FutbolPi! Predict, compete, and win – powered by Pi Network. Join the game and kick off your winning streak! ⚽🏆🔥",
       "resources": {
         "title": "Resources",
-        "links": { "announcements": { "title": "Announcements" } }
+        "links": {
+          "announcements": {
+            "title": "Announcements"
+          }
+        }
       },
       "company": {
         "title": "Company",
         "links": {
-          "about": { "title": "About" },
-          "terms": { "title": "Terms" },
-          "privacy": { "title": "Privacy" }
+          "about": {
+            "title": "About"
+          },
+          "terms": {
+            "title": "Terms"
+          },
+          "privacy": {
+            "title": "Privacy"
+          }
         }
       },
       "tools": {
         "title": "Tools",
-        "links": { "pi": { "title": "Join Pi Network" } }
+        "links": {
+          "pi": {
+            "title": "Join Pi Network"
+          }
+        }
       }
     },
     "MarketingPages": {
@@ -111,12 +129,22 @@
     "headerDescription": "Predict outcomes for top leagues and cups. Score big with FutbolPi!"
   },
   "DashboardLayout": {
-    "UserNav": { "appearance": "Appearance", "profile": "Profile" },
-    "Pages": {
-      "Competitions": { "title": "Competition" },
-      "Settings": { "title": "Settings" }
+    "UserNav": {
+      "appearance": "Appearance",
+      "profile": "Profile"
     },
-    "DataTableToolbar": { "filterInput": "Filter names...", "reset": "Reset" }
+    "Pages": {
+      "Competitions": {
+        "title": "Competition"
+      },
+      "Settings": {
+        "title": "Settings"
+      }
+    },
+    "DataTableToolbar": {
+      "filterInput": "Filter names...",
+      "reset": "Reset"
+    }
   },
   "DataTable": {
     "noResult": "No results.",
@@ -130,7 +158,11 @@
       "lastPage": "Go to last page"
     },
     "CompetitionsTable": {
-      "Header": { "name": "Name", "season": "Season", "created": "Created" }
+      "Header": {
+        "name": "Name",
+        "season": "Season",
+        "created": "Created"
+      }
     },
     "DefaultTable": {
       "Header": {
@@ -152,7 +184,10 @@
       "title": "User",
       "description": "Profile settings for the user."
     },
-    "Overview": { "title": "Overview", "description": "View all competitions" },
+    "Overview": {
+      "title": "Overview",
+      "description": "View all competitions"
+    },
     "Leaderboard": {
       "title": "Leaderboard",
       "description": "View top players"
@@ -177,7 +212,10 @@
       "title": "Predict",
       "description": "Explore upcoming fixtures and make your predictions for active leagues and cups!"
     },
-    "Settings": { "title": "Settings", "description": "Your profile settings" }
+    "Settings": {
+      "title": "Settings",
+      "description": "Your profile settings"
+    }
   },
   "CompetitionDetail": {
     "Overview": {
@@ -237,7 +275,11 @@
       "points": "Points",
       "signIn": "Sign in to view Profile"
     },
-    "Appearance": { "light": "Light", "dark": "Dark", "system": "System" }
+    "Appearance": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    }
   },
   "LocaleSwitcher": {
     "label": "Change language",
