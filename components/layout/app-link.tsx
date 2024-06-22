@@ -1,12 +1,14 @@
 "use client";
 
 import { cva } from "class-variance-authority";
-import Link from "next/link";
-import type { LinkProps } from "next/link";
 
 import { cn } from "@/lib/utils";
+import { Link } from "@/intl/navigation";
+import type { pathnames } from "@/intl/config";
+
 import type { ValidIcon } from "../icons";
 import { Icons } from "../icons";
+import { ComponentProps } from "react";
 
 const linkVariants = cva(
   "text-muted-foreground group flex w-full min-w-[200px] items-center rounded-md border px-3 py-1",
@@ -21,10 +23,10 @@ const linkVariants = cva(
     defaultVariants: {
       variant: "default",
     },
-  },
+  }
 );
 
-interface AppLinkProps extends LinkProps {
+interface AppLinkProps {
   label: string;
   icon?: ValidIcon;
   className?: string;
@@ -32,7 +34,7 @@ interface AppLinkProps extends LinkProps {
   disabled?: boolean;
 }
 
-export function AppLink({
+export function AppLink<Pathname extends keyof typeof pathnames>({
   label,
   href,
   icon,
@@ -40,7 +42,7 @@ export function AppLink({
   className,
   active,
   ...props
-}: AppLinkProps) {
+}: ComponentProps<typeof Link<Pathname>> & AppLinkProps) {
   const Icon = icon && Icons[icon];
 
   const variant = disabled ? "disabled" : active ? "active" : "default";
