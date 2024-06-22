@@ -3,6 +3,7 @@
 import { Menu } from "lucide-react";
 import { usePathname } from "next/navigation";
 import * as React from "react";
+import { useLocale, useTranslations } from "next-intl";
 
 import { marketingPagesConfig } from "@/config/pages";
 import { socialsConfig } from "@/config/socials";
@@ -18,11 +19,11 @@ import {
   SheetTrigger,
 } from "../ui/sheet";
 import { Button } from "../ui/button";
-import { useTranslations } from "next-intl";
 
 export function MarketingMenu() {
   const [open, setOpen] = React.useState(false);
   const pathname = usePathname();
+  const locale = useLocale();
   const t = useTranslations("Layout.MarketingHeader");
   const pagesTranslation = useTranslations("Layout.MarketingPages");
 
@@ -58,7 +59,7 @@ export function MarketingMenu() {
               return (
                 <li key={href} className="w-full">
                   <AppLink
-                    href={href}
+                    href={`/${locale}/${href}`}
                     label={pagesTranslation(`${segment}.title`)}
                     active={isActive}
                     {...externalProps}
