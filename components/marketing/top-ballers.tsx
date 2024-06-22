@@ -80,8 +80,10 @@ const TopballersTable = async () => {
         {data.map((player) => (
           <TableRow key={player.username}>
             <TableCell className="font-medium">{player.username}</TableCell>
-            <TableCell>{player._count.username}</TableCell>
-            <TableCell className="text-right">{player._sum.points}</TableCell>
+            <TableCell>{player._sum.points}</TableCell>
+            <TableCell className="text-right">
+              {player._count.username}
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>
