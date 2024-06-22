@@ -1,10 +1,16 @@
 import { notFound } from "next/navigation";
 import * as React from "react";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 import { Metrics } from "@/components/competition-dashboard/metrics";
 import prisma from "@/lib/prisma";
 
-export default async function Page({ params }: { params: { id: string } }) {
+type Props = {
+  params: { locale: string; id: string };
+};
+
+export default async function Page({ params }: Props) {
+  unstable_setRequestLocale(params.locale);
   const id = params.id;
 
   const competition = await prisma.competition.findUnique({

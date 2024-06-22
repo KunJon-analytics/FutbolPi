@@ -10,14 +10,11 @@ import { LoadingAnimation } from "@/components/loading-animation";
 import { toastAction } from "@/lib/toast";
 import { Competition } from "@prisma/client";
 import {
-  deleteCompetition,
-  toggleActiveCompetition,
-} from "@/actions/competition";
-import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
+  DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import {
@@ -31,7 +28,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
 
 interface DataTableRowActionsProps {
   row: Row<Competition>;
@@ -46,7 +42,7 @@ export function DataTableRowActions({ row }: DataTableRowActionsProps) {
   async function onDelete() {
     startTransition(async () => {
       try {
-        await deleteCompetition(competition.id);
+        // await deleteCompetition(competition.id);
         toastAction("deleted");
         router.refresh();
         setAlertOpen(false);
@@ -61,7 +57,7 @@ export function DataTableRowActions({ row }: DataTableRowActionsProps) {
       try {
         // biome-ignore lint/correctness/noUnusedVariables: <explanation>
 
-        await toggleActiveCompetition(competition.id);
+        // await toggleActiveCompetition(competition.id);
         toastAction("success");
         router.refresh();
       } catch {
