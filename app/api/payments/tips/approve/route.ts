@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 
 import prisma from "@/lib/prisma";
 import { PaymentDTO } from "@/types";
-import { getSession } from "@/actions/session";
 import { PaymentDTOMemo } from "@/lib/pi/types";
 import platformAPIClient from "@/lib/pi/platform-api-client";
 import { siteConfig } from "@/config/site";

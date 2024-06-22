@@ -5,7 +5,6 @@ export const env = createEnv({
   server: {
     PI_PLATFORM_API_URL: z.string().url(),
     PI_API_KEY: z.string().min(1),
-    AUTH_SECRET: z.string().min(1),
     FOOTBALL_API_KEY: z.string().min(1),
     TELEGRAM_BOT_TOKEN: z.string().min(1),
     TELEGRAM_PRIVATE_CHANNEL: z.string().min(1),
@@ -23,7 +22,6 @@ export const env = createEnv({
     NEXT_PUBLIC_SUPPORT_EMAIL: process.env.NEXT_PUBLIC_SUPPORT_EMAIL,
     NEXT_PUBLIC_ADMIN_USERNAME: process.env.NEXT_PUBLIC_ADMIN_USERNAME,
     NODE_ENV: process.env.NODE_ENV,
-    AUTH_SECRET: process.env.AUTH_SECRET,
     // PI NETWORK
     PI_PLATFORM_API_URL: process.env.PI_PLATFORM_API_URL,
     PI_API_KEY: process.env.PI_API_KEY,
