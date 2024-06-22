@@ -1,274 +1,288 @@
 {
   "Index": {
     "Hero": {
-      "heroBadgeText": "Get Latest News",
-      "heroTitle": "Predict, Compete, Win: Score Big with FutbolPi",
-      "heroDescription": "Kick off the excitement! Invite friends and family to FutbolPi, the ultimate match prediction platform. Earn points, climb the leaderboard, and prove your football prowess. Ready to predict? 🚀⚽️",
-      "heroPrimaryBtnText": "Predict Matches",
-      "heroSecondaryBtnText": "Join Now ",
-      "statsTotalPredictions": "Total Predictions",
-      "statsFixturesPredicted": "Fixtures Predicted",
-      "statsActivePlayers": "Active Players",
-      "buttomCTADescription": "Invite your friends to FutbolPi and battle it out in match predictions. The more, the merrier! 🚀⚽️",
-      "buttomCTAPrimaryAction": "Invite Friends",
-      "buttomCTASecondaryAction": "Start Predicting"
+      "heroBadgeText": "최신 뉴스 받기",
+      "heroTitle": "예측하고, 경쟁하고, 승리하세요: FutbolPi로 큰 점수를 얻으세요",
+      "heroDescription": "흥분을 시작하세요! 최고의 경기 예측 플랫폼인 FutbolPi에 친구와 가족을 초대하세요. 포인트를 획득하고, 리더보드에 오르고, 축구 실력을 증명하세요. 예측할 준비가 되셨나요? 🚀⚽️",
+      "heroPrimaryBtnText": "경기 예측",
+      "heroSecondaryBtnText": "지금 가입하세요 ",
+      "statsTotalPredictions": "총 예측",
+      "statsFixturesPredicted": "예상 경기 수",
+      "statsActivePlayers": "활성 플레이어 수",
+      "buttomCTADescription": "친구를 FutbolPi에 초대하고 경기 예측을 통해 대결해 보세요. 많을수록 더 즐겁습니다! 🚀⚽️",
+      "buttomCTAPrimaryAction": "친구를 초대",
+      "buttomCTASecondaryAction": "예측 시작"
     },
     "Stats": {
-      "totalPredictions": "Total Predictions",
-      "fixturesPredicted": "Fixtures Predicted",
-      "activePlayers": "Active Players"
+      "totalPredictions": "총 예측",
+      "fixturesPredicted": "예상 경기 수",
+      "activePlayers": "활성 플레이어 수"
     },
     "BottomCTA": {
-      "description": "Invite your friends to FutbolPi and battle it out in match predictions. The more, the merrier! 🚀⚽️",
+      "description": "친구를 FutbolPi에 초대하고 경기 예측을 통해 대결해 보세요. 많을수록 더 즐겁습니다! 🚀⚽️",
       "primaryAction": {
-        "label": "Invite Friends"
+        "label": "친구를 초대"
       },
       "secondaryAction": {
-        "label": "Start Predicting"
+        "label": "예측 시작"
+      }
+    },
+    "TopBallers": {
+      "title": "FutbolPi Legends: 명예의 전당",
+      "description": "역대 최고의 FutbolPi 예측기를 찾아보세요! 🏆 이 전설들은 경기 예측 기술을 숙달하여 역대 최고 점수를 달성했습니다. 당신의 이름이 그들의 이름에 합류하게 될까요? 지금 플레이하고 리더보드를 목표로 해보세요!",
+      "ctaButton": "지금 플레이하기",
+      "Table": {
+        "caption": "🌟 대열에 합류하세요! 경기를 예측하고, 포인트를 획득하고, FutbolPi 기록에 이름을 적어보세요!",
+        "username": "사용자 이름",
+        "points": "포인트들",
+        "predictions": "예측"
       }
     }
   },
   "Layout": {
     "MarketingHeader": {
       "BrandName": {
-        "downloadSVG": "Download SVG"
+        "downloadSVG": "SVG 다운로드"
       },
       "LoginButton": {
-        "text": "Play Now"
+        "text": "지금 플레이하기"
       },
-      "marketingMenuTitle": "Menu"
+      "marketingMenuTitle": "메뉴"
     },
     "MarketingFooter": {
-      "tagline": "Score big with FutbolPi! Predict, compete, and win – powered by Pi Network. Join the game and kick off your winning streak! ⚽🏆🔥",
+      "tagline": "FutbolPi로 큰 점수를 획득하세요! Pi Network를 통해 예측하고, 경쟁하고, 승리하세요. 게임에 참여하여 연승 행진을 시작하세요! ⚽🏆🔥",
       "resources": {
-        "title": "Resources",
+        "title": "리소스",
         "links": {
           "announcements": {
-            "title": "Announcements"
+            "title": "공지사항 "
           }
         }
       },
       "company": {
-        "title": "Company",
+        "title": "회사 ",
         "links": {
           "about": {
-            "title": "About"
+            "title": "소개"
           },
           "terms": {
-            "title": "Terms"
+            "title": "용어"
           },
           "privacy": {
-            "title": "Privacy"
+            "title": "개인 정보"
           }
         }
       },
       "tools": {
-        "title": "Tools",
+        "title": "용구",
         "links": {
           "pi": {
-            "title": "Join Pi Network"
+            "title": "Pi 네트워크에 가입하세요"
           }
         }
       }
     },
     "MarketingPages": {
       "about": {
-        "title": "About",
-        "description": "Discover our story, mission, and the exciting world of FutbolPi!"
+        "title": "소개",
+        "description": "FutbolPi의 스토리, 미션, 흥미진진한 세계를 만나보세요!"
       },
       "predict": {
-        "title": "Predict",
-        "description": "Explore upcoming fixtures and make your predictions for active leagues and cups!"
+        "title": "예측하다",
+        "description": "다가오는 경기를 살펴보고 진행 중인 리그와 컵에 대한 예측을 해보세요!"
       },
       "telegram": {
-        "title": "Telegram",
-        "description": "Join our lively Telegram group to discuss football, share predictions, and connect with fellow fans"
-      }
+        "title": "전보",
+        "description": "활발한 텔레그램 그룹에 참여하여 축구에 대해 토론하고, 예측을 공유하고, 동료 팬들과 소통하세요."
+      },
+      "signIn": "로그인"
     }
   },
   "NotFoundPage": {
-    "firstParagraph": "404 Page not found",
-    "secondParagraph": "The page you are looking for doesn't exist.",
-    "backButton": "Go Back",
-    "homeButton": "Home",
-    "title": " Oops, something went wrong."
+    "firstParagraph": "404 페이지를 찾을 수 없습니다.",
+    "secondParagraph": "찾으시는 페이지가 존재하지 않습니다.",
+    "backButton": "돌아가기",
+    "homeButton": "홈페이지",
+    "title": " 아차! 문제가 발생했습니다."
   },
   "Auth": {
     "Layout": {
-      "title": "Unlock the Game: Sign In with Pi Network",
-      "description": "Welcome to FutbolPi! To access our exclusive predictions and leaderboards, sign in using your Pi Network credentials via the Pi Browser. <br></br> <br></br> <pi>Join Pi Network</pi> and download the browser."
+      "title": "게임 잠금 해제: Pi Network로 로그인",
+      "description": "FutbolPi에 오신 것을 환영합니다! 독점 예측 및 순위표에 액세스하려면 Pi 브라우저를 통해 Pi 네트워크 자격 증명을 사용하여 로그인하세요. <br></br> <br></br> <pi>Pi 네트워크에 가입하세요</pi> 브라우저를 다운로드하세요."
     },
     "LoginPage": {
-      "title": "Sign In",
-      "noPayments": "Get started now. No Pi payments required.",
-      "conditions": "By clicking continue, you agree to our <terms>Terms of Service</terms> and <privacy>Privacy Policy</privacy>.",
+      "title": "로그인 ",
+      "noPayments": "지금 시작하세요. Pi 결제가 필요하지 않습니다. ",
+      "conditions": "'계속' 을 클릭하면 다음에 동의하는 것으로 간주됩니다. <terms>이용 약관</terms> 및 <privacy>개인 정보 보호 정책</privacy>.",
       "LoginForm": {
-        "buttonText": "Sign in with Pi Wallet",
-        "successMessage": "You are successfully signed in"
+        "buttonText": "Pi 지갑으로 로그인 ",
+        "successMessage": "성공적으로 로그인되었습니다 "
       }
     }
   },
   "HelpCallOut": {
-    "title": "Need help?",
-    "description": "Let us know by joining our <telegram>Telegram</telegram>."
+    "title": "도움이 필요하다?",
+    "description": "우리의 가입을 통해 알려주세요 <telegram>전보</telegram>."
   },
   "CompetitionPage": {
-    "headerTitle": "Active Competitions",
-    "headerDescription": "Predict outcomes for top leagues and cups. Score big with FutbolPi!"
+    "headerTitle": "활성화된 대회",
+    "headerDescription": "최고의 리그와 컵에 대한 결과를 예측합니다. FutbolPi로 큰 점수를 획득하세요!"
   },
   "DashboardLayout": {
     "UserNav": {
-      "appearance": "Appearance",
-      "profile": "Profile"
+      "appearance": "외형",
+      "profile": "프로필"
     },
     "Pages": {
       "Competitions": {
-        "title": "Competition"
+        "title": "경쟁"
       },
       "Settings": {
-        "title": "Settings"
+        "title": "설정"
       }
     },
     "DataTableToolbar": {
-      "filterInput": "Filter names...",
-      "reset": "Reset"
+      "filterInput": "이름 필터링...",
+      "reset": "초기화"
     }
   },
   "DataTable": {
-    "noResult": "No results.",
+    "noResult": "결과 없음.",
     "Pagination": {
-      "rowsPerPage": "Rows per page",
-      "rowsFiltered": "row(s) filtered",
-      "page": "Page {pageIndex} of {pageCount}",
-      "firstPage": "Go to first page",
-      "previousPage": "Go to previous page",
-      "nextPage": "Go to next page",
-      "lastPage": "Go to last page"
+      "rowsPerPage": "페이지당 행 수",
+      "rowsFiltered": "필터링된 행 수",
+      "page": "{pageCount} 페이지 중 {pageIndex} 페이지",
+      "firstPage": "첫 패이지로 이동하기",
+      "previousPage": "이전 페이지로 이동 ",
+      "nextPage": "다음 페이지로 이동",
+      "lastPage": "마지막 페이지로 이동 "
     },
     "CompetitionsTable": {
       "Header": {
-        "name": "Name",
-        "season": "Season",
-        "created": "Created"
+        "name": "이름",
+        "season": "계절",
+        "created": "생산 일"
       }
     },
     "DefaultTable": {
       "Header": {
-        "username": "Username",
-        "points": "Points",
-        "round": "Round",
-        "homeTeam": "Home Team",
-        "awayTeam": "Away Team",
-        "kickoff": "Kickoff"
+        "username": "사용자 이름",
+        "points": "포인트들",
+        "round": "라운드",
+        "homeTeam": "홈팀",
+        "awayTeam": "원정팀",
+        "kickoff": "킥오프"
       }
     }
   },
   "PageTitles": {
     "Appearance": {
-      "title": "Appearance",
-      "description": "Appearance settings for the user."
+      "title": "외형",
+      "description": "사용자의 모양 설정입니다."
     },
     "User": {
-      "title": "User",
-      "description": "Profile settings for the user."
+      "title": "사용자",
+      "description": "사용자의 프로필 설정입니다."
     },
     "Overview": {
-      "title": "Overview",
-      "description": "View all competitions"
+      "title": "개요",
+      "description": "모든 대회 보기"
     },
     "Leaderboard": {
-      "title": "Leaderboard",
-      "description": "View top players"
+      "title": "리더보드",
+      "description": "최고의 플레이어 보기"
     },
     "Fixtures": {
-      "title": "Fixtures",
-      "description": "View all competition fixtures."
+      "title": "비품",
+      "description": "모든 대회 일정을 확인하세요."
     },
     "Competitions": {
-      "title": "Competitions",
-      "description": "See all available competitions"
+      "title": "경쟁",
+      "description": "이용 가능한 모든 대회 보기"
     },
     "About": {
-      "title": "About",
-      "description": "Discover our story, mission, and the exciting world of FutbolPi!"
+      "title": "소개",
+      "description": "FutbolPi의 스토리, 미션, 흥미진진한 세계를 만나보세요!"
     },
     "Telegram": {
-      "title": "Telegram",
-      "description": "Join our lively Telegram group to discuss football, share predictions, and connect with fellow fans"
+      "title": "전보",
+      "description": "활발한 텔레그램 그룹에 참여하여 축구에 대해 토론하고, 예측을 공유하고, 동료 팬들과 소통하세요."
     },
     "Predict": {
-      "title": "Predict",
-      "description": "Explore upcoming fixtures and make your predictions for active leagues and cups!"
+      "title": "예측하다",
+      "description": "다가오는 경기를 탐색하고 활성 리그 및 컵에 대한 예측을 해보세요!"
     },
     "Settings": {
-      "title": "Settings",
-      "description": "Your profile settings"
+      "title": "설정",
+      "description": "프로필 설정"
     }
   },
   "CompetitionDetail": {
     "Overview": {
-      "teams": "teams",
-      "predictions": "predictions",
-      "scheduled": "scheduled fixtures",
-      "players": "players",
-      "leaderboardLink": "Start making predictions in the <action>competition fixtures</action>",
-      "finished": "finished fixtures"
+      "teams": "팀",
+      "predictions": "예측",
+      "scheduled": "예정된 비품",
+      "players": "플레이어",
+      "leaderboardLink": "에서 예측을 시작하세요. <action>대회 비품</action>",
+      "finished": "완성된 비품"
     },
     "Leaderboard": {
-      "fixturesLink": "On the leaderboard, every prediction counts! Want to climb higher? <action>Make your predictions</action> now."
+      "fixturesLink": "리더보드에는 모든 예측이 중요합니다! 더 높이 올라가고 싶으신가요? <action>예측하기</action> 지금."
     },
     "Fixtures": {
       "Status": {
-        "ALL": "All Fixtures",
-        "COMPLETED": "Completed Fixtures",
-        "NOT_STARTED": "Scheduled Fixtures"
+        "ALL": "모든 픽스쳐 ",
+        "COMPLETED": "완성된 비품",
+        "NOT_STARTED": "예정된 비품"
       },
-      "leaderboardLink": "Click on fixtures to predict or view. Check <action>leaderboard</action> too!",
+      "leaderboardLink": "예측하거나 보려면 픽스처를 클릭하십시오. 확인 <action>리더보드</action> 또한",
       "FixtureDetailTabs": {
-        "yourPrediction": "Your Prediction",
-        "makePrediction": "Make Prediction",
-        "errorMessage": "Something went wrong",
-        "networkError": "Network response was not ok",
-        "fixture": "Fixture"
+        "yourPrediction": "당신의 예측 ",
+        "makePrediction": "예측하기 ",
+        "errorMessage": "문제가 발생했습니다.",
+        "networkError": "네트워크 응답이 좋지 않았습니다. ",
+        "fixture": "고정 장치",
+        "signIn": "예측을 하려면 로그인하세요"
       },
       "TabsDetailTable": {
-        "predictionTableCaption": "Your Prediction Detail",
-        "fixtureTableCaption": "Fixture Detail",
-        "key": "Key",
-        "value": "Value",
-        "round": "Round",
-        "teams": "Teams",
-        "realScores": "Real Scores",
-        "scores": "Scores",
-        "predictedScores": "Predicted Scores",
-        "kickoff": "Kickoff",
-        "status": "Status",
-        "pointsWon": "Points Won"
+        "predictionTableCaption": "내 예측 세부 정보",
+        "fixtureTableCaption": "경기 세부정보",
+        "key": "키",
+        "value": "값",
+        "round": "둥근",
+        "teams": "팀",
+        "realScores": "실제 점수",
+        "scores": "점수",
+        "predictedScores": "예상 점수",
+        "kickoff": "킥오프",
+        "status": "상태",
+        "pointsWon": "획득한 포인트"
       },
       "PredictionForm": {
-        "homeTeam": "Home Team",
-        "awayTeam": "Away Team",
-        "allowed": "Allowed",
-        "confirm": "Confirm",
-        "notAllowed": "Not Allowed",
-        "canPredict": "Can Predict?"
+        "homeTeam": "홈팀 ",
+        "awayTeam": "원정팀",
+        "allowed": "허용된 ",
+        "confirm": "확인하다 ",
+        "notAllowed": "허용되지 않음",
+        "canPredict": "예측할 수 있나요? "
       }
     }
   },
   "Settings": {
     "User": {
-      "username": "Username",
-      "predictions": "Predictions",
-      "points": "Points"
+      "username": "사용자 이름",
+      "predictions": "예측",
+      "points": "포인트들",
+      "signIn": "프로필을 보려면 로그인하세요."
     },
     "Appearance": {
-      "light": "Light",
-      "dark": "Dark",
-      "system": "System"
+      "light": "빛",
+      "dark": "어두운",
+      "system": "체계"
     }
   },
   "LocaleSwitcher": {
-    "label": "Change language",
+    "label": "언어 변경",
     "locale": "{locale, select, zh {🇨🇳 Chinese} en {🇺🇸 English} other {Unknown}}"
   }
 }
