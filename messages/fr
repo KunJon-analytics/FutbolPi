@@ -283,6 +283,6 @@
   },
   "LocaleSwitcher": {
     "label": "Change language",
-    "locale": "{locale, select, zh {🇨🇳 Chinese} en {🇺🇸 English} other {Unknown}}"
+    "locale": "{locale, select, zh {🇨🇳 Chinese} en {🇺🇸 English} ko {🇰🇷 Korean} de {🇩🇪 Deutsch} vi {🇻🇳 Vietnamese}  other {Unknown}}"
   }
 }
