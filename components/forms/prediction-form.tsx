@@ -34,6 +34,7 @@ import {
   TableBody,
   TableCell,
 } from "../ui/table";
+import useCurrentSession from "../providers/session-provider";
 
 export function PredictionForm({
   defaultValues,
@@ -50,7 +51,11 @@ export function PredictionForm({
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const queryClient = useQueryClient();
-  const isAllowed = canPredict(fixture.timestamp);
+
+  const { session, status } = useCurrentSession();
+  const userAllowed = session.isLoggedIn && status === "success";
+
+  const isAllowed = canPredict(fixture.timestamp) && userAllowed;
 
   async function onSubmit(data: PredictionInsertSchema) {
     startTransition(async () => {
@@ -59,7 +64,7 @@ export function PredictionForm({
           toastAction("error");
           router.refresh();
         }
-        const result = await predict(data);
+        const result = await predict(data, session.id);
         if (result.success) {
           toastAction("saved");
           queryClient.invalidateQueries({

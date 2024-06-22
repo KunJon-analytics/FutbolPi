@@ -1,7 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { fromUnixTime, isFuture, subHours } from "date-fns";
-import * as z from "zod";
 
 import { env } from "@/env.mjs";
 import { FixtureOutcome } from "@prisma/client";
@@ -14,20 +13,6 @@ export function numberFormatter(value: number) {
   const formatter = Intl.NumberFormat("en", { notation: "compact" });
   return formatter.format(value);
 }
-
-export const sessionSchema = z.object({
-  username: z.string(),
-  isLoggedIn: z.boolean(),
-  id: z.string(),
-});
-
-export type SessionData = z.infer<typeof sessionSchema>;
-
-export const defaultSession: SessionData = {
-  username: "",
-  isLoggedIn: false,
-  id: "",
-};
 
 export function notEmpty<TValue>(
   value: TValue | null | undefined

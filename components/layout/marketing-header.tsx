@@ -52,7 +52,7 @@ export function MarketingHeader({ className }: Props) {
           <MarketingMenu />
         </div>
         <LocaleSwitcher />
-        <LoginButton />
+        <LoginButton redirectTo="/app/competitions" />
       </div>
     </header>
   );

@@ -1,20 +1,20 @@
 "use client";
 
 import React from "react";
-import { useQueryClient } from "@tanstack/react-query";
 
 import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
-import { logout } from "@/actions/session";
+import useCurrentSession from "@/components/providers/session-provider";
 
 const UserNavLogout = () => {
-  const queryClient = useQueryClient();
+  const { logout, isPending } = useCurrentSession();
   const signout = async () => {
     logout();
-    queryClient.invalidateQueries({
-      queryKey: ["session"],
-    });
   };
-  return <DropdownMenuItem onClick={signout}>Log out</DropdownMenuItem>;
+  return (
+    <DropdownMenuItem onClick={signout} disabled={isPending}>
+      Log out
+    </DropdownMenuItem>
+  );
 };
 
 export default UserNavLogout;

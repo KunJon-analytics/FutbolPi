@@ -9,12 +9,14 @@ import type {
   Row,
 } from "@tanstack/react-table";
 import { Suspense } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { skipToken, useQuery } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
 
 import { LoadingAnimation } from "@/components/loading-animation";
 import { DataTable } from "@/components/data-table/data-table";
 import { FixturesResult } from "@/types";
+import useCurrentSession from "@/components/providers/session-provider";
+import { LoginButton } from "@/components/layout/login-button";
 
 import { columns } from "./columns";
 import { FixtureDetailTabs } from "./fixture-detail-tabs";
@@ -58,18 +60,33 @@ function Details({ row }: { row: Row<FixturesResult> }) {
   const fixtureId = row.original.id;
   const t = useTranslations("CompetitionDetail.Fixtures.FixtureDetailTabs");
 
-  const { status, data } = useQuery({
+  const { session, status: sessionStatus } = useCurrentSession();
+  const canFetch = session.isLoggedIn && sessionStatus === "success";
+
+  const { status, data, isLoading } = useQuery({
     queryKey: ["fixtures", fixtureId, "predictions"],
-    queryFn: async () => {
-      const response = await fetch(`/api/fixtures/${fixtureId}/predictions`);
-      if (!response.ok) {
-        throw new Error(t("networkError"));
-      }
-      return response.json();
-    },
+    queryFn: canFetch
+      ? async () => {
+          const response = await fetch(
+            `/api/fixtures/${fixtureId}/predictions?token=${session.id}`
+          );
+          if (!response.ok) {
+            throw new Error(t("networkError"));
+          }
+          return response.json();
+        }
+      : skipToken,
   });
 
-  if (status === "pending") {
+  if (!canFetch) {
+    return (
+      <div className="flex items-center justify-center">
+        <LoginButton />
+      </div>
+    );
+  }
+
+  if (isLoading) {
     return (
       <div className="py-4">
         <LoadingAnimation variant="inverse" />

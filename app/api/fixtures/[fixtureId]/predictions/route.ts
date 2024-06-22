@@ -1,23 +1,24 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-import { getSession } from "@/actions/session";
 import prisma from "@/lib/prisma";
 
 export async function GET(
-  req: Request,
+  req: NextRequest,
   { params }: { params: { fixtureId: string } }
 ) {
   try {
-    const session = await getSession();
-    const { fixtureId } = params;
+    const searchParams = req.nextUrl.searchParams;
+    const id = searchParams.get("token");
+    // id is "hello" for /api/search?token=hello
 
-    if (!session.isLoggedIn) {
-      console.log("[GET_PREDICTION]", "User not authenticated");
+    if (!id) {
+      console.log("[GET_PREDICTION]", "Invalid authentication params");
       return NextResponse.json(null);
     }
+    const { fixtureId } = params;
 
     const prediction = await prisma.prediction.findFirst({
-      where: { username: session.username, fixtureId: parseInt(fixtureId) },
+      where: { fixtureId: parseInt(fixtureId), user: { id } },
     });
     return NextResponse.json(prediction);
   } catch (error) {

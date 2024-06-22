@@ -2,20 +2,12 @@ import { NextResponse } from "next/server";
 
 import prisma from "@/lib/prisma";
 import { PaymentDTO } from "@/types";
-import { getSession } from "@/actions/session";
 import { PaymentDTOMemo } from "@/lib/pi/types";
 import platformAPIClient from "@/lib/pi/platform-api-client";
 import { siteConfig } from "@/config/site";
 
 export async function POST(req: Request) {
   try {
-    const session = await getSession();
-
-    if (!session.isLoggedIn) {
-      console.log("[COMPLETE_TIPS]", "User not authenticated");
-      return new NextResponse("Unauthorized", { status: 401 });
-    }
-
     const {
       paymentId,
       txid,

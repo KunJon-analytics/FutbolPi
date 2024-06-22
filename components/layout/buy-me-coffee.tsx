@@ -2,22 +2,20 @@
 
 import React from "react";
 import { Coffee } from "lucide-react";
-import { useQueryClient } from "@tanstack/react-query";
 
-import useSession from "@/hooks/use-session";
-import { Button } from "../ui/button";
 import axiosClient, { config } from "@/lib/axios-client";
 import { toastAction } from "@/lib/toast";
 import { PaymentDTO } from "@/types";
 import { PaymentDTOMemo, PiCallbacks } from "@/lib/pi/types";
 import { siteConfig } from "@/config/site";
-import { logout } from "@/actions/session";
+
+import { Button } from "../ui/button";
+import useCurrentSession from "../providers/session-provider";
 
 const BuyMeCoffee = () => {
-  const { data: session } = useSession();
-  const queryClient = useQueryClient();
+  const { session, logout, status } = useCurrentSession();
 
-  if (!session?.isLoggedIn) {
+  if (!session.isLoggedIn || status !== "success") {
     return null;
   }
 
@@ -75,10 +73,7 @@ const BuyMeCoffee = () => {
         if (
           error.message === 'Cannot create a payment without "payments" scope'
         ) {
-          await logout();
-          queryClient.invalidateQueries({
-            queryKey: ["session"],
-          });
+          logout();
           toastAction("error");
         }
       }

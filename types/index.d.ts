@@ -93,8 +93,6 @@ export type PiCallbacks<T> = {
   onError: (error: Error, payment?: PaymentDTO<T>) => void;
 };
 
-export type SessionData = { username: string; isLoggedIn: boolean; id: string };
-
 export type FixturesResult = Prisma.FixtureGetPayload<{
   include: { awayTeam: true; homeTeam: true };
 }>;

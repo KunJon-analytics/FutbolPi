@@ -4,24 +4,23 @@ import { canPredict, getOutcome } from "@/lib/utils";
 import prisma from "@/lib/prisma";
 import { predictionInsertSchema } from "@/lib/prediction/schema";
 
-import { getSession } from "./session";
+//obscure data by using accessToken but it is id of user
 
-export const predict = async (params: unknown) => {
+export const predict = async (params: unknown, accessToken: string) => {
   try {
     const parsedParam = predictionInsertSchema.safeParse(params);
     if (!parsedParam.success) {
       return { error: "Invalid Params" };
     }
 
-    const session = await getSession();
-    if (!session.isLoggedIn) {
+    if (!accessToken) {
       return { error: "Unauthorized" };
     }
 
     const { fixtureId, awayGoals, homeGoals } = parsedParam.data;
 
-    const prevPrediction = await prisma.prediction.findUnique({
-      where: { predictionId: { username: session.username, fixtureId } },
+    const prevPrediction = await prisma.prediction.findFirst({
+      where: { fixtureId, user: { id: accessToken } },
       select: { id: true },
     });
     if (!!prevPrediction?.id) {
@@ -36,17 +35,21 @@ export const predict = async (params: unknown) => {
       return { error: "Unauthorized" };
     }
 
-    const prediction = await prisma.prediction.create({
+    const updatedUser = await prisma.user.update({
+      where: { id: accessToken },
       data: {
-        awayGoals,
-        homeGoals,
-        fixtureId,
-        username: session.username,
-        predictedOutcome: getOutcome(homeGoals, awayGoals),
+        predictions: {
+          create: {
+            awayGoals,
+            homeGoals,
+            fixtureId,
+            predictedOutcome: getOutcome(homeGoals, awayGoals),
+          },
+        },
       },
     });
 
-    return { success: !!prediction.id };
+    return { success: !!updatedUser.id };
   } catch (error) {
     console.log("PREDICT", error);
     return { error: "Server Error" };

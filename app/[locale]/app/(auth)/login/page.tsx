@@ -3,10 +3,9 @@ import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 
 import { Shell } from "@/components/dashboard/shell";
-import { getSession } from "@/actions/session";
 import { defaultRedirectTo } from "@/config/pages";
 import { HelpCallout } from "@/components/dashboard/help-callout";
-import { redirect, Link } from "@/intl/navigation";
+import { Link } from "@/intl/navigation";
 
 import { LoginForm } from "./_components/login-form";
 
@@ -22,15 +21,12 @@ const searchParamsSchema = z.object({
 });
 
 export default async function Page({ searchParams }: Props) {
-  const session = await getSession();
   const search = searchParamsSchema.safeParse(searchParams);
   const t = await getTranslations("Auth.LoginPage");
 
   const redirectTo = search.success
     ? search.data.redirectTo
     : defaultRedirectTo;
-
-  if (session.isLoggedIn) redirect(redirectTo);
 
   return (
     <Shell className="my-4 grid w-full max-w-xl gap-6 md:p-10">

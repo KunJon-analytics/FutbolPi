@@ -1,7 +1,7 @@
-import { getLocale, getTranslations } from "next-intl/server";
-import Link from "next/link";
+"use client";
 
-import { getSession } from "@/actions/session";
+import { useTranslations } from "next-intl";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,18 +11,24 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import useCurrentSession from "@/components/providers/session-provider";
+import { Link } from "@/intl/navigation";
 
 import UserAvatar from "./user-avatar";
 import UserNavLoading from "./user-nav-loading";
 import UserNavLogout from "./user-nav-logout";
+import { LoginButton } from "../login-button";
 
-export async function UserNav() {
-  const session = await getSession();
-  const t = await getTranslations("DashboardLayout.UserNav");
-  const locale = await getLocale();
+export function UserNav() {
+  const t = useTranslations("DashboardLayout.UserNav");
+  const { session, status, isPending } = useCurrentSession();
 
-  if (!session.isLoggedIn) {
+  if (isPending) {
     return <UserNavLoading />;
+  }
+
+  if (!session.isLoggedIn || status === "error") {
+    return <LoginButton size={"icon"} variant={"outline"} />;
   }
 
   return (
@@ -41,12 +47,10 @@ export async function UserNav() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem asChild>
-            <Link href={`/${locale}/app/settings/appearance`}>
-              {t("appearance")}
-            </Link>
+            <Link href={`/app/settings/appearance`}>{t("appearance")}</Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link href={`/${locale}/app/settings/user`}>{t("profile")}</Link>
+            <Link href={`/app/settings/user`}>{t("profile")}</Link>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />

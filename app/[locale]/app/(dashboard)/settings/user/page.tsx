@@ -1,22 +1,61 @@
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+"use client";
 
-import { getSession } from "@/actions/session";
+import { useTranslations } from "next-intl";
+import { skipToken, useQuery } from "@tanstack/react-query";
+
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import prisma from "@/lib/prisma";
+import useCurrentSession from "@/components/providers/session-provider";
+import { Skeleton } from "@/components/ui/skeleton";
+import { LoginButton } from "@/components/layout/login-button";
+import { Button } from "@/components/ui/button";
 
-type Props = { params: { locale: string } };
+export default function UserPage() {
+  const t = useTranslations("Settings.User");
+  const networkT = useTranslations(
+    "CompetitionDetail.Fixtures.FixtureDetailTabs"
+  );
 
-export default async function UserPage({ params: { locale } }: Props) {
-  unstable_setRequestLocale(locale);
-  const t = await getTranslations("Settings.User");
+  const { session, status: sessionStatus, accessToken } = useCurrentSession();
 
-  const session = await getSession();
-  const predictions = await prisma.prediction.aggregate({
-    where: { username: session.username },
-    _count: { id: true },
-    _sum: { points: true },
+  const canFetch = session.isLoggedIn && sessionStatus === "success";
+
+  const {
+    status,
+    data: predictions,
+    isPending,
+  } = useQuery({
+    queryKey: ["profile", accessToken],
+    queryFn: canFetch
+      ? async () => {
+          const response = await fetch(`/api/profile/${accessToken}`);
+          if (!response.ok) {
+            throw new Error(networkT("networkError"));
+          }
+          return response.json();
+        }
+      : skipToken,
   });
+
+  if (!canFetch) {
+    return (
+      <div className="flex items-center justify-center">
+        <LoginButton />
+      </div>
+    );
+  }
+
+  if (isPending) {
+    return <Skeleton className="h-72 w-full" />;
+  }
+
+  if (status === "error") {
+    return (
+      <div className="flex items-center justify-center">
+        <Button variant={"destructive"}>{networkT("networkError")}</Button>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col gap-8">

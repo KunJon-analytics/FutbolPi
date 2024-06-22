@@ -18,6 +18,7 @@ import ReactQueryProvider from "@/components/providers/react-query";
 import GoogleAnalytics from "@/components/providers/google-analytics";
 import { env } from "@/env.mjs";
 import { locales } from "@/intl/config";
+import { SessionProvider } from "@/components/providers/session-provider";
 
 import "@/styles/globals.css";
 
@@ -67,10 +68,17 @@ export default async function RootLayout({
         } ${calSans.variable}`}
       >
         <GoogleAnalytics ga_id={env.NEXT_PUBLIC_GOOGLE_TAG} />
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider
+          locale={locale}
+          messages={messages}
+          formats={{ number: { compact: { notation: "compact" } } }}
+        >
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
             <ReactQueryProvider>
-              <Background>{children}</Background>
+              <SessionProvider>
+                <Background>{children}</Background>
+              </SessionProvider>
+
               <Toaster richColors />
               <TailwindIndicator />
             </ReactQueryProvider>

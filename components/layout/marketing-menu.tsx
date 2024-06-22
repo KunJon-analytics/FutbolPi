@@ -75,7 +75,7 @@ export function MarketingMenu() {
                 </li>
               ))}
             </ul>
-            <LoginButton variant="outline" />
+            <LoginButton variant="outline" redirectTo="/app/competitions" />
           </div>
         </div>
       </SheetContent>

@@ -8,12 +8,6 @@ import platformAPIClient from "@/lib/pi/platform-api-client";
 import { siteConfig } from "@/config/site";
 
 export async function POST(req: Request) {
-  const session = await getSession();
-
-  if (!session.isLoggedIn) {
-    console.log("[TIPS_APPROVE]", "User not authenticated");
-    return new NextResponse("Unauthorized", { status: 401 });
-  }
   try {
     const {
       paymentId,
@@ -33,11 +27,6 @@ export async function POST(req: Request) {
 
     */
 
-    if (currentPayment.data.metadata.purpose !== session.id) {
-      console.log("[TIPS_APPROVE]", "Unauthorized");
-      return new NextResponse("Wrong reservation Id", { status: 401 });
-    }
-
     if (currentPayment.data.amount !== siteConfig.businessLogic.tipsAmount) {
       console.log("[TIPS_APPROVE]", "wrong payment amount");
       return new NextResponse("Unauthorized", { status: 401 });
@@ -47,7 +36,7 @@ export async function POST(req: Request) {
       data: {
         amount: currentPayment.data.amount,
         paymentId,
-        purposeId: session.id,
+        purposeId: currentPayment.data.metadata.purpose,
         type: "TIP",
         status: "INITIALIZED",
       },
