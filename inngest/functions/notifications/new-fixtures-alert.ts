@@ -24,7 +24,7 @@ export const newFixturesAlert = inngest.createFunction(
     }
 
     message = message.concat(
-      `\n\n<a href='${env.NEXT_PUBLIC_APP_URL}/app/competitions/overview'>Predict now</a> and climb the leaderboard! 📈🔮\n\nBest regards,\nThe FutbolPi Team 🚀`
+      `\n\n<a href='${env.NEXT_PUBLIC_APP_URL}/en/app/competitions/overview'>Predict now</a> and climb the leaderboard! 📈🔮\n\nBest regards,\nThe FutbolPi Team 🚀`
     );
 
     await step.sendEvent("send-new-fixtures-notification", {
