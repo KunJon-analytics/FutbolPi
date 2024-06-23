@@ -3,7 +3,6 @@
 import { useFormatter } from "next-intl";
 
 import useStats from "@/hooks/use-stats";
-import { numberFormatter } from "@/lib/utils";
 import { defaultStats } from "@/lib/site/stats";
 
 import { Badge } from "../ui/badge";

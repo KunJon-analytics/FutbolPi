@@ -84,7 +84,7 @@ export const updateTodayFixtures = inngest.createFunction(
 
       for (let index = 0; index < deadlineFixtures.length; index++) {
         const fixture = deadlineFixtures[index];
-        const fixtureText = `\n\n<b>${fixture.homeTeam.name}</b> vs. <b>${fixture.awayTeam.name}</b>\n📲 <a href='${env.NEXT_PUBLIC_APP_URL}/app/competitions/${fixture.competitionId}/fixtures'>Predict now!!!</a>`;
+        const fixtureText = `\n\n<b>${fixture.homeTeam.name}</b> vs. <b>${fixture.awayTeam.name}</b>\n📲 <a href='${env.NEXT_PUBLIC_APP_URL}/en/app/competitions/${fixture.competitionId}/fixtures'>Predict now!!!</a>`;
 
         message = message.concat(fixtureText);
       }
