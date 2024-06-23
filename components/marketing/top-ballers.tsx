@@ -1,5 +1,4 @@
 import { getTranslations } from "next-intl/server";
-import { unstable_cache } from "next/cache";
 import { Suspense } from "react";
 
 import {
@@ -14,7 +13,8 @@ import {
 } from "@/components/ui/table";
 import { Link } from "@/intl/navigation";
 import { Button } from "@/components/ui/button";
-import prisma from "@/lib/prisma";
+import { env } from "@/env.mjs";
+import { type TopBallers, defaultTopBallers } from "@/lib/site/stats";
 
 import {
   CardContainer,
@@ -25,18 +25,21 @@ import {
 } from "./card";
 import { TopBallersSkeleton } from "./top-ballers-skeleton";
 
-const getTopBallers = unstable_cache(
-  async () =>
-    prisma.prediction.groupBy({
-      by: ["username"],
-      _sum: { points: true },
-      _count: { username: true },
-      orderBy: { _sum: { points: "desc" } },
-      take: 5,
-    }),
-  ["top-ballers"],
-  { revalidate: 3600 }
-);
+async function getData() {
+  const res = await fetch(
+    `${env.NEXT_PUBLIC_APP_URL}/api/site/stats/top-ballers`,
+    { next: { revalidate: 3600 } }
+  );
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    return defaultTopBallers;
+  }
+
+  return (await res.json()) as TopBallers;
+}
 
 export async function TopBallers() {
   const t = await getTranslations("Index.TopBallers");
@@ -63,7 +66,7 @@ export async function TopBallers() {
 }
 
 const TopballersTable = async () => {
-  const data = await getTopBallers();
+  const data = await getData();
   const t = await getTranslations("Index.TopBallers.Table");
 
   return (
