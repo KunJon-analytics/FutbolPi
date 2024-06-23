@@ -3,33 +3,19 @@ import * as React from "react";
 import { unstable_setRequestLocale } from "next-intl/server";
 
 import { Metrics } from "@/components/competition-dashboard/metrics";
-import prisma from "@/lib/prisma";
+import { getCompetitionOverview } from "@/actions/competitions";
 
 type Props = {
   params: { locale: string; id: string };
 };
 
+export const revalidate = 3600; // revalidate at most every hour
+
 export default async function Page({ params }: Props) {
   unstable_setRequestLocale(params.locale);
   const id = params.id;
 
-  const competition = await prisma.competition.findUnique({
-    where: { id },
-    include: {
-      fixtures: {
-        include: {
-          awayTeam: { select: { name: true, logo: true } },
-          homeTeam: { select: { name: true, logo: true } },
-          predictions: {
-            select: {
-              user: { select: { username: true, id: true } },
-              points: true,
-            },
-          },
-        },
-      },
-    },
-  });
+  const competition = await getCompetitionOverview(id);
 
   if (!competition) {
     return notFound();

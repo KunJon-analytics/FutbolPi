@@ -6,8 +6,7 @@ import prisma from "@/lib/prisma";
 import { Header } from "@/components/dashboard/header";
 import AppPageWithSidebarLayout from "@/components/layout/app-page-with-sidebar-layout";
 import { StatusDotWithTooltip } from "@/components/competition/status-dot-with-tooltip";
-
-import { getActiveCompetitions } from "../(overview)/page";
+import { getActiveCompetitions } from "@/actions/competitions";
 
 type Props = {
   children: React.ReactNode;
