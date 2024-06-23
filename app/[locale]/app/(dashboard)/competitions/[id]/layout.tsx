@@ -7,10 +7,20 @@ import { Header } from "@/components/dashboard/header";
 import AppPageWithSidebarLayout from "@/components/layout/app-page-with-sidebar-layout";
 import { StatusDotWithTooltip } from "@/components/competition/status-dot-with-tooltip";
 
+import { getActiveCompetitions } from "../(overview)/page";
+
 type Props = {
   children: React.ReactNode;
   params: { id: string; locale: string };
 };
+
+export async function generateStaticParams() {
+  const competitions = await getActiveCompetitions();
+
+  return competitions.map((competition) => ({
+    id: competition.id,
+  }));
+}
 
 export default async function Layout({ children, params }: Props) {
   unstable_setRequestLocale(params.locale);
