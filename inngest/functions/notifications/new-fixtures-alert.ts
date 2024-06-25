@@ -1,6 +1,5 @@
 import { env } from "@/env.mjs";
 import { inngest } from "@/inngest/client";
-import { format, fromUnixTime } from "date-fns";
 
 // Some function we'll call
 export const newFixturesAlert = inngest.createFunction(

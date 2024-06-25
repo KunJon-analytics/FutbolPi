@@ -3,12 +3,14 @@
 import { useTranslations } from "next-intl";
 import { skipToken, useQuery } from "@tanstack/react-query";
 
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import useCurrentSession from "@/components/providers/session-provider";
 import { Skeleton } from "@/components/ui/skeleton";
 import { LoginButton } from "@/components/layout/login-button";
 import { Button } from "@/components/ui/button";
+import { MetricsCard } from "@/components/competition-dashboard/metrics-card";
+import { UserStatResponse } from "@/app/api/profile/[accessToken]/get-stat";
+
+import { StringCard } from "./_components/string-card";
 
 export default function UserPage() {
   const t = useTranslations("Settings.User");
@@ -24,7 +26,7 @@ export default function UserPage() {
     status,
     data: predictions,
     isPending,
-  } = useQuery({
+  } = useQuery<UserStatResponse>({
     queryKey: ["profile", accessToken],
     queryFn: canFetch
       ? async () => {
@@ -58,30 +60,32 @@ export default function UserPage() {
   }
 
   return (
-    <div className="flex flex-col gap-8">
-      <div className="grid max-w-sm gap-3">
-        <div className="grid w-full items-center gap-1.5">
-          <Label htmlFor="username">{t("username")}</Label>
-          <Input id="username" value={`${session.username}`} disabled />
-        </div>
-        <div className="grid w-full items-center gap-1.5">
-          <Label htmlFor="predictions">{t("predictions")}</Label>
-          <Input
-            id="predictions"
-            type="number"
-            value={`${predictions._count.id}`}
-            disabled
-          />
-        </div>
-        <div className="grid w-full items-center gap-1.5">
-          <Label htmlFor="points">{t("points")}</Label>
-          <Input
-            id="points"
-            type="number"
-            value={`${predictions._sum.points}`}
-            disabled
-          />
-        </div>
+    <div className="@container grid gap-6">
+      <div className="grid grid-cols-2 gap-4 @3xl:grid-cols-5 @xl:grid-cols-4 @3xl:gap-6">
+        <StringCard
+          title={t("username")}
+          value={session.username}
+          suffix="@"
+          variant="info"
+        />
+        <MetricsCard
+          title={t("predictions")}
+          value={predictions._count.id}
+          suffix="#"
+          variant="info"
+        />
+        <MetricsCard
+          title={t("points")}
+          value={predictions._sum.points}
+          suffix="#"
+          variant="positive"
+        />
+        <MetricsCard
+          title={`${t("points")}/${t("predictions")}`}
+          value={predictions._avg.points}
+          suffix="μ"
+          variant="info"
+        />
       </div>
     </div>
   );
