@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { getStats } from "./get-stat";
 
+export const revalidate = 3600;
+
 export async function GET(
   request: NextRequest,
   { params: { accessToken } }: { params: { accessToken: string } }
