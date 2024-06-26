@@ -1,11 +1,11 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
-import { formatDistanceToNowStrict, fromUnixTime } from "date-fns";
 import Image from "next/image";
 
 import { DataTableColumnHeader } from "@/components/data-table/data-table-column-header";
 import { FixturesResult } from "@/types";
+import FormattedDate from "@/components/data-table/formatted-date";
 
 export const columns: ColumnDef<FixturesResult>[] = [
   {
@@ -16,14 +16,7 @@ export const columns: ColumnDef<FixturesResult>[] = [
     cell: ({ row }) => {
       const timestamp = row.original.timestamp;
 
-      const distance = formatDistanceToNowStrict(fromUnixTime(timestamp), {
-        addSuffix: true,
-      });
-      return (
-        <div className="flex max-w-[84px] text-muted-foreground sm:max-w-none">
-          <span className="truncate">{distance}</span>
-        </div>
-      );
+      return <FormattedDate timestamp={timestamp} />;
     },
   },
   {

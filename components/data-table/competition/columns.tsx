@@ -1,13 +1,14 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
-import { formatDistanceToNowStrict } from "date-fns";
+import { getUnixTime } from "date-fns";
 import Link from "next/link";
 
 import { Competition } from "@prisma/client";
 import { StatusDotWithTooltip } from "@/components/competition/status-dot-with-tooltip";
 
 import { DataTableColumnHeader } from "./data-table-column-header";
+import FormattedDate from "../formatted-date";
 
 // import { DataTableRowActions } from "./data-table-row-actions";
 
@@ -48,16 +49,10 @@ export const columns: ColumnDef<Competition>[] = [
       <DataTableColumnHeader column={column} title="created" />
     ),
     cell: ({ row }) => {
-      const timestamp = row.original.createdAt;
+      const createdAt = row.original.createdAt;
+      const timestamp = getUnixTime(createdAt);
 
-      const distance = formatDistanceToNowStrict(new Date(timestamp), {
-        addSuffix: true,
-      });
-      return (
-        <div className="flex max-w-[84px] text-muted-foreground sm:max-w-none">
-          <span className="truncate">{distance}</span>
-        </div>
-      );
+      return <FormattedDate timestamp={timestamp} />;
     },
   },
 

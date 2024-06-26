@@ -87,7 +87,7 @@ export function PredictionForm({
           <TableHeader>
             <TableRow>
               <TableHead>{t("homeTeam")}</TableHead>
-              <TableHead>{t("homeTeam")}</TableHead>
+              <TableHead>{t("awayTeam")}</TableHead>
               <TableHead className="w-[100px]">{t("canPredict")}</TableHead>
             </TableRow>
           </TableHeader>
