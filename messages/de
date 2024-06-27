@@ -250,6 +250,7 @@
         "key": "Key",
         "value": "Value",
         "round": "Round",
+        "action": "Actions",
         "teams": "Teams",
         "realScores": "Real Scores",
         "scores": "Scores",
