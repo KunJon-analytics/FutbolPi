@@ -1,0 +1,250 @@
+{
+  "Index": {
+    "Hero": {
+      "heroBadgeText": "Nhận Tin Tức Mới Nhất",
+      "heroTitle": "Dự Đoán, Cạnh Tranh, Chiến Thắng: Ghi Điểm Lớn với FutbolPi",
+      "heroDescription": "Khởi đầu sự phấn khích! Mời bạn bè và gia đình đến với FutbolPi, nền tảng dự đoán trận đấu tối ưu. Kiếm điểm, leo lên bảng xếp hạng và chứng tỏ tài năng bóng đá của bạn. Sẵn sàng dự đoán chưa? 🚀⚽️",
+      "heroPrimaryBtnText": "Dự Đoán Trận Đấu",
+      "heroSecondaryBtnText": "Tham Gia Ngay",
+      "statsTotalPredictions": "Tổng Dự Đoán",
+      "statsFixturesPredicted": "Trận Đấu Được Dự Đoán",
+      "statsActivePlayers": "Người Chơi Hoạt Động",
+      "buttomCTADescription": "Mời bạn bè của bạn đến với FutbolPi và tham gia cuộc chiến dự đoán trận đấu. Càng đông, càng vui! 🚀⚽️",
+      "buttomCTAPrimaryAction": "Mời Bạn Bè",
+      "buttomCTASecondaryAction": "Bắt Đầu Dự Đoán"
+    },
+    "Stats": {
+      "totalPredictions": "Tổng Dự Đoán",
+      "fixturesPredicted": "Trận Đấu Được Dự Đoán",
+      "activePlayers": "Người Chơi Hoạt Động"
+    },
+    "BottomCTA": {
+      "description": "Mời bạn bè của bạn đến với FutbolPi và tham gia cuộc chiến dự đoán trận đấu. Càng đông, càng vui! 🚀⚽️",
+      "primaryAction": {
+        "label": "Mời Bạn Bè"
+      },
+      "secondaryAction": {
+        "label": "Bắt Đầu Dự Đoán"
+      }
+    },
+    "TopBallers": {
+      "title": "Huyền Thoại FutbolPi: Đại Sảnh Danh Vọng",
+      "description": "Khám phá những người dự đoán FutbolPi hàng đầu mọi thời đại! 🏆 Những huyền thoại này đã làm chủ nghệ thuật dự đoán trận đấu, đạt được số điểm cao nhất từng ghi nhận. Liệu tên bạn có góp mặt trong số đó? Chơi ngay và nhắm đến bảng xếp hạng!",
+      "ctaButton": "Chơi Ngay",
+      "Table": {
+        "caption": "🌟 Tham gia hàng ngũ! Dự đoán trận đấu, kiếm điểm và khắc tên bạn vào lịch sử FutbolPi!",
+        "username": "Tên Người Dùng",
+        "points": "Điểm",
+        "predictions": "Dự Đoán"
+      }
+    }
+  },
+  "Layout": {
+    "MarketingHeader": {
+      "BrandName": { "downloadSVG": "Tải SVG" },
+      "LoginButton": { "text": "Chơi Ngay" },
+      "marketingMenuTitle": "Menu"
+    },
+    "MarketingFooter": {
+      "tagline": "Ghi điểm lớn với FutbolPi! Dự đoán, cạnh tranh và chiến thắng – được hỗ trợ bởi Pi Network. Tham gia trò chơi và bắt đầu chuỗi chiến thắng của bạn! ⚽🏆🔥",
+      "resources": {
+        "title": "Tài Nguyên",
+        "links": { "announcements": { "title": "Thông Báo" } }
+      },
+      "company": {
+        "title": "Công Ty",
+        "links": {
+          "about": { "title": "Về Chúng Tôi" },
+          "terms": { "title": "Điều Khoản" },
+          "privacy": { "title": "Chính Sách Bảo Mật" }
+        }
+      },
+      "tools": {
+        "title": "Công Cụ",
+        "links": { "pi": { "title": "Tham Gia Pi Network" } }
+      }
+    },
+    "MarketingPages": {
+      "about": {
+        "title": "Về Chúng Tôi",
+        "description": "Khám phá câu chuyện, sứ mệnh và thế giới thú vị của FutbolPi!"
+      },
+      "predict": {
+        "title": "Dự Đoán",
+        "description": "Khám phá các trận đấu sắp tới và thực hiện dự đoán của bạn cho các giải đấu và cúp đang hoạt động!"
+      },
+      "telegram": {
+        "title": "Telegram",
+        "description": "Tham gia nhóm Telegram sôi động của chúng tôi để thảo luận về bóng đá, chia sẻ dự đoán và kết nối với những người hâm mộ khác"
+      },
+      "signIn": "Đăng Nhập"
+    }
+  },
+  "NotFoundPage": {
+    "firstParagraph": "404 Không tìm thấy trang",
+    "secondParagraph": "Trang bạn đang tìm không tồn tại.",
+    "backButton": "Quay Lại",
+    "homeButton": "Trang Chủ",
+    "title": "Rất tiếc, đã xảy ra sự cố."
+  },
+  "Auth": {
+    "Layout": {
+      "title": "Mở khóa trò chơi: Đăng nhập bằng Pi Network",
+      "description": "Chào mừng đến với FutbolPi! Để truy cập các dự đoán và bảng xếp hạng độc quyền của chúng tôi, hãy đăng nhập bằng thông tin đăng nhập Pi Network của bạn qua trình duyệt Pi. <br></br> <br></br> <pi>Tham Gia Pi Network</pi> và tải trình duyệt."
+    },
+    "LoginPage": {
+      "title": "Đăng Nhập",
+      "noPayments": "Bắt đầu ngay bây giờ. Không yêu cầu thanh toán Pi.",
+      "conditions": "Bằng cách nhấp vào tiếp tục, bạn đồng ý với <terms>Điều Khoản Dịch Vụ</terms> và <privacy>Chính Sách Bảo Mật</privacy> của chúng tôi.",
+      "LoginForm": {
+        "buttonText": "Đăng nhập bằng Pi Wallet",
+        "successMessage": "Bạn đã đăng nhập thành công"
+      }
+    }
+  },
+  "HelpCallOut": {
+    "title": "Cần giúp đỡ?",
+    "description": "Hãy cho chúng tôi biết bằng cách tham gia <telegram>Telegram</telegram> của chúng tôi."
+  },
+  "CompetitionPage": {
+    "headerTitle": "Cuộc Thi Đang Diễn Ra",
+    "headerDescription": "Dự đoán kết quả cho các giải đấu và cúp hàng đầu. Ghi điểm lớn với FutbolPi!"
+  },
+  "DashboardLayout": {
+    "UserNav": { "appearance": "Giao Diện", "profile": "Hồ Sơ" },
+    "Pages": {
+      "Competitions": { "title": "Cuộc Thi" },
+      "Settings": { "title": "Cài Đặt" }
+    },
+    "DataTableToolbar": { "filterInput": "Lọc tên...", "reset": "Đặt Lại" }
+  },
+  "DataTable": {
+    "noResult": "Không có kết quả.",
+    "Pagination": {
+      "rowsPerPage": "Số hàng mỗi trang",
+      "rowsFiltered": "{row} hàng đã lọc",
+      "page": "Trang {pageIndex} của {pageCount}",
+      "firstPage": "Đến trang đầu",
+      "previousPage": "Trang trước",
+      "nextPage": "Trang sau",
+      "lastPage": "Đến trang cuối"
+    },
+    "CompetitionsTable": {
+      "Header": { "name": "Tên", "season": "Mùa Giải", "created": "Được Tạo" }
+    },
+    "DefaultTable": {
+      "Header": {
+        "username": "Tên Người Dùng",
+        "points": "Điểm",
+        "round": "Vòng",
+        "homeTeam": "Đội Nhà",
+        "awayTeam": "Đội Khách",
+        "kickoff": "Thời Gian Bắt Đầu"
+      }
+    }
+  },
+  "PageTitles": {
+    "Appearance": {
+      "title": "Giao Diện",
+      "description": "Cài đặt giao diện cho người dùng."
+    },
+    "User": {
+      "title": "Người Dùng",
+      "description": "Cài đặt hồ sơ cho người dùng."
+    },
+    "Overview": {
+      "title": "Tổng Quan",
+      "description": "Xem tất cả các cuộc thi"
+    },
+    "Leaderboard": {
+      "title": "Bảng Xếp Hạng",
+      "description": "Xem những người chơi hàng đầu"
+    },
+    "Fixtures": {
+      "title": "Lịch Thi Đấu",
+      "description": "Xem tất cả các trận đấu trong cuộc thi."
+    },
+    "Competitions": {
+      "title": "Cuộc Thi",
+      "description": "Xem tất cả các cuộc thi có sẵn"
+    },
+    "About": {
+      "title": "Về Chúng Tôi",
+      "description": "Khám phá câu chuyện, sứ mệnh và thế giới thú vị của FutbolPi!"
+    },
+    "Telegram": {
+      "title": "Telegram",
+      "description": "Tham gia nhóm Telegram sôi động của chúng tôi để thảo luận về bóng đá, chia sẻ dự đoán và kết nối với những người hâm mộ khác"
+    },
+    "Predict": {
+      "title": "Dự Đoán",
+      "description": "Khám phá các trận đấu sắp tới và thực hiện dự đoán của bạn cho các giải đấu và cúp đang hoạt động!"
+    },
+    "Settings": { "title": "Cài Đặt", "description": "Cài đặt hồ sơ của bạn" }
+  },
+  "CompetitionDetail": {
+    "Overview": {
+      "teams": "đội",
+      "predictions": "dự đoán",
+      "scheduled": "trận đấu đã lên lịch",
+      "players": "người chơi",
+      "leaderboardLink": "Bắt đầu thực hiện dự đoán trong <action>trận đấu của cuộc thi</action>",
+      "finished": "trận đấu đã hoàn thành"
+    },
+    "Leaderboard": {
+      "fixturesLink": "Trên bảng xếp hạng, mọi dự đoán đều quan trọng! Muốn leo lên cao hơn? <action>Thực hiện dự đoán</action> ngay bây giờ."
+    },
+    "Fixtures": {
+      "Status": {
+        "ALL": "Tất cả các trận đấu",
+        "COMPLETED": "Trận đấu đã hoàn thành",
+        "NOT_STARTED": "Trận đấu đã lên lịch"
+      },
+      "leaderboardLink": "Nhấp vào các trận đấu để dự đoán hoặc xem. Kiểm tra <action>bảng xếp hạng</action> nữa!",
+      "FixtureDetailTabs": {
+        "yourPrediction": "Dự Đoán Của Bạn",
+        "makePrediction": "Thực Hiện Dự Đoán",
+        "errorMessage": "Có gì đó sai",
+        "networkError": "Phản hồi mạng không ổn",
+        "fixture": "Trận Đấu",
+        "signIn": "Đăng nhập để dự đoán"
+      },
+      "TabsDetailTable": {
+        "predictionTableCaption": "Chi Tiết Dự Đoán Của Bạn",
+        "fixtureTableCaption": "Chi Tiết Trận Đấu",
+        "key": "Chìa Khóa",
+        "value": "Giá Trị",
+        "round": "Vòng",
+        "action": "Hành Động",
+        "teams": "Đội",
+        "realScores": "Tỷ Số Thực",
+        "scores": "Tỷ Số",
+        "predictedScores": "Tỷ Số Dự Đoán",
+        "kickoff": "Thời Gian Bắt Đầu",
+        "status": "Trạng Thái",
+        "pointsWon": "Điểm Đạt Được"
+      },
+      "PredictionForm": {
+        "homeTeam": "Đội Nhà",
+        "awayTeam": "Đội Khách",
+        "allowed": "Được Phép",
+        "confirm": "Xác Nhận",
+        "notAllowed": "Không Được Phép",
+        "canPredict": "Có thể dự đoán?"
+      }
+    }
+  },
+  "Settings": {
+    "User": {
+      "username": "Tên Người Dùng",
+      "predictions": "Dự Đoán",
+      "points": "Điểm",
+      "signIn": "Đăng nhập để xem Hồ Sơ"
+    },
+    "Appearance": { "light": "Sáng", "dark": "Tối", "system": "Hệ Thống" }
+  },
+  "LocaleSwitcher": {
+    "label": "Thay đổi ngôn ngữ",
+    "locale": "{locale, select, zh {🇨🇳 Tiếng Trung} en {🇺🇸 Tiếng Anh} ko {🇰🇷 Tiếng Hàn} de {🇩🇪 Tiếng Đức} vi {🇻🇳 Tiếng Việt}  other {Không Xác Định}}"
+  }
+}

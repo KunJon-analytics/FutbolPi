@@ -1,0 +1,289 @@
+{
+  "Index": {
+    "Hero": {
+      "heroBadgeText": "Erhalte die neuesten Nachrichten",
+      "heroTitle": "Vorhersagen, konkurrieren, gewinnen: Punkte groß mit FutbolPi",
+      "heroDescription": "Starte die Aufregung! Lade Freunde und Familie zu FutbolPi ein, der ultimativen Plattform für Spielvorhersagen. Verdiene Punkte, klettere auf der Rangliste und beweise dein Fußballtalent. Bereit zum Vorhersagen? 🚀⚽️",
+      "heroPrimaryBtnText": "Spiele vorhersagen",
+      "heroSecondaryBtnText": "Jetzt beitreten",
+      "statsTotalPredictions": "Gesamtvorhersagen",
+      "statsFixturesPredicted": "Vorhergesagte Spiele",
+      "statsActivePlayers": "Aktive Spieler",
+      "buttomCTADescription": "Lade deine Freunde zu FutbolPi ein und messt euch in Spielvorhersagen. Je mehr, desto besser! 🚀⚽️",
+      "buttomCTAPrimaryAction": "Freunde einladen",
+      "buttomCTASecondaryAction": "Vorhersagen beginnen"
+    },
+    "Stats": {
+      "totalPredictions": "Gesamtvorhersagen",
+      "fixturesPredicted": "Vorhergesagte Spiele",
+      "activePlayers": "Aktive Spieler"
+    },
+    "BottomCTA": {
+      "description": "Lade deine Freunde zu FutbolPi ein und messt euch in Spielvorhersagen. Je mehr, desto besser! 🚀⚽️",
+      "primaryAction": {
+        "label": "Freunde einladen"
+      },
+      "secondaryAction": {
+        "label": "Vorhersagen beginnen"
+      }
+    },
+    "TopBallers": {
+      "title": "FutbolPi-Legenden: Ruhmeshalle",
+      "description": "Entdecke die besten FutbolPi-Vorhersager aller Zeiten! 🏆 Diese Legenden haben die Kunst der Spielvorhersagen gemeistert und die höchsten Punkte aller Zeiten erzielt. Wird dein Name zu ihren gehören? Spiele jetzt und strebe nach der Rangliste!",
+      "ctaButton": "Jetzt spielen",
+      "Table": {
+        "caption": "🌟 Tritt den Reihen bei! Sage Spiele vorher, verdiene Punkte und verewige deinen Namen in der Geschichte von FutbolPi!",
+        "username": "Benutzername",
+        "points": "Punkte",
+        "predictions": "Vorhersagen"
+      }
+    }
+  },
+  "Layout": {
+    "MarketingHeader": {
+      "BrandName": {
+        "downloadSVG": "SVG herunterladen"
+      },
+      "LoginButton": {
+        "text": "Jetzt spielen"
+      },
+      "marketingMenuTitle": "Menü"
+    },
+    "MarketingFooter": {
+      "tagline": "Punkte groß mit FutbolPi! Vorhersagen, konkurrieren und gewinnen – unterstützt von Pi Network. Trete dem Spiel bei und starte deine Siegesserie! ⚽🏆🔥",
+      "resources": {
+        "title": "Ressourcen",
+        "links": {
+          "announcements": {
+            "title": "Ankündigungen"
+          }
+        }
+      },
+      "company": {
+        "title": "Unternehmen",
+        "links": {
+          "about": {
+            "title": "Über uns"
+          },
+          "terms": {
+            "title": "Bedingungen"
+          },
+          "privacy": {
+            "title": "Datenschutz"
+          }
+        }
+      },
+      "tools": {
+        "title": "Werkzeuge",
+        "links": {
+          "pi": {
+            "title": "Pi Network beitreten"
+          }
+        }
+      }
+    },
+    "MarketingPages": {
+      "about": {
+        "title": "Über uns",
+        "description": "Entdecke unsere Geschichte, Mission und die aufregende Welt von FutbolPi!"
+      },
+      "predict": {
+        "title": "Vorhersagen",
+        "description": "Erkunde bevorstehende Spiele und mache deine Vorhersagen für aktive Ligen und Pokale!"
+      },
+      "telegram": {
+        "title": "Telegram",
+        "description": "Tritt unserer lebhaften Telegram-Gruppe bei, um über Fußball zu diskutieren, Vorhersagen zu teilen und dich mit anderen Fans zu verbinden"
+      },
+      "signIn": "Anmelden"
+    }
+  },
+  "NotFoundPage": {
+    "firstParagraph": "404 Seite nicht gefunden",
+    "secondParagraph": "Die gesuchte Seite existiert nicht.",
+    "backButton": "Zurück",
+    "homeButton": "Startseite",
+    "title": "Oops, etwas ist schief gelaufen."
+  },
+  "Auth": {
+    "Layout": {
+      "title": "Schalte das Spiel frei: Mit Pi Network anmelden",
+      "description": "Willkommen bei FutbolPi! Um auf unsere exklusiven Vorhersagen und Ranglisten zuzugreifen, melde dich mit deinen Pi Network-Anmeldedaten über den Pi-Browser an. <br></br> <br></br> <pi>Pi Network beitreten</pi> und den Browser herunterladen."
+    },
+    "LoginPage": {
+      "title": "Anmelden",
+      "noPayments": "Jetzt starten. Keine Pi-Zahlungen erforderlich.",
+      "conditions": "Durch Klicken auf 'Weiter' stimmst du unseren <terms>Nutzungsbedingungen</terms> und unserer <privacy>Datenschutzrichtlinie</privacy> zu.",
+      "LoginForm": {
+        "buttonText": "Mit Pi Wallet anmelden",
+        "successMessage": "Du hast dich erfolgreich angemeldet"
+      }
+    }
+  },
+  "HelpCallOut": {
+    "title": "Brauchen Sie Hilfe?",
+    "description": "Lassen Sie es uns wissen, indem Sie unserem <telegram>Telegram</telegram> beitreten."
+  },
+  "CompetitionPage": {
+    "headerTitle": "Aktive Wettbewerbe",
+    "headerDescription": "Sage Ergebnisse für die Top-Ligen und -Pokale vorher. Punkte groß mit FutbolPi!"
+  },
+  "DashboardLayout": {
+    "UserNav": {
+      "appearance": "Aussehen",
+      "profile": "Profil"
+    },
+    "Pages": {
+      "Competitions": {
+        "title": "Wettbewerb"
+      },
+      "Settings": {
+        "title": "Einstellungen"
+      }
+    },
+    "DataTableToolbar": {
+      "filterInput": "Namen filtern...",
+      "reset": "Zurücksetzen"
+    }
+  },
+  "DataTable": {
+    "noResult": "Keine Ergebnisse.",
+    "Pagination": {
+      "rowsPerPage": "Zeilen pro Seite",
+      "rowsFiltered": "Zeile(n) gefiltert",
+      "page": "Seite {pageIndex} von {pageCount}",
+      "firstPage": "Zur ersten Seite",
+      "previousPage": "Zur vorherigen Seite",
+      "nextPage": "Zur nächsten Seite",
+      "lastPage": "Zur letzten Seite"
+    },
+    "CompetitionsTable": {
+      "Header": {
+        "name": "Name",
+        "season": "Saison",
+        "created": "Erstellt"
+      }
+    },
+    "DefaultTable": {
+      "Header": {
+        "username": "Benutzername",
+        "points": "Punkte",
+        "round": "Runde",
+        "homeTeam": "Heimmannschaft",
+        "awayTeam": "Gastmannschaft",
+        "kickoff": "Anstoß"
+      }
+    }
+  },
+  "PageTitles": {
+    "Appearance": {
+      "title": "Aussehen",
+      "description": "Aussehen-Einstellungen für den Benutzer."
+    },
+    "User": {
+      "title": "Benutzer",
+      "description": "Profil-Einstellungen für den Benutzer."
+    },
+    "Overview": {
+      "title": "Übersicht",
+      "description": "Alle Wettbewerbe anzeigen"
+    },
+    "Leaderboard": {
+      "title": "Rangliste",
+      "description": "Top-Spieler anzeigen"
+    },
+    "Fixtures": {
+      "title": "Spiele",
+      "description": "Alle Wettbewerbsspiele anzeigen."
+    },
+    "Competitions": {
+      "title": "Wettbewerbe",
+      "description": "Alle verfügbaren Wettbewerbe anzeigen"
+    },
+    "About": {
+      "title": "Über uns",
+      "description": "Entdecke unsere Geschichte, Mission und die aufregende Welt von FutbolPi!"
+    },
+    "Telegram": {
+      "title": "Telegram",
+      "description": "Tritt unserer lebhaften Telegram-Gruppe bei, um über Fußball zu diskutieren, Vorhersagen zu teilen und dich mit anderen Fans zu verbinden"
+    },
+    "Predict": {
+      "title": "Vorhersagen",
+      "description": "Erkunde bevorstehende Spiele und mache deine Vorhersagen für aktive Ligen und Pokale!"
+    },
+    "Settings": {
+      "title": "Einstellungen",
+      "description": "Deine Profileinstellungen"
+    }
+  },
+  "CompetitionDetail": {
+    "Overview": {
+      "teams": "Teams",
+      "predictions": "Vorhersagen",
+      "scheduled": "geplante Spiele",
+      "players": "Spieler",
+      "leaderboardLink": "Beginne mit Vorhersagen in den <action>Wettbewerbsspielen</action>",
+      "finished": "beendete Spiele"
+    },
+    "Leaderboard": {
+      "fixturesLink": "Auf der Rangliste zählt jede Vorhersage! Möchtest du höher klettern? <action>Jetzt vorhersagen</action>."
+    },
+    "Fixtures": {
+      "Status": {
+        "ALL": "Alle Spiele",
+        "COMPLETED": "Beendete Spiele",
+        "NOT_STARTED": "Geplante Spiele"
+      },
+      "leaderboardLink": "Klicke auf Spiele, um vorherzusagen oder anzusehen. Überprüfe auch die <action>Rangliste</action>!",
+      "FixtureDetailTabs": {
+        "yourPrediction": "Deine Vorhersage",
+        "makePrediction": "Vorhersage machen",
+        "errorMessage": "Etwas ist schief gelaufen",
+        "networkError": "Netzwerkantwort war nicht in Ordnung",
+        "fixture": "Spiel",
+        "signIn": "Zum Vorhersagen anmelden"
+      },
+      "TabsDetailTable": {
+        "predictionTableCaption": "Details deiner Vorhersage",
+        "fixtureTableCaption": "Spieldetails",
+        "key": "Schlüssel",
+        "value": "Wert",
+        "round": "Runde",
+        "action": "Aktionen",
+        "teams": "Teams",
+        "realScores": "Echte Ergebnisse",
+        "scores": "Ergebnisse",
+        "predictedScores": "Vorhergesagte Ergebnisse",
+        "kickoff": "Anstoß",
+        "status": "Status",
+        "pointsWon": "Erzielte Punkte"
+      },
+      "PredictionForm": {
+        "homeTeam": "Heimmannschaft",
+        "awayTeam": "Gastmannschaft",
+        "allowed": "Erlaubt",
+        "confirm": "Bestätigen",
+        "notAllowed": "Nicht erlaubt",
+        "canPredict": "Kann vorhersagen?"
+      }
+    }
+  },
+  "Settings": {
+    "User": {
+      "username": "Benutzername",
+      "predictions": "Vorhersagen",
+      "points": "Punkte",
+      "signIn": "Anmelden, um Profil zu sehen"
+    },
+    "Appearance": {
+      "light": "Hell",
+      "dark": "Dunkel",
+      "system": "System"
+    }
+  },
+  "LocaleSwitcher": {
+    "label": "Sprache ändern",
+    "locale": "{locale, select, zh {🇨🇳 Chinesisch} en {🇺🇸 Englisch} ko {🇰🇷 Koreanisch} de {🇩🇪 Deutsch} vi {🇻🇳 Vietnamesisch}  other {Unbekannt}}"
+  }
+}
