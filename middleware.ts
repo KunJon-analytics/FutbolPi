@@ -18,5 +18,5 @@ export async function middleware(req: NextRequest) {
 // See "Matching Paths" below to learn more
 export const config = {
   // Skip all paths that should not be internationalized
-  matcher: ["/", "/(zh|en|ko)/:path*"],
+  matcher: ["/", "/(zh|en|ko|de|vi)/:path*"],
 };
