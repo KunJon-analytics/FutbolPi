@@ -250,6 +250,7 @@
         "key": "密钥 ",
         "value": "价值 ",
         "round": "圆形的 ",
+        "action": "Actions",
         "teams": "团队 ",
         "realScores": "真实分数 ",
         "scores": "足球比分",
