@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { formatDistanceToNowStrict, fromUnixTime } from "date-fns";
 
 import {
@@ -15,6 +15,8 @@ import {
 import { FixturesResult } from "@/types";
 import { Prediction } from "@prisma/client";
 
+import SocialCard from "./social-card";
+
 export function PredictionDetailTable({
   fixture,
   prediction,
@@ -23,6 +25,7 @@ export function PredictionDetailTable({
   prediction: Prediction;
 }) {
   const t = useTranslations("CompetitionDetail.Fixtures.TabsDetailTable");
+  const locale = useLocale();
 
   const teams = `${fixture.homeTeam.name} vs ${fixture.awayTeam.name}`;
   const kickoff = formatDistanceToNowStrict(fromUnixTime(fixture.timestamp), {
@@ -48,6 +51,31 @@ export function PredictionDetailTable({
         </TableRow>
       </TableHeader>
       <TableBody>
+        <TableRow>
+          <TableCell className="group">
+            <div className="flex min-w-[130px] items-center justify-between gap-2">
+              <div className="flex items-center justify-between gap-2">
+                <code className="break-all font-medium">{t("action")}</code>
+              </div>
+            </div>
+          </TableCell>
+          <TableCell className="group">
+            <div className="flex items-center justify-between gap-1">
+              <SocialCard
+                params={{
+                  awayGoal: prediction.awayGoals,
+                  awayTeam: fixture.awayTeam.name,
+                  competitionId: fixture.competitionId,
+                  homeGoal: prediction.homeGoals,
+                  homeTeam: fixture.homeTeam.name,
+                  locale,
+                  round: fixture.round,
+                }}
+              />
+            </div>
+          </TableCell>
+        </TableRow>
+
         <FixtureTableRow heading={t("teams")} value={teams} />
         <FixtureTableRow heading={t("realScores")} value={scores} />
         <FixtureTableRow

@@ -249,6 +249,7 @@
         "fixtureTableCaption": "경기 세부정보",
         "key": "키",
         "value": "값",
+        "action": "행위",
         "round": "둥근",
         "teams": "팀",
         "realScores": "실제 점수",
