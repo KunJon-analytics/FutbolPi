@@ -250,6 +250,7 @@
         "key": "키",
         "value": "값",
         "round": "둥근",
+        "action": "Actions",
         "teams": "팀",
         "realScores": "실제 점수",
         "scores": "점수",
