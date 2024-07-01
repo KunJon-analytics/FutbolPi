@@ -42,6 +42,7 @@ type NewFixtures = {
 type Events = {
   "fixtures/current-week.get": {};
   "fixtures/today.update": {};
+  "badges/rookie.add": {};
   "fixtures/fixture.complete": CompleteFixture;
   "fixtures/fixture.finish": FinishFixture;
   "fixtures/fixture.cancel": CancelFixture;

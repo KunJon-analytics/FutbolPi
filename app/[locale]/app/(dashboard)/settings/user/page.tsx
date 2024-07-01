@@ -2,8 +2,10 @@
 
 import { useTranslations } from "next-intl";
 import { skipToken, useQuery } from "@tanstack/react-query";
+import { Award } from "lucide-react";
 
 import useCurrentSession from "@/components/providers/session-provider";
+import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { LoginButton } from "@/components/layout/login-button";
 import { Button } from "@/components/ui/button";
@@ -22,11 +24,7 @@ export default function UserPage() {
 
   const canFetch = session.isLoggedIn && sessionStatus === "success";
 
-  const {
-    status,
-    data: predictions,
-    isPending,
-  } = useQuery<UserStatResponse>({
+  const { status, data, isPending } = useQuery<UserStatResponse>({
     queryKey: ["profile", accessToken],
     queryFn: canFetch
       ? async () => {
@@ -59,8 +57,25 @@ export default function UserPage() {
     );
   }
 
+  const { badges, predictions } = data;
+  console.log({ data });
+
   return (
     <div className="@container grid gap-6">
+      <div className="flex items-center justify-center space-x-4">
+        {badges.length > 0 &&
+          badges.map((badge) => {
+            return (
+              <Badge
+                className={`bg-${badge.badge.color}-900 text-${badge.badge.color}-200 hover:bg-${badge.badge.color}-900/80 p-2`}
+                variant="outline"
+              >
+                <Award className="h-4 w-4" />{" "}
+                {`${badge.badge.name} ${badge.id}`}
+              </Badge>
+            );
+          })}
+      </div>
       <div className="grid grid-cols-2 gap-4 @3xl:grid-cols-5 @xl:grid-cols-4 @3xl:gap-6">
         <StringCard
           title={t("username")}

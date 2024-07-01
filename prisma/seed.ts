@@ -1,4 +1,5 @@
 import { copaAmerica, euros } from "@/lib/api-football/constants";
+import { rookie } from "@/lib/badges/constant";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
@@ -38,8 +39,17 @@ async function main() {
     });
   }
 
+  const existingRookie = await prisma.badge.findUnique({
+    where: { name: rookie.name },
+  });
+  if (!existingRookie) {
+    await prisma.badge.create({ data: { ...rookie, icon: "award" } });
+  }
+
   const allCompetitions = await prisma.competition.findMany();
+  const allBadges = await prisma.badge.findMany();
   console.log({ allCompetitions });
+  console.log({ allBadges });
 }
 main()
   .then(async () => {
