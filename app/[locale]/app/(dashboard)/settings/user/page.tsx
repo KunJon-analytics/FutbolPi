@@ -69,6 +69,7 @@ export default function UserPage() {
               <Badge
                 className={`bg-${badge.badge.color}-900 text-${badge.badge.color}-200 hover:bg-${badge.badge.color}-900/80 p-2`}
                 variant="outline"
+                key={`${badge.badge.name}-${badge.id}`}
               >
                 <Award className="h-4 w-4" />{" "}
                 {`${badge.badge.name} ${badge.id}`}
