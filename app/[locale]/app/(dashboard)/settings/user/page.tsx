@@ -13,6 +13,7 @@ import { MetricsCard } from "@/components/competition-dashboard/metrics-card";
 import { UserStatResponse } from "@/app/api/profile/[accessToken]/get-stat";
 
 import { StringCard } from "./_components/string-card";
+import { cn } from "@/lib/utils";
 
 export default function UserPage() {
   const t = useTranslations("Settings.User");
@@ -67,12 +68,14 @@ export default function UserPage() {
           badges.map((badge) => {
             return (
               <Badge
-                className={`bg-${badge.badge.color}-900 text-${badge.badge.color}-200 hover:bg-${badge.badge.color}-900/80 p-2`}
+                className={cn(
+                  `bg-${badge.badge.color}-900 text-${badge.badge.color}-200 hover:bg-${badge.badge.color}-900/80 p-2`
+                )}
                 variant="outline"
                 key={`${badge.badge.name}-${badge.id}`}
               >
                 <Award className="h-4 w-4" />{" "}
-                {`${badge.badge.name} ${badge.id}`}
+                {`${badge.badge.name} #${badge.id}`}
               </Badge>
             );
           })}
