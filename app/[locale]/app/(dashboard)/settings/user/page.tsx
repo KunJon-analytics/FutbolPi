@@ -14,6 +14,7 @@ import { UserStatResponse } from "@/app/api/profile/[accessToken]/get-stat";
 
 import { StringCard } from "./_components/string-card";
 import { cn } from "@/lib/utils";
+import { UserBadge } from "./_components/user-badge";
 
 export default function UserPage() {
   const t = useTranslations("Settings.User");
@@ -67,16 +68,10 @@ export default function UserPage() {
         {badges.length > 0 &&
           badges.map((badge) => {
             return (
-              <Badge
-                className={cn(
-                  `bg-${badge.badge.color}-900 text-${badge.badge.color}-200 hover:bg-${badge.badge.color}-900/80 p-2`
-                )}
-                variant="outline"
+              <UserBadge
+                badge={badge}
                 key={`${badge.badge.name}-${badge.id}`}
-              >
-                <Award className="h-4 w-4" />{" "}
-                {`${badge.badge.name} #${badge.id}`}
-              </Badge>
+              />
             );
           })}
       </div>

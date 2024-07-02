@@ -23,6 +23,7 @@ model User {
 
   predictions Prediction[]
   badges      UserBadge[]
+  guilds      UserToGuild[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -100,7 +101,7 @@ model Prediction {
   @@unique([username, fixtureId], name: "predictionId")
 }
 
-/// A Near Nest payment
+/// A FutbolPi payment
 model Payment {
   amount     Float
   txId       String?
@@ -129,13 +130,41 @@ model Badge {
 }
 
 model UserBadge {
-  id      Int    @default(autoincrement())
+  id Int @default(autoincrement())
+
   userId  String
   user    User   @relation(fields: [userId], references: [id])
   badgeId String
   badge   Badge  @relation(fields: [badgeId], references: [id])
 
   @@id([userId, badgeId], name: "userBadgeId")
+}
+
+model Guild {
+  id          String @id @default(cuid())
+  slug        String @unique
+  name        String
+  description String
+
+  txId      String?
+  paymentId String  @unique
+
+  members UserToGuild[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model UserToGuild {
+  id   Int       @unique @default(autoincrement())
+  role GuildRole @default(MEMBER)
+
+  userId  String
+  user    User   @relation(fields: [userId], references: [id])
+  guildId String
+  guild   Guild  @relation(fields: [guildId], references: [id])
+
+  @@id([userId, guildId], name: "userGuildId")
 }
 
 enum PiTransactionType {
@@ -163,4 +192,10 @@ enum FixtureOutcome {
   HOME_WIN
   AWAY_WIN
   DRAW
+}
+
+enum GuildRole {
+  OWNER
+  ADMIN
+  MEMBER
 }
