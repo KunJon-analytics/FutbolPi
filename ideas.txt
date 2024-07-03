@@ -1,0 +1,7 @@
+-- Create default team for every member or 
+--- create default teams that peeps can choose from
+--- think of wavesduck community farm example
+--- gamify joining by using block number (10 teams... join using last digit)
+--- badge = guild tickets
+
+
