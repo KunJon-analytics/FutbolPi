@@ -9,6 +9,7 @@ import { siteConfig } from "@/config/site";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import StarsBadge, { StarsBadgeFallback } from "./stars-badge";
+import DoubleUnderline from "../animata/text/double-underline";
 
 export async function Hero() {
   const t = await getTranslations("Index.Hero");
@@ -35,7 +36,7 @@ export async function Hero() {
             "bg-gradient-to-tl from-0% from-[hsl(var(--muted))] to-40% to-[hsl(var(--foreground))] bg-clip-text text-transparent"
           )}
         >
-          {t("heroTitle")}
+          <DoubleUnderline>{t("heroTitle")}</DoubleUnderline>
         </h1>
         <p className="mx-auto max-w-md text-lg text-muted-foreground md:max-w-xl md:text-xl">
           {t("heroDescription")}
