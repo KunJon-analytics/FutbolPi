@@ -1,5 +1,10 @@
 import { copaAmerica, euros } from "@/lib/api-football/constants";
-import { rookie } from "@/lib/badges/constant";
+import {
+  champion,
+  goldenBootStrikers,
+  matchdayHeroes,
+  rookie,
+} from "@/lib/badges/constant";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
@@ -39,12 +44,26 @@ async function main() {
     });
   }
 
-  const existingRookie = await prisma.badge.findUnique({
+  await prisma.badge.upsert({
     where: { name: rookie.name },
+    create: { ...rookie, icon: "award" },
+    update: { ...rookie },
   });
-  if (!existingRookie) {
-    await prisma.badge.create({ data: { ...rookie, icon: "award" } });
-  }
+  await prisma.badge.upsert({
+    where: { name: champion.name },
+    create: { ...champion, icon: "award" },
+    update: { ...champion },
+  });
+  await prisma.badge.upsert({
+    where: { name: goldenBootStrikers.name },
+    create: { ...goldenBootStrikers, icon: "award" },
+    update: { ...goldenBootStrikers },
+  });
+  await prisma.badge.upsert({
+    where: { name: matchdayHeroes.name },
+    create: { ...matchdayHeroes, icon: "award" },
+    update: { ...matchdayHeroes },
+  });
 
   const allCompetitions = await prisma.competition.findMany();
   const allBadges = await prisma.badge.findMany();

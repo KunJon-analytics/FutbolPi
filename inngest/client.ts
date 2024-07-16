@@ -12,6 +12,12 @@ type CompleteFixture = {
   };
 };
 
+type CompleteCompetition = {
+  data: {
+    competitionId: string;
+  };
+};
+
 type TelegramEvent = {
   data: {
     message: string;
@@ -48,6 +54,7 @@ type Events = {
   "fixtures/fixture.cancel": CancelFixture;
   "notifications/telegram.send": TelegramEvent;
   "notifications/fixtures.new": NewFixtures;
+  "seasons/season.complete": {};
 };
 
 // Create a client to send and receive events

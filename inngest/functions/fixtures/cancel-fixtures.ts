@@ -8,6 +8,8 @@ export const cancelFixtures = inngest.createFunction(
   async ({ event, step }) => {
     const { idsToDelete } = event.data;
 
+    // let it wait for 10 minutes then check the fixture again
+
     const toDeleteFixures = await step.run(
       "get-fixtures-to-delete",
       async () => {

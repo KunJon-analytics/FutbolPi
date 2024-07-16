@@ -34,5 +34,19 @@ export const champion: BadgeCreateProps = {
   description:
     "Reserved for competition winners on FutbolPi. Congratulations on your victory!",
   name: "Champion’s Crest",
-  requiredPoints: 100,
+  requiredPoints: 1,
+};
+
+export const goldenBootStrikers: BadgeCreateProps = {
+  color: "purple",
+  description: "For the elite—top scorers who ruled the pitch!",
+  name: "Golden Boot Strikers",
+  requiredPoints: 5,
+};
+
+export const matchdayHeroes: BadgeCreateProps = {
+  color: "orange",
+  description: "Every prediction counts! You’re part of the FutbolPi legacy.",
+  name: "Matchday Heroes",
+  requiredPoints: 1,
 };

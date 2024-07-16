@@ -64,7 +64,7 @@ export default function UserPage() {
 
   return (
     <div className="@container grid gap-6">
-      <div className="flex items-center justify-center space-x-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
         {badges.length > 0 &&
           badges.map((badge) => {
             return (

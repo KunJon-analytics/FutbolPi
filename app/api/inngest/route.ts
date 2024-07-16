@@ -9,6 +9,7 @@ import { updateTodayFixtures } from "@/inngest/functions/fixtures/update-today-f
 import { telegramMessage } from "@/inngest/functions/notifications/telegram-message";
 import { newFixturesAlert } from "@/inngest/functions/notifications/new-fixtures-alert";
 import { addRookieBadge } from "@/inngest/functions/badges/add-rookie-badge";
+import { completeSeason } from "@/inngest/functions/season/complete-season";
 
 // Create an API that serves zero functions
 export const { GET, POST, PUT } = serve({
@@ -23,5 +24,6 @@ export const { GET, POST, PUT } = serve({
     telegramMessage,
     newFixturesAlert,
     addRookieBadge,
+    completeSeason,
   ],
 });
