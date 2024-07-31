@@ -285,5 +285,10 @@
   "LocaleSwitcher": {
     "label": "Sprache ändern",
     "locale": "{locale, select, zh {🇨🇳 Chinesisch} en {🇺🇸 Englisch} ko {🇰🇷 Koreanisch} de {🇩🇪 Deutsch} vi {🇻🇳 Vietnamesisch}  other {Unbekannt}}"
+  },
+  "AnnouncementBanner": {
+    "title": "Mainnet-Start",
+    "description": "Entdecken Sie neue Funktionen: Gilden, Transfers, Pi-Belohnungen!",
+    "buttonText": "Beitreten"
   }
 }

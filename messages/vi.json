@@ -246,5 +246,10 @@
   "LocaleSwitcher": {
     "label": "Thay đổi ngôn ngữ",
     "locale": "{locale, select, zh {🇨🇳 Tiếng Trung} en {🇺🇸 Tiếng Anh} ko {🇰🇷 Tiếng Hàn} de {🇩🇪 Tiếng Đức} vi {🇻🇳 Tiếng Việt}  other {Không Xác Định}}"
+  },
+  "AnnouncementBanner": {
+    "title": "Ra mắt Mainnet",
+    "description": "Khám phá tính năng mới: hội nhóm, chuyển khoản, phần thưởng Pi!",
+    "buttonText": "Tham gia"
   }
 }

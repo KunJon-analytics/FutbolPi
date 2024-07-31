@@ -243,5 +243,10 @@
   "LocaleSwitcher": {
     "label": "Change language",
     "locale": "{locale, select, zh {🇨🇳 Chinese} en {🇺🇸 English} ko {🇰🇷 Korean} de {🇩🇪 Deutsch} vi {🇻🇳 Vietnamese}  other {Unknown}}"
+  },
+  "AnnouncementBanner": {
+    "title": "Mainnet Launch",
+    "description": "Explore new features: guilds, transfers, Pi rewards!",
+    "buttonText": "Join Now"
   }
 }

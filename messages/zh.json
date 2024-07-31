@@ -285,5 +285,10 @@
   "LocaleSwitcher": {
     "label": "改变语言",
     "locale": "{locale, select, zh {🇨🇳 中文} en {🇺🇸 English} ko {🇰🇷 韩国} de {🇩🇪 德乌茨ch} vi {🇻🇳 越南}  other {未知}}"
+  },
+  "AnnouncementBanner": {
+    "title": "主网启动",
+    "description": "探索新功能：公会、转账、Pi奖励！",
+    "buttonText": "加入"
   }
 }
